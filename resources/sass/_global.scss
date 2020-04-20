@@ -1,0 +1,43 @@
+.btn-eco{
+  background: #2196f3;
+  color: #fff!important;
+}
+.f-w-500 {
+  font-weight: 500;
+  font-family: auto;
+}
+hr.red-hr{
+  max-width: 10.25rem;
+  border: .2rem red;
+}
+
+hr.white-hr{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.blue-color{
+  color: $blue-custom;
+}
+.pointer{
+  cursor: pointer;
+}
+.fab.fa-whatsapp {
+  color: #25d366;
+}
+
+.hidden{
+  display: none;
+}
+
+.about-page-section, .services-page-section {
+  padding-top: 250px;
+  text-align: center;
+  background: #eee;
+}
+
+.disabled{
+  cursor: not-allowed!important;
+}
