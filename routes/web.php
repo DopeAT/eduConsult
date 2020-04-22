@@ -11,10 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Pages
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/services', 'PagesController@services')->name('services');
+Route::get('/faqs', 'PagesController@faqs')->name('faqs');
+Route::get('/contact', 'MessageController@showPage')->name('contact');
+
+
+// Order Page
+Route::get('/order', 'OrderController@index')->name('order.index');
+
+
+// Post pages WEB
+Route::post('/newsletter/store', 'NewsletterController@store')->name('newsletter.store');
+Route::post('/contact', 'MessageController@store')->name('contact.store');
+
+
+// Admin Routes
+require_once('admin.php');
