@@ -10931,3 +10931,88 @@ hr.white-hr {
   cursor: not-allowed !important;
 }
 
+nav#nav {
+  min-height: 60px;
+}
+
+nav#nav .navbar-nav .nav-link {
+  color: #000;
+}
+
+nav#nav .navbar-nav .nav-link:focus,
+nav#nav .navbar-nav .nav-link:hover {
+  border-bottom: 2px solid red;
+  padding-bottom: 5px;
+}
+
+footer#footer {
+  background-color: #3e4551;
+  color: #fff;
+  padding: 40px 0;
+}
+
+footer#footer .container .row div {
+  padding: 5px 60px;
+}
+
+footer#footer span.footer-heading-text {
+  padding: 20px 10px;
+  line-height: 28.57142858px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: left;
+}
+
+footer#footer ul.footerLinks {
+  list-style-type: none;
+  text-align: left;
+  padding: 10px;
+  margin-top: 10px;
+  line-height: 32px;
+  font-size: 16px;
+}
+
+footer#footer ul.footerLinks a {
+  color: #fff;
+}
+
+footer#footer .footer-eco {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+footer#footer ul.socislBtns li a i {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  margin-right: 10px;
+  padding-top: 15%;
+  transition: all 0.2s ease-in-out;
+}
+
+footer#footer ul.socislBtns li a i.fa-facebook-f {
+  background: #3b5998;
+}
+
+footer#footer ul.socislBtns li a i.fa-linkedin-in {
+  background: #007bb6;
+}
+
+footer#footer ul.socislBtns li a i.fa-twitter {
+  background: #00aced;
+}
+
+footer#footer #news-feedback #alert-danger {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+footer#footer #news-feedback #alert-danger button#alert-btn {
+  padding: 5px 20px;
+}
+
