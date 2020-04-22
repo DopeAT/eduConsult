@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header h5 font-weight-bold">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -61,13 +61,31 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
+
+
+                        <div class="form-group row mb-5">
+                            <div class="col-md-6 offset-md-4">
+                                <small class="small text-muted">By signing up, you agree to our Terms of Use and Privacy Policy.</small>
+                            </div>
+                        </div>
+
+                        <hr class="my-2">
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <span>
+                                    Already have an account? <a href="{{ route('login') }}">Log In</a>
+                                </span>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
