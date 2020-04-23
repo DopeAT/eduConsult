@@ -13,10 +13,10 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-
-
 Route::get('/about', 'PagesController@about')->name('about');
-Route::get('/services', 'PagesController@services')->name('services');
 Route::get('/faqs', 'PagesController@faqs')->name('faqs');
-Route::get('/contact', 'MessageController@showPage')->name('contact');
+Route::get('/contact', 'ContactController@show')->name('contact');
+
+
+Route::get('/services', 'PagesController@services')->name('services');
 Route::post('/newsletter/store', 'NewsletterController@store')->name('newsletter.store');
