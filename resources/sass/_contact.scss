@@ -1,0 +1,41 @@
+#contactPage{
+
+  background: white;
+
+  .contact-section {
+    margin-top: 90px;
+  }
+
+  form{
+
+    label{
+      font-weight: 700;
+    }
+
+
+  }
+
+  .contact{
+
+    margin-bottom: 10px;
+
+    .fas,.fab{
+      font-size: 30px;
+      width: 30px;
+    }
+
+    .location-contact{
+      display: inline-flex;
+    }
+
+    span{
+      color: #585757;
+      text-decoration: none;
+      font-size: 15px;
+      margin-left: 10px;
+    }
+
+  }
+
+
+}

@@ -11016,3 +11016,324 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   padding: 5px 20px;
 }
 
+#home .intro-section {
+  height: 700px;
+  padding-top: 150px;
+  text-align: center;
+  background: #fff;
+}
+
+#home .intro-section#intro {
+  background-image: url(/images/asd.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+}
+
+#home .intro-section#intro .intro-text {
+  padding-top: 10%;
+  padding-bottom: 90px;
+}
+
+#home .intro-section#intro .intro-text .intro-lead-in {
+  font-size: 2.5em;
+  font-family: "Roboto Slab", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#home .intro-section#intro .intro-text p {
+  padding: 15px;
+  font-size: 1.2em;
+  font-family: "Roboto Slab", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#home .intro-section#intro .intro-text .fas.fa-angle-down {
+  font-size: 30px !important;
+}
+
+#home .intro-section#intro .icons {
+  font-size: 20px;
+}
+
+#home .intro-section#intro .icons span {
+  margin-right: 16.5px;
+  text-transform: uppercase;
+}
+
+#home #whyUseUs h4 {
+  font-weight: 600;
+}
+
+#home #whyUseUs .title {
+  color: #333;
+  font-size: 24px;
+}
+
+#home #whyUseUs .boxes {
+  text-align: center;
+  border: 2px solid #fff;
+  margin: 5px 0;
+}
+
+#home #whyUseUs .non-icon {
+  color: #40a0d2;
+}
+
+#home #whyUseUs .non-icon,
+#home #whyUseUs .icon-field {
+  font-family: "Roboto Slab", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 3em;
+  font-weight: 300;
+}
+
+#home #about-us .testimonials .testimonial-user {
+  margin-right: 23%;
+  margin-left: 23%;
+}
+
+#home #about-us .testimonials .testimonial-user img {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  max-width: 170px;
+  margin: 0 auto;
+}
+
+#home #about-us .testimonials .testimonial-user .avatar-name {
+  margin-top: 1.5rem !important;
+  font-weight: 700 !important;
+  text-align: center;
+}
+
+#home #about-us .testimonials .testimonial-user .prof {
+  text-align: center;
+  font-weight: 600;
+}
+
+#home #about-us .testimonials .testimonial-user .star-text {
+  color: #ff9800 !important;
+  text-align: center;
+}
+
+#home #contact.contact-section {
+  background-color: #f5f5f5;
+}
+
+#home #contact.contact-section .contact-boxes {
+  padding: 70px 30px 60px !important;
+  background-color: #ffffff !important;
+  border-right: 1px solid #dddddd !important;
+  border-bottom: 5px solid #dddddd !important;
+  border-radius: 1px !important;
+}
+
+#home #contact.contact-section .contact-boxes .content .icon i.fas,
+#home #contact.contact-section .contact-boxes .content .icon i.far {
+  font-size: 70px;
+}
+
+#subjects {
+  background: url(/images/subjects.jpg) no-repeat scroll center;
+  background-size: cover;
+}
+
+#subjects.subjects-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+#subjects .subjects-boxes {
+  padding: 0px 10px;
+  margin: 5px;
+}
+
+#subjects .subjects-boxes .course-title span {
+  text-transform: uppercase;
+  position: relative;
+  padding: 10px 20px;
+  font-size: 12px;
+  z-index: 1;
+  font-weight: bold;
+  line-height: 34px;
+  background: #FFFFFF;
+}
+
+#subjects .subjects-boxes .icon-course {
+  margin: 5px 0 0;
+  font-size: 40px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+#subjects .subjects-boxes .course-title-inside {
+  text-transform: uppercase;
+  padding: 0 15px;
+  line-height: normal;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  margin-bottom: 17px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#subjects .subjects-boxes .course-details {
+  height: 150px;
+  margin-bottom: 5px;
+  padding: 0 15px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+}
+
+#subjects .subjects-boxes .btn-order {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 0;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  color: white;
+  text-transform: uppercase;
+  margin: 20px;
+}
+
+#about .about-page-section {
+  background-image: url(/images/about.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+}
+
+#about .about-page-section .card-lead {
+  padding: 10px 50px 0 50px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#about .about-page-section .card-lead .intro {
+  font-size: 2.5em;
+  font-family: "Roboto Slab", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#about .about-page-section .card-lead .text {
+  font-size: 22px;
+  margin-top: 30px;
+}
+
+#about .guarantees {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/about-guar-img.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+}
+
+#about .guarantees .icon {
+  font-size: 35px;
+}
+
+#about .guarantees .details h4 {
+  height: 37px;
+}
+
+#faqs .faq-section {
+  padding-top: 150px;
+  text-align: center;
+}
+
+#faqs .faq-section p {
+  padding: 15px;
+  font-size: 1.2em;
+  font-family: "Roboto Slab", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#faqs .faq-content {
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+#faqs .faq-content .faq {
+  margin-bottom: 0;
+  box-shadow: none;
+  border-radius: 0 0 0 0;
+  border: none;
+  border-bottom: 2px solid #f5f5f5;
+  position: relative;
+  padding: 10px 0;
+}
+
+#faqs .faq-content .faq .title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+#faqs .faq-content .faq .title a:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F077";
+  color: #1f539d;
+  position: absolute;
+  display: block;
+  right: 0;
+  height: 16px;
+  line-height: 17px;
+  width: 16px;
+  font-size: 12px;
+  padding: 0px;
+  text-align: center;
+  border-radius: 50% 50% 50% 50%;
+}
+
+#faqs .faq-content .faq .title a.collapsed:before {
+  content: "\F078";
+}
+
+#faqs .radio-inline {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: 400;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#contactPage {
+  background: white;
+}
+
+#contactPage .contact-section {
+  margin-top: 90px;
+}
+
+#contactPage form label {
+  font-weight: 700;
+}
+
+#contactPage .contact {
+  margin-bottom: 10px;
+}
+
+#contactPage .contact .fas,
+#contactPage .contact .fab {
+  font-size: 30px;
+  width: 30px;
+}
+
+#contactPage .contact .location-contact {
+  display: inline-flex;
+}
+
+#contactPage .contact span {
+  color: #585757;
+  text-decoration: none;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
