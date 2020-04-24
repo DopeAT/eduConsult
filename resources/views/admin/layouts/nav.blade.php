@@ -62,7 +62,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('admin.roles.index') }}">
             <i class="fas fa-fw fa-user-astronaut"></i>
             <span>Roles</span>
         </a>
@@ -109,7 +109,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('admin.newsletter.index') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Mail Data</span>
         </a>
