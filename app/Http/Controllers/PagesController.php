@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Faq;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -9,11 +10,13 @@ class PagesController extends Controller
 
     public function about()
     {
-        return view('pages/about');
+        return view('pages.about');
     }
 
     public function faqs()
     {
-        return view('pages/faqs');
+        $faqs = Faq::all();
+
+        return view('pages.faqs')->withFaqs($faqs);
     }
 }
