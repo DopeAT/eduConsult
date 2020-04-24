@@ -70,7 +70,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('admin.faqs.index') }}">
             <i class="fas fa-fw fa-question"></i>
             <span>FAQs</span>
         </a>
