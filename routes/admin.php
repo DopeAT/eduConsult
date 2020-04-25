@@ -5,6 +5,17 @@ Route::middleware(['admin.access'])->group(function(){
     // Dashboard
     Route::get('/admin', 'Admin\AdminController@dashboard')->name('dashboard');
 
+    // Messages
+    Route::resource('/admin/messages', 'Admin\MessageController')->names([
+        'index'   => 'admin.messages.index',
+        'create'  => 'admin.messages.create',
+        'store'   => 'admin.messages.store',
+        'show'    => 'admin.messages.show',
+        'edit'    => 'admin.messages.edit',
+        'update'  => 'admin.messages.update',
+        'destroy' => 'admin.messages.destroy',
+    ]);
+
     // Users
     Route::resource('/admin/users', 'Admin\UserController')->names([
         'index'   => 'admin.users.index',
@@ -47,6 +58,17 @@ Route::middleware(['admin.access'])->group(function(){
         'edit'    => 'admin.settings.edit',
         'update'  => 'admin.settings.update',
         'destroy' => 'admin.settings.destroy',
+    ]);
+
+    // Testimonials
+    Route::resource('/admin/testimonials', 'Admin\TestimonialController')->names([
+        'index'   => 'admin.testimonials.index',
+        'create'  => 'admin.testimonials.create',
+        'store'   => 'admin.testimonials.store',
+        'show'    => 'admin.testimonials.show',
+        'edit'    => 'admin.testimonials.edit',
+        'update'  => 'admin.testimonials.update',
+        'destroy' => 'admin.testimonials.destroy',
     ]);
 
     // Faqs

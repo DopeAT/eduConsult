@@ -34,3 +34,7 @@ $(document).ready(function() {
     } );
 
 });
+
+$('.tr-row-href').on('click', function() {
+    window.location = $(this).data("href");
+});
