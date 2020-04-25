@@ -1,0 +1,122 @@
+/* Inbox Style */
+#gmail-inbox .table-email tr.unread, .table-email tr.selected {
+    background-color: #EEEEEE;
+}
+
+#gmail-inbox .tr-row-href:hover {
+    cursor: pointer;
+}
+
+#gmail-inbox .table-email tr td:first-child, .table-email tr td:nth-child(2) {
+    text-align: center;
+    width: 35px;
+}
+
+#gmail-inbox .table-email tr:first-child td {
+    border-top: none;
+}
+
+#gmail-inbox .table-email .checkbox {
+    line-height: 0px;
+    margin-left: 8px;
+    margin-top: 10px;
+}
+
+#gmail-inbox .table-email .star {
+    margin-left: 6px;
+}
+
+#gmail-inbox .table-email .star.star-checked i {
+    color: goldenrod;
+}
+
+#gmail-inbox .table-email .media {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+#gmail-inbox .table-email .media-object {
+    width: 35px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#gmail-inbox .table-email .media h4 {
+    margin: 0px;
+    font-size: 14px;
+    line-height: normal;
+}
+
+#gmail-inbox .table-email .email-summary {
+    margin: 0px 110px 0px 0px;
+}
+
+#gmail-inbox .table-email .email-summary strong {
+    color: #333;
+}
+
+#gmail-inbox .table-email .email-summary span.label {
+    padding: 1px 5px 2px;
+}
+
+#gmail-inbox .table-email .email-summary span {
+    line-height: 1;
+}
+
+#gmail-inbox .table-email .media-meta {
+    top: 0px;
+}
+
+#gmail-inbox .table-email .media-meta, .table-email .media-attach {
+    font-size: 11px;
+    color: #999;
+    position: absolute;
+    right: 10px;
+}
+
+#gmail-inbox .media-body {
+    margin-left: 15px;
+}
+
+#gmail-inbox .tr-row {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Inbox show */
+.inbox-show a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+}
+
+.inbox-show .back-btn:hover {
+    background-color: rgba(32,33,36, .089);
+    border-radius: 50%;
+}
+
+.inbox-show .back-btn {
+    cursor: pointer;
+    padding: 10px;
+    color: #000;
+}
+
+.inbox-show .headers .user img {
+    width: 32px;
+}
+
+.inbox-show .headers .user svg {
+    width: 15px;
+    height: 20px;
+    color: #82868b;
+    fill: #82868b;
+}
+
+.inbox-show .headers .time, .inbox-show .headers .user .email {
+    color: #828c93;
+}
+
+.inbox-show .body .content {
+    /*white-space: pre;*/
+}

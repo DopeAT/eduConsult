@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="/vendor/assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/css/admin.styles.css" rel="stylesheet">
 
     <!-- Datatables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
