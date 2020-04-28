@@ -86,6 +86,14 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.team.index') }}">
+            <i class="fas fa-fw fa-users "></i>
+            <span>Team</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-users"></i>
             <span>Users</span>
@@ -93,8 +101,8 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Users:</h6>
-                <a class="collapse-item" href="/admin/users?type=admin">Admin</a>
-                <a class="collapse-item" href="/admin/users?type=members">Members</a>
+                <a class="collapse-item" href="/admin/users?type=1">Admin</a>
+                <a class="collapse-item" href="/admin/users?type=3">Members</a>
             </div>
         </div>
     </li>
