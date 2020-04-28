@@ -71,6 +71,17 @@ Route::middleware(['admin.access'])->group(function(){
         'destroy' => 'admin.testimonials.destroy',
     ]);
 
+    // Team
+    Route::resource('/admin/team', 'Admin\TeamController')->names([
+        'index'   => 'admin.team.index',
+        'create'  => 'admin.team.create',
+        'store'   => 'admin.team.store',
+        'show'    => 'admin.team.show',
+        'edit'    => 'admin.team.edit',
+        'update'  => 'admin.team.update',
+        'destroy' => 'admin.team.destroy',
+    ]);
+
     // Faqs
     Route::resource('/admin/faqs', 'Admin\FaqController')->names([
         'index'   => 'admin.faqs.index',
