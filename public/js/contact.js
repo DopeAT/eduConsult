@@ -93,7 +93,31 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\eduConsult\\resources\\js\\contact.js'");
+$('#contact-form').on('submit', function () {
+  $(".is-invalid").removeClass("is-invalid");
+  var name = $('#name');
+  var email = $('#email');
+  var message = $('#message');
+  var invalid = false;
+  var emailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+  if (name.val().trim().length === 0) {
+    invalid = true;
+    name.addClass('is-invalid');
+  }
+
+  if (email.val().trim().length === 0 || !emailRegex.test(email.val())) {
+    invalid = true;
+    email.addClass('is-invalid');
+  }
+
+  if (message.val().trim().length === 0) {
+    invalid = true;
+    message.addClass('is-invalid');
+  }
+
+  if (invalid) return false;
+});
 
 /***/ }),
 

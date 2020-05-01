@@ -79,6 +79,7 @@
             </div>
         </div>
     </section>
+
     <!-- Services Section -->
     <section id="subjects" class="subjects-section">
         <div class="container">
@@ -203,66 +204,30 @@
                 </div>
             </div>
             <div class="row mt-3 testimonials">
-                <div class="col-sm-4">
-                    <div class="testimonial-user">
-                        <!--Avatar-->
-                        <div class="testimonial-user-avatar mx-auto">
-                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg" class="img-fluid rounded-circle" />
-                        </div>
-                        <!--Content-->
-                        <h4 class="avatar-name">John Doe</h4>
-                        <h6 class="text-primary prof">Web Developer</h6>
-                        <p class="text-center">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis laboriosam.</p>
-                        <!--Review-->
-                        <div class="star-text">
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="testimonial-user">
-                        <!--Avatar-->
-                        <div class="testimonial-user-avatar">
-                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg" class="img-fluid rounded-circle" />
-                        </div>
-                        <!--Content-->
-                        <h4 class="avatar-name">John Doe</h4>
-                        <h6 class="text-primary prof">Web Developer</h6>
-                        <p class="text-center">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis laboriosam.</p>
-                        <!--Review-->
-                        <div class="star-text">
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
+
+                @foreach($testimonials as $member)
+                    <div class="col-sm-4">
+                        <div class="testimonial-user">
+                            <!--Avatar-->
+                            <div class="testimonial-user-avatar mx-auto">
+                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg" class="img-fluid rounded-circle" />
+                            </div>
+                            <!--Content-->
+                            <h4 class="avatar-name">{{ $member->name }}</h4>
+                            <h6 class="text-primary prof">{{ $member->role }}</h6>
+                            <p class="text-center">{{ $member->message }}</p>
+                            <!--Review-->
+                            <div class="star-text">
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="testimonial-user">
-                        <!--Avatar-->
-                        <div class="testimonial-user-avatar">
-                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg" class="img-fluid rounded-circle" />
-                        </div>
-                        <!--Content-->
-                        <h4 class="avatar-name">John Doe</h4>
-                        <h6 class="text-primary prof">Web Developer</h6>
-                        <p class="text-center">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis laboriosam.</p>
-                        <!--Review-->
-                        <div class="star-text">
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                            <i class="fas fa-star"> </i>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
 
         </div>
