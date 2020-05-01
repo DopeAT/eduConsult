@@ -12,7 +12,7 @@
                     <hr>
                 </div>
                 <div class="col-lg-12">
-                    <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.3520105831262!2d-0.4205106838428679!3d52.12791797974181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877b64261a52c9d%3A0x6af698b0216051fc!2sVijay+House+Limited!5e0!3m2!1sen!2suk!4v1525511467221" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe class="w-100" src="{{ env('MAP_ID') }}" height="450" frameborder="0"></iframe>
                 </div>
             </div>
 
@@ -25,14 +25,14 @@
 
                     @endif
 
-                    <form id="contact-form" method="POST" action="#" role="form">
+                    <form id="contact-form" method="POST" action="" role="form">
                         @csrf
                         <div class="controls">
                             <div class="form-group">
-                                <label for="name">Firstname *</label>
-                                <input id="name" type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Please enter your firstname *">
+                                <label for="name">Name *</label>
+                                <input id="name" type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Please enter your name *">
                                 @error('name')
-                                <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -41,7 +41,7 @@
                                 <label for="email">Email *</label>
                                 <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Please enter your email *">
                                 @error('email')
-                                <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -50,7 +50,7 @@
                                 <label for="phone">Phone</label>
                                 <input id="phone" type="tel" name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="Please enter your phone">
                                 @error('phone')
-                                <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -59,13 +59,13 @@
                                 <label for="message">Message *</label>
                                 <textarea id="message" name="message" class="form-control @error('message') is-invalid @enderror" placeholder="Please enter your message" rows="4">{{ old('message') }}</textarea>
                                 @error('message')
-                                <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-success disabled float-left" value="Send message">
+                                <input type="submit" class="btn btn-success float-left" value="Send message">
                             </div>
                         </div>
                     </form>
@@ -97,4 +97,8 @@
         </div>
     </section>
 
+@endsection
+
+@section('_scripts')
+    <script src="{{ asset('js/contact.js') }}" defer></script>
 @endsection
