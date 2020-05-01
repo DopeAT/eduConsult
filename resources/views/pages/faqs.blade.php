@@ -60,12 +60,12 @@
                                     <div class="hidden" id="yes"></div>
                                     <div class="hidden" id="no">
                                         <div class="mt-3">
-                                            We are really sorry to hear that. You can <a href="/site/contact-us.php">contact us</a> and we will be glad to help you.
+                                            We are really sorry to hear that. You can <a href="{{ route('contact') }}">contact us</a> and we will be glad to help you.
                                         </div>
                                     </div>
                                     <div class="hidden" id="notsure">
                                         <div class="mt-3">
-                                            You can <a href="/site/contact-us.php">contact us</a> and we will be glad to help you.
+                                            You can <a href="{{ route('contact') }}">contact us</a> and we will be glad to help you.
                                         </div>
                                     </div>
                                 </div>

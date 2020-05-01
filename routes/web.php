@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faqs', 'PagesController@faqs')->name('faqs');
 Route::get('/contact', 'ContactController@show')->name('contact');
+Route::post('/contact', 'ContactController@store')->name('contact.post');
 
 
 // Admin Routes

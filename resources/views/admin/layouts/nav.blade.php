@@ -20,6 +20,13 @@
         </a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.settings.index') }}">
+            <i class="fas fa-fw fa-cogs"></i>
+            <span>Settings</span>
+        </a>
+    </li>
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmails" aria-expanded="true" aria-controls="collapseEmails">
