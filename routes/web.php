@@ -19,6 +19,10 @@ Route::get('/contact', 'ContactController@show')->name('contact');
 Route::post('/contact', 'ContactController@store')->name('contact.post');
 
 
+// Order Page
+Route::get('/order', 'OrderController@order')->name('order');
+
+
 // Ajax - Api Routes
 Route::post('/api/newsletter/post', 'AjaxController@newsletter')->name('newsletter.store');
 
