@@ -11337,3 +11337,23 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   margin-left: 10px;
 }
 
+#services .intro-section {
+  height: 400px;
+  padding-top: 125px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#services .intro-section#intro {
+  background-image: url(/images/photography-of-people-graduating-emily-ranquist.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+}
+
+#services .intro-section#intro .intro-text {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+

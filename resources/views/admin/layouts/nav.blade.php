@@ -69,6 +69,14 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.services.index') }}">
+            <i class="fas fa-fw fa-server"></i>
+            <span>Services</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.roles.index') }}">
             <i class="fas fa-fw fa-user-astronaut"></i>
             <span>Roles</span>
