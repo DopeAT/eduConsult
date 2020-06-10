@@ -18,6 +18,9 @@ Route::get('/faqs', 'PagesController@faqs')->name('faqs');
 Route::get('/contact', 'ContactController@show')->name('contact');
 Route::post('/contact', 'ContactController@store')->name('contact.post');
 
+// Services
+Route::get('/services', 'ServiceController@index')->name('services.index');
+Route::get('/services/{service}', 'ServiceController@show')->name('services.show');
 
 // Order Page
 Route::get('/order', 'OrderController@order')->name('order');
@@ -28,7 +31,4 @@ Route::post('/api/newsletter/post', 'AjaxController@newsletter')->name('newslett
 
 // Admin Routes
 require_once('admin.php');
-
-
-Route::get('/services', 'PagesController@services')->name('services');
 

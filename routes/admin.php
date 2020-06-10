@@ -5,6 +5,17 @@ Route::middleware(['admin.access'])->group(function(){
     // Dashboard
     Route::get('/admin', 'Admin\AdminController@dashboard')->name('dashboard');
 
+    // Services
+    Route::resource('/admin/services', 'Admin\ServiceController')->names([
+        'index'   => 'admin.services.index',
+        'create'  => 'admin.services.create',
+        'store'   => 'admin.services.store',
+        'show'    => 'admin.services.show',
+        'edit'    => 'admin.services.edit',
+        'update'  => 'admin.services.update',
+        'destroy' => 'admin.services.destroy',
+    ]);
+
     // Messages
     Route::resource('/admin/messages', 'Admin\MessageController')->names([
         'index'   => 'admin.messages.index',

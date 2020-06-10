@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Testimonial;
+use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class TestimonialController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,10 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::all();
+        $services = Service::all();
 
-        return view('admin.testimonials.index', [
-            'data' => $testimonials
+        return view('admin.services.index', [
+            'data' => $services
         ]);
     }
 
@@ -30,7 +30,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        return view('admin.testimonials.create');
+        return view('admin.services.create');
     }
 
     /**
@@ -42,33 +42,35 @@ class TestimonialController extends Controller
     public function store(Request $request)
     {
         $new_image = '';
-        $testimonialsFolder = public_path().'/images/testimonials';
+        $servicesFolder = public_path().'/images/services';
 
-        if(!file_exists($testimonialsFolder)) {
-            File::makeDirectory($testimonialsFolder, 0777, true, true);
+        if(!file_exists($servicesFolder)) {
+            File::makeDirectory($servicesFolder, 0777, true, true);
         }
 
         if($request->hasFile('image')){
 
             $request->validate(['image' => 'image|mimes:jpeg,png,jpg',]);
             $image  = $request->file('image');
-            $name   = 'testimonial_'.time();
+            $name   = 'service_'.time();
             $new_image = $name. '.' . $image->getClientOriginalExtension();
 
             // Upload image
-            $request->image->move($testimonialsFolder, $new_image);
+            $request->image->move($servicesFolder, $new_image);
         }
 
-        Testimonial::create([
+        Service::create([
             'name'    => $request->name,
-            'role'    => $request->role,
-            'stars'   => $request->stars,
-            'message' => $request->message,
-            'image'   => $new_image
+            'slug'    => slug($request->name),
+            'intro'   => $request->intro,
+            'description' => $request->description,
+            'title' => '',
+            'meta'  => '',
+            'header_image'   => $new_image
         ]);
 
-        session()->flash('success', 'Testimonial Created Successfully.');
-        return redirect('/admin/testimonials');
+        session()->flash('success', 'Service Created Successfully.');
+        return redirect('/admin/services');
     }
 
     /**
@@ -85,13 +87,13 @@ class TestimonialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Testimonial $testimonial
+     * @param Service $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Testimonial $testimonial)
+    public function edit(Service $service)
     {
-        return view('admin.testimonials.edit', [
-            'data' => $testimonial
+        return view('admin.services.edit', [
+            'data' => $service
         ]);
     }
 
@@ -102,51 +104,52 @@ class TestimonialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testimonial $testimonial)
+    public function update(Request $request, Service $service)
     {
-        $image = $testimonial->image;
-        $testimonialsFolder = public_path().'/images/testimonials';
+        $image = $service->header_image;
+        $servicesFolder = public_path().'/images/services';
 
         if($request->hasFile('image')){
 
             $request->validate(['image' => 'image|mimes:jpeg,png,jpg',]);
             $image  = $request->file('image');
-            $name   = 'testimonial_'.time();
+            $name   = 'service_'.time();
             $new_image = $name. '.' . $image->getClientOriginalExtension();
 
             // Upload image
-            $request->image->move($testimonialsFolder, $new_image);
+            $request->image->move($servicesFolder, $new_image);
 
             // remove old image
-            File::delete($testimonialsFolder.'/'.$image);
+            File::delete($servicesFolder.'/'.$image);
 
             $image = $new_image;
         }
 
-        $testimonial->update([
+        $service->update([
             'name'    => $request->name,
-            'role'    => $request->role,
-            'stars'   => $request->stars,
-            'message' => $request->message,
-            'image'   => $image
+            'intro'   => $request->intro,
+            'description' => $request->description,
+            'title' => '',
+            'meta'  => '',
+            'header_image' => $image
         ]);
 
-        session()->flash('success', 'Testimonial Updated.');
-        return redirect('/admin/testimonials');
+        session()->flash('success', 'Service Updated.');
+        return redirect('/admin/services');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param Testimonial $testimonial
+     * @param Service $service
      * @return \Illuminate\Http\Response
      * @throws \Exception
      */
-    public function destroy(Testimonial $testimonial)
+    public function destroy(Service $service)
     {
-        $testimonial->delete();
+        $service->delete();
 
-        session()->flash('success', 'Testimonial Removed.');
-        return redirect('/admin/testimonials');
+        session()->flash('success', 'Service Removed.');
+        return redirect('/admin/services');
     }
 }
