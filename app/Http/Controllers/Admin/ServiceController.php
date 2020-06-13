@@ -100,8 +100,8 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param Service $service
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Service $service)

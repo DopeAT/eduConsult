@@ -115,6 +115,8 @@
 
 <script src="/vendor/assets/js/custom.js"></script>
 
+@yield('scripts')
+
 </body>
 
 </html>
