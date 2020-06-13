@@ -32,6 +32,11 @@
         </div>
     </section>
 
+    <pre>
+        {{print_r($service->products)}}
+    </pre>
+
+
     <!-- partners -->
     <section id="logos-section" class="py-4 bg-white">
         <div class="container text-center">

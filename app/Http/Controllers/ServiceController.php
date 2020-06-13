@@ -22,7 +22,7 @@ class ServiceController extends Controller
         $service = Service::where('slug', $service)->get()->first();
 
         return view('pages.services.show', [
-            'service' => $service
+            'service' => $service->load('products')
         ]);
     }
 
