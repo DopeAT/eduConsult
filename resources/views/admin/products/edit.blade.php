@@ -72,7 +72,7 @@
                     <label for="body" class="col-md-4 col-form-label text-md-right">Description</label>
 
                     <div class="col-md-6">
-                        <textarea class="form-control form-control-sm" name="body" id="body" cols="30" rows="10">{!! $data->body !!}</textarea>
+                        <textarea class="form-control form-control-sm mytextarea" name="body" id="body" cols="30" rows="10">{!! $data->body !!}</textarea>
                     </div>
                 </div>
 

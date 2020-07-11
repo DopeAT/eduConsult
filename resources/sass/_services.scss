@@ -21,4 +21,27 @@
             }
         }
     }
+
+    #services-list {
+        .service-title span{
+            text-transform: uppercase;
+            position: relative;
+            padding: 10px;
+            font-size: 14px;
+            z-index: 1;
+            font-weight: 900;
+            line-height: 34px;
+            background: #FFFFFF;
+        }
+
+        .service-details {
+            margin-bottom: 30px;
+            padding: 25px;
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
 }
