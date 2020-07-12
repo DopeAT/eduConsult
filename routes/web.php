@@ -29,6 +29,9 @@ Route::get('/order', 'OrderController@order')->name('order');
 // Ajax - Api Routes
 Route::post('/api/newsletter/post', 'AjaxController@newsletter')->name('newsletter.store');
 
+// Payment Routes
+Route::post('/charge', 'PaymentController@charge');
+
 // Admin Routes
 require_once('admin.php');
 

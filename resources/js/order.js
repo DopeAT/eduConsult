@@ -1,5 +1,6 @@
 window.Vue = require('vue');
 window.IS_LOGGED = IS_AUTHENTICATED;
+window.axios = require('axios');
 
 import store from './vuex/store'
 
