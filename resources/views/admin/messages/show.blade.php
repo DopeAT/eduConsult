@@ -9,7 +9,7 @@
             <div class="bg-white p-5 inbox-show">
 
                 <div>
-                    <a onclick="window.history.back()" class="back-btn">
+                    <a href="/admin/messages" class="back-btn">
                         <i title="" data-placement="bottom" data-toggle="tooltip" class="fas fa-long-arrow-alt-left" data-original-title="Back to Inbox"></i>
                     </a>
                 </div>

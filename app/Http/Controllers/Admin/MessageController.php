@@ -11,7 +11,7 @@ class MessageController extends Controller
 
     public function index()
     {
-        $messages = Message::paginate(10);
+        $messages = Message::orderBy('id', 'DESC')->paginate(25);
 
         return view('admin.messages.index', [
             'messages' => $messages
@@ -20,6 +20,14 @@ class MessageController extends Controller
 
     public function show(Message $message)
     {
+        if( !$message->seen ) {
+            $message->update([
+                'seen' => 1
+            ]);
+        }
+
+
+
         return view('admin.messages.show')->withMessage($message);
     }
 }

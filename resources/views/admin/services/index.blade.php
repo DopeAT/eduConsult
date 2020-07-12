@@ -4,39 +4,46 @@
 
 @section('content')
 
+    <div class="row">
+        <div class="col-sm-12 mb-2">
+            @include('layouts.messages')
+        </div>
+    </div>
+
     <!-- Content Row -->
     <div class="row">
 
-        <div class="col-sm-12 bg-white mb-5">
-            <div class="py-3 px-1 d-flex justify-content-between">
-                <h5 class="font-weight-bold">Services</h5>
-
-                <a href="{{ route('admin.services.create') }}" class="btn btn-sm btn-success"> Add Service </a>
+        <div class="col-sm-12 mb-2">
+            <div class="bg-white p-3 d-flex justify-content-between">
+                <span class="font-weight-bold">
+                    Services
+                </span>
+                <a href="{{ route('admin.services.create') }}" class="btn-sm btn btn-success"><i class="fas fa-plus"></i> Add Service</a>
             </div>
 
-            @include('layouts.messages')
+
         </div>
 
-        <div class="col-sm-12 bg-white">
+        <div class="col-sm-12">
 
-            <div class="table-responsive my-3 py-3">
+            <div class="table-responsive bg-white p-3">
 
                 <table id="datatable" class="table w-100">
                     <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Products</th>
-                        <th>Created</th>
-                        <th><i class="fas fa-cog"></i></th>
-                    </tr>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Products</th>
+                            <th>Created</th>
+                            <th><i class="fas fa-cog"></i></th>
+                        </tr>
                     </thead>
                     <tbody>
                     @foreach($data as $service)
 
                         <tr>
-                            <td>{{ $service->id }}</td>
-                            <td>{{ $service->name }}</td>
+                            <td class="font-weight-bold">{{ $service->id }}</td>
+                            <td class="font-weight-bold text-primary">{{ $service->name }}</td>
                             <td></td> <!--{ $service->products->count() }-->
                             <td>{{ $service->created_at->format('d M Y') }}</td>
                             <td class="d-flex">
