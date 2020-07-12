@@ -4,22 +4,27 @@
 
 @section('content')
 
+    <div class="row">
+        <div class="col-sm-12 mb-2">
+            @include('layouts.messages')
+        </div>
+    </div>
+
     <!-- Content Row -->
     <div class="row">
 
-        <div class="col-sm-12 bg-white mb-5">
-            <div class="py-3 px-1 d-flex justify-content-between">
-                <h5 class="font-weight-bold">Products</h5>
-
-                <a href="{{ route('admin.products.create') }}" class="btn btn-sm btn-success"> Add Product </a>
+        <div class="col-sm-12 mb-2">
+            <div class="bg-white p-3 d-flex justify-content-between">
+                <span class="font-weight-bold">
+                    Products
+                </span>
+                <a href="{{ route('admin.products.create') }}" class="btn-sm btn btn-success"><i class="fas fa-plus"></i> Add Product</a>
             </div>
-
-            @include('layouts.messages')
         </div>
 
-        <div class="col-sm-12 bg-white">
+        <div class="col-sm-12">
 
-            <div class="table-responsive my-3 py-3">
+            <div class="table-responsive bg-white p-3">
 
                 <table id="datatable" class="table w-100">
                     <thead>
@@ -31,7 +36,7 @@
                         <th><i class="fas fa-cog"></i></th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="mb-3">
                     @foreach($data as $product)
 
                         <tr>

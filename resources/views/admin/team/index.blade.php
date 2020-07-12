@@ -4,22 +4,26 @@
 
 @section('content')
 
-    <!-- Content Row -->
     <div class="row">
-
-        <div class="col-sm-12 bg-white mb-5">
-            <div class="py-3 px-1 d-flex justify-content-between">
-                <h5 class="font-weight-bold">Team</h5>
-
-                <a href="{{ route('admin.team.create') }}" class="btn btn-sm btn-success"> Add Team Member </a>
-            </div>
-
+        <div class="col-sm-12 mb-2">
             @include('layouts.messages')
         </div>
+    </div>
 
-        <div class="col-sm-12 bg-white">
+    <div class="row">
 
-            <div class="table-responsive my-3 py-3">
+        <div class="col-sm-12 mb-2">
+            <div class="bg-white p-3 d-flex justify-content-between">
+                <span class="font-weight-bold">
+                    Team
+                </span>
+                <a href="{{ route('admin.team.create') }}" class="btn-sm btn btn-success"><i class="fas fa-plus"></i> Add Team Member</a>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+
+            <div class="table-responsive bg-white p-3">
 
                 <table id="datatable" class="table w-100">
                     <thead>

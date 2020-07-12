@@ -4,20 +4,26 @@
 
 @section('content')
 
+    <div class="row">
+        <div class="col-sm-12 mb-2">
+            @include('layouts.messages')
+        </div>
+    </div>
+
     <!-- Content Row -->
     <div class="row">
 
-        <div class="col-sm-12 bg-white mb-5">
-            <div class="py-3 px-1">
-                <h5 class="font-weight-bold">Newsletter Data</h5>
+        <div class="col-sm-12 mb-2">
+            <div class="bg-white p-3 d-flex justify-content-between">
+                <span class="font-weight-bold">
+                    Newsletter Data
+                </span>
             </div>
-
-            @include('layouts.messages')
         </div>
 
-        <div class="col-sm-12 bg-white">
+        <div class="col-sm-12">
 
-            <div class="table-responsive my-3 py-3">
+            <div class="table-responsive bg-white p-3">
 
                 <table id="datatable" class="table w-100">
                     <thead>
@@ -33,7 +39,7 @@
 
                         <tr>
                             <td>{{ $user->id }}</td>
-                            <td>{{ $user->email }}</td>
+                            <td class="font-weight-bold">{{ $user->email }}</td>
                             <td>{{ $user->created_at->format('d M Y') }}</td>
                             <td class="d-flex">
                                 <a title="Delete" href="#" data-toggle="modal" data-target="#delete{{ $user->id }}" class="fas fa-trash-alt text-danger"></a>
