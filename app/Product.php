@@ -13,4 +13,9 @@ class Product extends Model
     {
         return $this->belongsTo(Service::class);
     }
+
+    public function rates()
+    {
+        return $this->hasMany(Rate::class);
+    }
 }

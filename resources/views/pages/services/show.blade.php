@@ -29,6 +29,12 @@
                 {!! $service->description !!}
 
             </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    {!! $service->body !!}
+                </div>
+            </div>
         </div>
     </section>
 

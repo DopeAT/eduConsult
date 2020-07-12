@@ -10892,6 +10892,10 @@ a.text-dark:focus {
   font-family: auto;
 }
 
+.fs-16 {
+  font-size: 16px;
+}
+
 hr.red-hr {
   max-width: 10.25rem;
   border: 0.2rem red;
@@ -10929,6 +10933,31 @@ hr.white-hr {
 
 .disabled {
   cursor: not-allowed !important;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+.text-pre-wrap {
+  white-space: pre-wrap;
+}
+
+#contact.contact-section {
+  background-color: #f5f5f5;
+}
+
+#contact.contact-section .contact-boxes {
+  padding: 70px 30px 60px !important;
+  background-color: #ffffff !important;
+  border-right: 1px solid #dddddd !important;
+  border-bottom: 5px solid #dddddd !important;
+  border-radius: 1px !important;
+}
+
+#contact.contact-section .contact-boxes .content .icon i.fas,
+#contact.contact-section .contact-boxes .content .icon i.far {
+  font-size: 70px;
 }
 
 nav#nav {
@@ -11111,23 +11140,6 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
 #home #about-us .testimonials .testimonial-user .star-text {
   color: #ff9800 !important;
   text-align: center;
-}
-
-#home #contact.contact-section {
-  background-color: #f5f5f5;
-}
-
-#home #contact.contact-section .contact-boxes {
-  padding: 70px 30px 60px !important;
-  background-color: #ffffff !important;
-  border-right: 1px solid #dddddd !important;
-  border-bottom: 5px solid #dddddd !important;
-  border-radius: 1px !important;
-}
-
-#home #contact.contact-section .contact-boxes .content .icon i.fas,
-#home #contact.contact-section .contact-boxes .content .icon i.far {
-  font-size: 70px;
 }
 
 #subjects {
@@ -11355,5 +11367,26 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
 #services .intro-section#intro .intro-text {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.35);
+}
+
+#services #services-list .service-title span {
+  text-transform: uppercase;
+  position: relative;
+  padding: 10px;
+  font-size: 14px;
+  z-index: 1;
+  font-weight: 900;
+  line-height: 34px;
+  background: #FFFFFF;
+}
+
+#services #services-list .service-details {
+  margin-bottom: 30px;
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
 }
 

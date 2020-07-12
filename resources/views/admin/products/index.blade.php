@@ -26,7 +26,7 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Products</th>
+                        <th>Service</th>
                         <th>Created</th>
                         <th><i class="fas fa-cog"></i></th>
                     </tr>
@@ -35,9 +35,9 @@
                     @foreach($data as $product)
 
                         <tr>
-                            <td>{{ $product->id }}</td>
-                            <td>{{ $product->name }}</td>
-                            <td></td> <!--{ $product->products->count() }-->
+                            <td class="font-weight-bold">{{ $product->id }}</td>
+                            <td class="font-weight-bold text-primary">{{ $product->name }}</td>
+                            <td>{{ $product->service->name }}</td>
                             <td>{{ $product->created_at->format('d M Y') }}</td>
                             <td class="d-flex">
                                 <a title="Edit" href="{{ route('admin.products.edit', $product->id) }}" class="fas fa-pen text-primary mr-3"></a>

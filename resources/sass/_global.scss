@@ -6,6 +6,11 @@
     font-weight: 500;
     font-family: auto;
 }
+
+.fs-16 {
+    font-size: 16px;
+}
+
 hr.red-hr{
     max-width: 10.25rem;
     border: .2rem red;
@@ -40,4 +45,38 @@ hr.white-hr{
 
 .disabled{
     cursor: not-allowed!important;
+}
+
+.underline {
+    text-decoration: underline!important;
+}
+
+.text-pre-wrap {
+    white-space: pre-wrap;
+}
+
+
+// Contact Options Boxes
+#contact.contact-section{
+
+    background-color: #f5f5f5;
+
+    .contact-boxes {
+        padding: 70px 30px 60px !important;
+        background-color: #ffffff !important;
+        border-right: 1px solid #dddddd !important;
+        border-bottom: 5px solid #dddddd !important;
+        border-radius: 1px !important;
+
+        .content{
+
+            .icon i.fas, .icon i.far {
+                font-size: 70px;
+            }
+
+        }
+
+    }
+
+
 }
