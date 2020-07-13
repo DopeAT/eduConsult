@@ -80,3 +80,12 @@ hr.white-hr{
 
 
 }
+
+@media (max-width: 991.98px) {
+    #contact.contact-section {
+        .contact-boxes {
+            padding: 30px 5px 15px !important;
+            border-bottom: 1px solid #dddddd !important
+        }
+    }
+}

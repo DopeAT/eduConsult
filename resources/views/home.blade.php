@@ -6,12 +6,11 @@
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-12 darken-bg-text">
                     <div class="intro-text">
                         <div class="intro-lead-in">Superior Academic Help at the Student's Disposal</div>
                         <p>Devoted in helping you overcome any difficult subject,  so you can focus on the ones that you are shining!</p>
-                        <a class="btn btn-danger font-weight-bold" href="#">PLACE ORDER</a><br/>
-                        <a class="page-scroll text-danger" href="#whyUseUs"><i class="fas fa-angle-down"></i></a>
+                        <a class="btn btn-danger font-weight-bold" href="#">PLACE ORDER</a>
                     </div>
                     <div class="icons">
                         <span class="f-w-500"> <i class="fas fa-graduation-cap"></i> Subject-matter Experts</span>
@@ -69,7 +68,7 @@
                         <p class="text-muted">In four easy steps place your order, upload relevant documents, use our secure Pay Pal payment method and leave the rest with us!</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-12">
                     <div class="boxes">
                         <strong class="icon-field text-danger"><i class="fas fa-hands-helping"></i></strong>
                         <h4>Exceptional Customer Service</h4>
@@ -84,94 +83,88 @@
     <section id="subjects" class="subjects-section">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-12 col-lg-4">
                     <article class="subjects-boxes bg-dark">
                         <div class="course-title">
-                            <span>Criminology</span>
+                            <span>ACADEMIC PERSONAL STATEMENT SERVICE</span>
                         </div>
                         <div class="icon-course">
-                            <i class="fas fa-user-secret"></i>
+                            <i class="fas fa-book-reader"></i>
                         </div>
-                        <div class="course-title-inside">Criminology</div>
+                        <div class="course-title-inside">Academic Personal Statement</div>
                         <div class="course-details">
-                            Global Reconstructions of Justice, Judging Crime, Terror, Law and War, Research and Criminal Justice Governance, Indigenous Peoples in Global Context, History, Memory and Violence in Asia, Australian Politics: Democracy & Justice
+                            Edu.Consult.Org (ECO) is the #01 online platform where students can get in touch with the best
+                            academic consultants for just about every subject matter. We are your one stop solution providers for
+                            Essay, Assignment, Dissertation, Thesis, Proofreading-Editing &amp; Consultation.
+                            <br/><br/>
+                            We started our journey in 2013 servicing successfully primarily the European market.
+                            We soon expanded globally providing our online bespoke writing services to students that chose English as their education language,
+                            without border limitations.
                         </div>
-                        <a class="btn btn-small btn-order full-width" href="#">ORDER NOW</a>
+                        <div class="mbr-section-btn d-flex justify-content-between px-4 pb-3">
+                            <div class="text-white">
+                                Prices From: <b>£100</b>
+                            </div>
+                            <a href="/services/academic-personal-statement" class="font-weight-bold underline text-white">
+                                Order Now
+                            </a>
+                        </div>
                     </article>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-12 col-lg-4">
                     <article class="subjects-boxes bg-danger">
                         <div class="course-title">
-                            <span class="text-danger">Education</span>
+                            <span class="text-danger">CONSULTATION SERVICES</span>
                         </div>
                         <div class="icon-course">
-                            <i class="fas fa-book-open"></i>
+                            <i class="fas fa-comments"></i>
                         </div>
-                        <div class="course-title-inside">Education</div>
+                        <div class="course-title-inside">Consultation Services</div>
                         <div class="course-details">
-                            English, Mathematics, Science, Visual Arts, Music, Health and Physical Education,History, Geography, Business/Economics, Modern Languages Other Than English, Drama, Society and Culture/Aboriginal Studies
+                            Edu.Consult.Org (ECO) is the #01 online platform where students can get in touch with the best
+                            academic consultants for just about every subject matter. We are your one stop solution providers for
+                            Essay, Assignment, Dissertation, Thesis, Proofreading-Editing &amp; Consultation.
+                            <br/><br/>
+                            We started our journey in 2013 servicing successfully primarily the European market.
+                            We soon expanded globally providing our online bespoke writing services to students that chose English as their education language,
+                            without border limitations.
                         </div>
-                        <a class="btn btn-small btn-order full-width" href="#">ORDER NOW</a>
+                        <div class="mbr-section-btn d-flex justify-content-between px-4 pb-3">
+                            <div class="text-white">
+                                Prices From: <b>£100</b>
+                            </div>
+                            <a href="/services/academic-personal-statement" class="font-weight-bold underline text-white">
+                                Order Now
+                            </a>
+                        </div>
                     </article>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-12 col-lg-4">
                     <article class="subjects-boxes bg-dark">
                         <div class="course-title">
-                            <span>Finance</span>
+                            <span>ASSISTING SERVICES</span>
                         </div>
                         <div class="icon-course">
-                            <i class="fas fa-hand-holding-usd"></i>
+                            <i class="fas fa-hands-helping"></i>
                         </div>
-                        <div class="course-title-inside">Finance</div>
+                        <div class="course-title-inside">Assisting Services</div>
                         <div class="course-details">
-                            Global Reconstructions of Justice, Judging Crime, Terror, Law and War, Research and Criminal Justice Governance, Indigenous Peoples in Global Context, History, Memory and Violence in Asia, Australian Politics: Democracy & Justice
+                            Edu.Consult.Org (ECO) is the #01 online platform where students can get in touch with the best
+                            academic consultants for just about every subject matter. We are your one stop solution providers for
+                            Essay, Assignment, Dissertation, Thesis, Proofreading-Editing &amp; Consultation.
+                            <br/><br/>
+                            We started our journey in 2013 servicing successfully primarily the European market.
+                            We soon expanded globally providing our online bespoke writing services to students that chose English as their education language,
+                            without border limitations.
                         </div>
-                        <a class="btn btn-small btn-order full-width" href="#">ORDER NOW</a>
-                    </article>
-                </div>
-                <div class="col-sm-4">
-                    <article class="subjects-boxes bg-danger">
-                        <div class="course-title">
-                            <span class="text-danger">Management</span>
+                        <div class="mbr-section-btn d-flex justify-content-between px-4 pb-3">
+                            <div class="text-white">
+                                Prices From: <b>£100</b>
+                            </div>
+                            <a href="/services/academic-personal-statement" class="font-weight-bold underline text-white">
+                                Order Now
+                            </a>
                         </div>
-                        <div class="icon-course">
-                            <i class="far fa-chart-bar"></i>
-                        </div>
-                        <div class="course-title-inside">Management</div>
-                        <div class="course-details">
-                            Researching Politics, Comparative Public Policy, Global Governance: Origins, Challenges and Trajectories, Politics of International Law, Security & Development,Philosophies and Practice of Nonviolence, Hybridity, China in a Changing World
-                        </div>
-                        <a class="btn btn-small btn-order full-width" href="#">ORDER NOW</a>
-                    </article>
-                </div>
-                <div class="col-sm-4">
-                    <article class="subjects-boxes bg-dark">
-                        <div class="course-title">
-                            <span>Marketing</span>
-                        </div>
-                        <div class="icon-course">
-                            <i class="fas fa-ad"></i>
-                        </div>
-                        <div class="course-title-inside">Marketing</div>
-                        <div class="course-details">
-                            Management and Decision Making, Contemporary Issues in Entrepreneurship and Innovation, Integrative Business Practice, Organisational Behaviour, Accounting Information and Managerial Decision Making, Business Information Systems for a Rapidly Changing World
-                        </div>
-                        <a class="btn btn-small btn-order full-width" href="#">ORDER NOW</a>
-                    </article>
-                </div>
-                <div class="col-sm-4">
-                    <article class="subjects-boxes bg-danger">
-                        <div class="course-title">
-                            <span class="text-danger">Politics</span>
-                        </div>
-                        <div class="icon-course">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="course-title-inside">Politics</div>
-                        <div class="course-details">
-                            War and Peace, Social and Economic Justice, Poverty; Development; and Environmental Sustainability, National and Regional Security In Broad Contexts, Including Military, Politics and Economics, Political and Regional Globalisation
-                        </div>
-                        <a class="btn btn-small btn-order full-width" href="#">ORDER NOW</a>
                     </article>
                 </div>
             </div>
@@ -271,7 +264,7 @@
                                 Frequently Asked Questions.<br/><br/>
                             </p>
                         </div>
-                        <a href="#" class="btn btn-eco pointer">FAQ</a>
+                        <a href="/faq" class="btn btn-eco pointer">FAQ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-4 contact-boxes">
@@ -286,7 +279,7 @@
                                 Don’t hesitate to ask now!<br/>
                             </p>
                         </div>
-                        <a class="btn btn-eco mt-2 pointer">CHAT</a>
+                        <a href="javascript:void(Tawk_API.toggle())" class="btn btn-eco mt-2 pointer">CHAT</a>
                     </div>
                 </div>
             </div>

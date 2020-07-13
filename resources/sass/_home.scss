@@ -6,7 +6,8 @@
     background: #fff;
 
     &#intro {
-      background-image: url(/images/asd.jpg);
+      //background-image: url(/images/asd.jpg);
+      background-image: url(/images/vadim-sherbakov-d6ebY-faOO0-unsplash.jpg);
       background-repeat: no-repeat;
       background-attachment: scroll;
       background-position: center;
@@ -15,9 +16,16 @@
       -o-background-size: cover;
       background-size: cover;
 
+      .darken-bg-text {
+          background: rgba(0,0,0,0.55);
+      }
+
       .intro-text {
         padding-top: 10%;
-        padding-bottom: 90px;
+        //padding-bottom: 90px;
+        padding-bottom: 70px;
+        // New Var
+        color: #fdf3f3;
 
         .intro-lead-in {
           font-size: 2.5em;
@@ -38,6 +46,10 @@
 
       .icons{
         font-size: 20px;
+          // New Var
+          color: #fdf3f3;
+          padding: 0 0 25px 0;
+
 
         span{
           margin-right: 16.5px;
@@ -113,4 +125,40 @@
 
   }
 
+}
+
+
+@media (max-width: 575.98px) {
+    #home {
+        .intro-section {
+            height: 560px;
+            padding-top: 0px;
+            text-align: center;
+            background: #fff;
+
+            &#intro {
+
+                .intro-text {
+                    padding-bottom: 40px;
+                }
+
+                .icons{
+
+                    display: grid;
+
+                    span{
+                        margin: 5px auto;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        #whyUseUs {
+            .title {
+                font-size: 23px;
+                font-weight: 600;
+            }
+        }
+    }
 }
