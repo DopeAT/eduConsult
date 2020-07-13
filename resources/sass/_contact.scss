@@ -39,3 +39,19 @@
 
 
 }
+
+
+@media (max-width: 991.98px) {
+    #contactPage {
+        .contact-section {
+            margin-top: 35px;
+        }
+
+        .contact {
+            span {
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+}
