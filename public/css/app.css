@@ -11376,6 +11376,12 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   cursor: pointer;
 }
 
+@media (max-width: 575.98px) {
+  #faqs .faq-section {
+    padding-top: 40px;
+  }
+}
+
 #contactPage {
   background: white;
 }
@@ -11407,6 +11413,17 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   text-decoration: none;
   font-size: 15px;
   margin-left: 10px;
+}
+
+@media (max-width: 991.98px) {
+  #contactPage .contact-section {
+    margin-top: 35px;
+  }
+
+  #contactPage .contact span {
+    font-size: 14px;
+    font-weight: 600;
+  }
 }
 
 #services .intro-section {
