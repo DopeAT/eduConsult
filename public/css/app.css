@@ -10960,6 +10960,13 @@ hr.white-hr {
   font-size: 70px;
 }
 
+@media (max-width: 991.98px) {
+  #contact.contact-section .contact-boxes {
+    padding: 30px 5px 15px !important;
+    border-bottom: 1px solid #dddddd !important;
+  }
+}
+
 nav#nav {
   min-height: 60px;
 }
@@ -11045,6 +11052,12 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   padding: 5px 20px;
 }
 
+@media (max-width: 991.98px) {
+  footer#footer .container .row div {
+    padding: 5px 0px;
+  }
+}
+
 #home .intro-section {
   height: 700px;
   padding-top: 150px;
@@ -11053,16 +11066,21 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
 }
 
 #home .intro-section#intro {
-  background-image: url(/images/asd.jpg);
+  background-image: url(/images/vadim-sherbakov-d6ebY-faOO0-unsplash.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center;
   background-size: cover;
 }
 
+#home .intro-section#intro .darken-bg-text {
+  background: rgba(0, 0, 0, 0.55);
+}
+
 #home .intro-section#intro .intro-text {
   padding-top: 10%;
-  padding-bottom: 90px;
+  padding-bottom: 70px;
+  color: #fdf3f3;
 }
 
 #home .intro-section#intro .intro-text .intro-lead-in {
@@ -11082,6 +11100,8 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
 
 #home .intro-section#intro .icons {
   font-size: 20px;
+  color: #fdf3f3;
+  padding: 0 0 25px 0;
 }
 
 #home .intro-section#intro .icons span {
@@ -11142,6 +11162,33 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   text-align: center;
 }
 
+@media (max-width: 575.98px) {
+  #home .intro-section {
+    height: 560px;
+    padding-top: 0px;
+    text-align: center;
+    background: #fff;
+  }
+
+  #home .intro-section#intro .intro-text {
+    padding-bottom: 40px;
+  }
+
+  #home .intro-section#intro .icons {
+    display: grid;
+  }
+
+  #home .intro-section#intro .icons span {
+    margin: 5px auto;
+    text-transform: uppercase;
+  }
+
+  #home #whyUseUs .title {
+    font-size: 23px;
+    font-weight: 600;
+  }
+}
+
 #subjects {
   background: url(/images/subjects.jpg) no-repeat scroll center;
   background-size: cover;
@@ -11179,20 +11226,19 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
 }
 
 #subjects .subjects-boxes .course-title-inside {
-  text-transform: uppercase;
+  text-transform: capitalize;
   padding: 0 15px;
   line-height: normal;
   position: relative;
   z-index: 1;
   color: #fff;
   margin-bottom: 17px;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
 }
 
 #subjects .subjects-boxes .course-details {
-  height: 150px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
   padding: 0 15px;
   position: relative;
   z-index: 1;
@@ -11211,6 +11257,20 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   color: white;
   text-transform: uppercase;
   margin: 20px;
+}
+
+@media (max-width: 575.98px) {
+  #subjects {
+    background: none;
+  }
+
+  #subjects.subjects-section {
+    padding: 20px 0;
+  }
+
+  #subjects .subjects-boxes {
+    margin: 10px 5px;
+  }
 }
 
 #about .about-page-section {

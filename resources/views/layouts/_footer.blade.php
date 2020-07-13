@@ -38,7 +38,7 @@
                 <span class="footer-heading-text">Contact</span>
                 <ul class="footerLinks">
                     <li>
-                        <i class="fab fa-whatsapp customFa"></i> <a href="#!"> +44 7715 366349</a>
+                        <i class="fab fa-whatsapp customFa"></i> <a href="https://api.whatsapp.com/send?phone=07770125434"> +44 7715 366349</a>
                     </li>
                     <li>
                         <i class="fas fa-phone customFa fa-rotate-90"></i> <a href="#!"> +44 7715 366349 </a>
