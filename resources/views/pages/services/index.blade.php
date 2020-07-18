@@ -34,7 +34,7 @@
             <div class="row">
 
                 @foreach($services as $service)
-                    <div class="p-2 col-12 col-md-6 col-lg-4">
+                    <div class="p-2 col-12 col-lg-4">
                         <article class="subjects-boxes {{ $service->id % 2 ? 'bg-dark' : 'bg-danger' }}">
                             <div class="service-title text-center">
                                 <span>{{ $service->name }}</span>

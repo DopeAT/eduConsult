@@ -11467,3 +11467,30 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   font-weight: 500;
 }
 
+@media (max-width: 575.98px) {
+  #services .intro-section {
+    height: auto;
+    padding-top: 10px;
+  }
+}
+
+#product .intro-section {
+  height: 400px;
+  padding-top: 125px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#product .intro-section#intro {
+  background-image: url(/images/photography-of-people-graduating-emily-ranquist.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+}
+
+#product .intro-section#intro .intro-text {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+

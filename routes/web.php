@@ -22,6 +22,9 @@ Route::post('/contact', 'ContactController@store')->name('contact.post');
 Route::get('/services', 'ServiceController@index')->name('services.index');
 Route::get('/services/{service}', 'ServiceController@show')->name('services.show');
 
+// Products
+Route::get('/services/{service}/{product}', 'ProductController@show')->name('products.show');
+
 // Order Page
 Route::get('/order', 'OrderController@order')->name('order');
 
