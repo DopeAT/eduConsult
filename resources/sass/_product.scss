@@ -1,0 +1,27 @@
+#product {
+
+    .intro-section {
+        height: 400px;
+        padding-top: 125px;
+        text-align: center;
+        color: #ffffff;
+
+        &#intro {
+            background-image: url(/images/photography-of-people-graduating-emily-ranquist.jpg);
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-position: center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+            .intro-text {
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.35);
+            }
+        }
+    }
+
+
+}

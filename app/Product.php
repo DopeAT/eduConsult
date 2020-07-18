@@ -18,4 +18,11 @@ class Product extends Model
     {
         return $this->hasMany(Rate::class);
     }
+
+    public function pricesFrom()
+    {
+        $prices = $this->rates->pluck('total');
+
+        return +$prices->min();
+    }
 }
