@@ -5,6 +5,17 @@ Route::middleware(['admin.access'])->group(function(){
     // Dashboard
     Route::get('/admin', 'Admin\AdminController@dashboard')->name('dashboard');
 
+    // Orders
+    Route::resource('/admin/orders', 'Admin\OrderController')->names([
+        'index'   => 'admin.orders.index',
+        'create'  => 'admin.orders.create',
+        'store'   => 'admin.orders.store',
+        'show'    => 'admin.orders.show',
+        'edit'    => 'admin.orders.edit',
+        'update'  => 'admin.orders.update',
+        'destroy' => 'admin.orders.destroy',
+    ]);
+
     // Services
     Route::resource('/admin/services', 'Admin\ServiceController')->names([
         'index'   => 'admin.services.index',

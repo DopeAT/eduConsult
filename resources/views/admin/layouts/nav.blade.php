@@ -53,7 +53,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('admin.orders.index') }}">
             <i class="fas fa-fw fa-dollar-sign"></i>
             <span>Orders</span>
         </a>
