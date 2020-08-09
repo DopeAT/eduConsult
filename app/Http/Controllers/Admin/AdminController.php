@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Message;
 use App\Newsletter;
+use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class AdminController extends Controller
     {
         $counters = [
             'newsletter' => Newsletter::count(),
-            'orders' => 15,
+            'orders' => Order::count(),
             'products' => Product::count(),
             'inbox' => Message::count(),
         ];
