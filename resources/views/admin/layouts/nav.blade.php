@@ -117,7 +117,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Users:</h6>
                 <a class="collapse-item" href="/admin/users?type=1">Admin</a>
-                <a class="collapse-item" href="/admin/users?type=3">Members</a>
+                <a class="collapse-item" href="/admin/users?type=2">Members</a>
             </div>
         </div>
     </li>

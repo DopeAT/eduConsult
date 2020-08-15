@@ -104,7 +104,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->update(['role_id' => 3]);
+        $user->update(['role_id' => 2]);
         $message = $user->fullname(). ' is not an Administrator any more.';
 
         session()->flash('success', $message);
