@@ -21,6 +21,7 @@
 
     <!-- Datatables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css">
 
 </head>
 
@@ -85,6 +86,7 @@
 <!-- Bootstrap core JavaScript-->
 <script src="/vendor/assets/vendor/jquery/jquery.min.js"></script>
 <script src="/vendor/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
 
 <!-- Core plugin JavaScript-->
 <script src="/vendor/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -95,6 +97,8 @@
 <!-- Datatables -->
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
 
 <script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=ud9yspx0b2aauj2z7gftecn1cn3nc7qdw4thb66an53zf6kv'></script>
 

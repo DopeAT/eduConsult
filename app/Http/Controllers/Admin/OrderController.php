@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\OrdersExport;
 use App\Http\Controllers\Controller;
 use App\Order;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
 {
@@ -23,5 +25,13 @@ class OrderController extends Controller
         ]);
     }
 
+    public function show() {
+
+    }
+
+    public function export(Request $request)
+    {
+        return (new OrdersExport($request))->download('orders.xlsx');
+    }
 
 }
