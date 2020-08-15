@@ -57,7 +57,7 @@
                         <div>
                             <img src="/images/testimonials/{{ $data->image }}" alt="" width="170" class="img-thumbnail">
                         </div>
-                        <input id="image" type="file" name="image" required>
+                        <input id="image" type="file" name="image">
                     </div>
                 </div>
 
