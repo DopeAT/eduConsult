@@ -131,4 +131,7 @@ Route::middleware(['admin.access'])->group(function(){
     // Exports Routes
     require_once('exports.php');
 
+    // Json Routes
+    require_once('json.php');
+
 });

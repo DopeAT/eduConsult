@@ -18,10 +18,9 @@
             </div>
         </div>
         <!-- Card Body -->
-        <div class="card-body">
-            <div class="chart-area">
-                <canvas id="myAreaChart"></canvas>
-            </div>
+        <div class="card-body p-0">
+            <div id="curve_chart" style="height: 350px;width: 100%"></div>
         </div>
     </div>
 </div>
+
