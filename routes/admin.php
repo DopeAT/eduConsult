@@ -15,7 +15,6 @@ Route::middleware(['admin.access'])->group(function(){
         'update'  => 'admin.orders.update',
         'destroy' => 'admin.orders.destroy',
     ]);
-    Route::post('/admin/orders/export/', 'Admin\OrderController@export')->name('admin.orders.export');
 
     // Services
     Route::resource('/admin/services', 'Admin\ServiceController')->names([
@@ -126,5 +125,10 @@ Route::middleware(['admin.access'])->group(function(){
         'update'  => 'admin.faqs.update',
         'destroy' => 'admin.faqs.destroy',
     ]);
+
+
+
+    // Exports Routes
+    require_once('exports.php');
 
 });
