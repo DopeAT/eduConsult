@@ -15,6 +15,7 @@ Route::middleware(['admin.access'])->group(function(){
         'update'  => 'admin.orders.update',
         'destroy' => 'admin.orders.destroy',
     ]);
+    Route::post('/admin/orders/export/', 'Admin\OrderController@export')->name('admin.orders.export');
 
     // Services
     Route::resource('/admin/services', 'Admin\ServiceController')->names([
