@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\NewsletterExport;
 use App\Http\Controllers\Controller;
 use App\Newsletter;
 use Illuminate\Http\Request;
@@ -88,5 +89,10 @@ class NewsletterController extends Controller
 
         session()->flash('success', 'User Deleted!');
         return redirect('/admin/newsletter');
+    }
+
+    public function export(Request $request)
+    {
+        return (new NewsletterExport($request))->download('newsletter.xlsx');
     }
 }

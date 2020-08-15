@@ -49,11 +49,11 @@
                                     </label>
 
                                     <label class="form-check-label">
-                                        <input class="form-control form-control-sm"  id="txtFromDate" name="date_from" />
+                                        <input class="form-control form-control-sm"  id="txtFromDate" name="date_from"  placeholder="Date From" />
                                     </label>
 
                                     <label class="form-check-label">
-                                        <input class="form-control form-control-sm" id="txtToDate" name="date_to" />
+                                        <input class="form-control form-control-sm" id="txtToDate" name="date_to" placeholder="Date To" />
                                     </label>
 
                                 </div>
