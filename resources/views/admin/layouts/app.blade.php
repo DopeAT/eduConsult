@@ -29,6 +29,8 @@
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+    @yield('styles')
+
 </head>
 
 <body id="page-top">
