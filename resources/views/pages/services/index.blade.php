@@ -39,7 +39,7 @@
                             <div class="service-title text-center">
                                 <span>{{ $service->name }}</span>
                             </div>
-                            <div class="service-details p-4 text-pre-wrap">{{ $service->intro }}</div>
+                            <div class="service-details p-4 text-pre-wrap">{!! $service->intro !!}</div>
                             <div class="mbr-section-btn d-flex justify-content-between px-4 pb-3">
                                 <div class="text-white">
                                     Prices From: <b>£{{ $service->pricesFrom() }}</b>

@@ -31,7 +31,7 @@
                     <label for="intro" class="col-md-4 col-form-label text-md-right">Intro</label>
 
                     <div class="col-md-6">
-                        <input id="intro" type="text" class="form-control" name="intro" value="{{ $data->intro }}" required autofocus>
+                        <textarea class="form-control form-control-sm mytextarea" name="intro" id="intro" cols="30" rows="10">{!! $data->intro !!}</textarea>
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@
                     <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
 
                     <div class="col-md-6">
-                        <textarea class="form-control form-control-sm" name="description" id="description" cols="30" rows="10">{!! $data->description !!}</textarea>
+                        <textarea class="form-control form-control-sm mytextarea" name="description" id="description" cols="30" rows="10">{!! $data->description !!}</textarea>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                         <div>
                             <img src="/images/services/{{ $data->header_image }}" alt="" width="170" class="img-thumbnail">
                         </div>
-                        <input id="image" type="file" name="image" required>
+                        <input id="image" type="file" name="image">
                     </div>
                 </div>
 

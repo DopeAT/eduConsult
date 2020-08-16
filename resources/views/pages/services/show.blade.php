@@ -50,7 +50,7 @@
                             <div class="service-title text-center">
                                 <span>{{ $product->name }}</span>
                             </div>
-                            <div class="service-details p-4 text-pre-wrap">{{ $product->intro }}</div>
+                            <div class="service-details p-4 text-pre-wrap">{!! $product->intro !!}</div>
                             <div class="mbr-section-btn d-flex justify-content-between px-4 pb-3">
                                 <div class="text-white">
                                     Prices From: <b>£{{ $product->pricesFrom() }}</b>

@@ -29,14 +29,14 @@
                     <label for="intro" class="col-md-4 col-form-label text-md-right">Intro</label>
 
                     <div class="col-md-6">
-                        <input id="intro" type="text" class="form-control" name="intro" value="{{ old('intro') }}" required autofocus>
+                        <textarea class="form-control form-control-sm mytextarea" name="intro" id="intro" cols="30" rows="10"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
                     <div class="col-md-6">
-                        <textarea class="form-control form-control-sm" name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+                        <textarea class="form-control form-control-sm mytextarea" name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
                     </div>
                 </div>
 
