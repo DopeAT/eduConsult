@@ -109,6 +109,14 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.partners.index') }}">
+            <i class="fas fa-fw fa-school "></i>
+            <span>Partners</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-users"></i>
             <span>Users</span>

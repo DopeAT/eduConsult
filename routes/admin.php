@@ -126,7 +126,16 @@ Route::middleware(['admin.access'])->group(function(){
         'destroy' => 'admin.faqs.destroy',
     ]);
 
-
+    // Partners
+    Route::resource('/admin/partners', 'Admin\PartnerController')->names([
+        'index'   => 'admin.partners.index',
+        'create'  => 'admin.partners.create',
+        'store'   => 'admin.partners.store',
+        'show'    => 'admin.partners.show',
+        'edit'    => 'admin.partners.edit',
+        'update'  => 'admin.partners.update',
+        'destroy' => 'admin.partners.destroy',
+    ]);
 
     // Exports Routes
     require_once('exports.php');
