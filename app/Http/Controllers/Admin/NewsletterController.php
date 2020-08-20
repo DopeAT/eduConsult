@@ -6,6 +6,7 @@ use App\Exports\NewsletterExport;
 use App\Http\Controllers\Controller;
 use App\Newsletter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NewsletterController extends Controller
 {
@@ -17,6 +18,8 @@ class NewsletterController extends Controller
     public function index()
     {
         $newsletter = Newsletter::all();
+
+        DB::table('newsletter')->where('is_new', '=', 1)->update(array('is_new' => 0));
 
         return view('admin.newsletter.index')->withData($newsletter);
     }

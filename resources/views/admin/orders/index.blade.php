@@ -2,6 +2,22 @@
 @section('title', 'Orders Admin Dashboard | EduConsultOrg')
 @section('heading', 'Orders - Dashboard')
 
+@section('styles')
+    <style>
+        .new-dot {
+            background-color: green;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .is-new {
+            background: rgba(0, 255, 163, 0.2);
+        }
+    </style>
+@endsection
+
 @section('content')
 
     <div class="row">
@@ -139,9 +155,16 @@
                     <tbody>
                     @foreach($data as $order)
 
-                        <tr>
+                        @php $isNew = $order->is_new @endphp
+
+                        <tr class="{{ $isNew ? 'is-new' : null }}">
                             <td class="font-weight-bold">{{ $order->id }}</td>
-                            <td class="font-weight-bold text-primary">{{ $order->payment_id }}</td>
+                            <td class="font-weight-bold text-primary">
+
+                                {!! $isNew ? '<span class="new-dot"></span>' : null !!}
+
+                                {{ $order->payment_id }}
+                            </td>
                             <td>{{ $order->user->fullname() }}</td>
                             <td>{{ $order->product->name }}</td>
                             <td>{{ $order->service->name }}</td>

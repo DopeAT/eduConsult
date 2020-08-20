@@ -29,7 +29,8 @@ class ContactController extends Controller
             'name'    => $request->name,
             'email'   => $request->email,
             'phone'   => $request->phone,
-            'message' => $request->message
+            'message' => $request->message,
+            'is_new'  => 1
         ]);
 
         session()->flash('success', 'Thank you. Your message sent successfully!');

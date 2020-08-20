@@ -10,6 +10,6 @@ class Newsletter extends Model
 
     use SoftDeletes;
 
-    protected $fillable = ['email'];
+    protected $fillable = ['email', 'is_new'];
     protected $table    = 'newsletter';
 }
