@@ -10,5 +10,5 @@ class Message extends Model
     use SoftDeletes;
 
 
-    protected $fillable = ['name','email','phone','message', 'seen'];
+    protected $fillable = ['name','email','phone','message', 'is_new'];
 }

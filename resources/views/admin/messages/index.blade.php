@@ -37,9 +37,9 @@
                     <table class="table table-hover table-inbox">
                         <tbody id="mailboxTableBody">
                         @foreach($messages as $message)
-                            <tr class="{{ !$message->seen ? 'unread' : null }}" onclick="window.location='{{ route('admin.messages.show', $message->id) }}'">
+                            <tr class="{{ $message->is_new ? 'unread' : null }}" onclick="window.location='{{ route('admin.messages.show', $message->id) }}'">
                                 <td>
-                                    @if( !$message->seen )
+                                    @if( $message->is_new )
                                         <div class="new-inbox badge badge-success font-weight-bold">New</div>
                                     @endif
                                 </td>

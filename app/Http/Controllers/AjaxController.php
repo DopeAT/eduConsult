@@ -12,7 +12,10 @@ class AjaxController extends Controller
     {
         $request->validate(['email' => 'required|email']);
 
-        $newsletter = Newsletter::updateOrCreate(['email' => $request->email]);
+        $newsletter = Newsletter::updateOrCreate([
+            'email' => $request->email,
+            'is_new' => 1
+        ]);
 
         return 'Thank you for signing up to our newsletter.';
     }

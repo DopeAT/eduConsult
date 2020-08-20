@@ -20,13 +20,11 @@ class MessageController extends Controller
 
     public function show(Message $message)
     {
-        if( !$message->seen ) {
+        if( $message->is_new ) {
             $message->update([
-                'seen' => 1
+                'is_new' => 0
             ]);
         }
-
-
 
         return view('admin.messages.show')->withMessage($message);
     }

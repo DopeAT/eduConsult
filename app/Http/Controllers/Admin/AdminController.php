@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Custom\Messages;
+use App\Custom\Orders;
 use App\Http\Controllers\Controller;
 use App\Message;
 use App\Newsletter;
@@ -14,6 +16,10 @@ class AdminController extends Controller
 
     public function dashboard()
     {
+        $notificationMessages = new Messages;
+        $notificationOrders   = new Orders;
+        $notificationNewsletter = new \App\Custom\Newsletter;
+
         $counters = [
             'newsletter' => Newsletter::count(),
             'orders' => Order::count(),
@@ -21,8 +27,15 @@ class AdminController extends Controller
             'inbox' => Message::count(),
         ];
 
+        $notifications = [
+            'orders' => $notificationOrders->send(),
+            'messages' => $notificationMessages->send(),
+            'newsletter' => $notificationNewsletter->send()
+        ];
+
         return view('admin.dashboard', [
-            'counters' => $counters
+            'counters' => $counters,
+            'notifications' => $notifications
         ]);
     }
 }

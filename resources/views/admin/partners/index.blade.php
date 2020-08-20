@@ -75,7 +75,7 @@
         }
         .logos :checked + label img {
             transform: scale(0.9);
-            box-shadow: 0 0 5px #333;
+            /*box-shadow: 0 0 5px #333;*/
             z-index: -1;
         }
 
