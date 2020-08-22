@@ -18,16 +18,16 @@
                 <span class="footer-heading-text">Useful Links</span>
                 <ul class="footerLinks">
                     <li>
-                        <a href="contact-us.php">Contact Us</a>
+                        <a href="{{ route('contact') }}">Contact Us</a>
                     </li>
                     <li>
-                        <a href="privacy.php">Privacy Policy</a>
+                        <a href="{{ route('privacy') }}">Privacy Policy</a>
                     </li>
                     <li>
-                        <a href="tcp.php">Terms and Conditions</a>
+                        <a href="{{ route('terms') }}">Terms and Conditions</a>
                     </li>
                     <li>
-                        <a href="sitemap.php">Sitemap</a>
+                        <a href="{{ route('sitemap') }}">Sitemap</a>
                     </li>
                 </ul>
             </div>
@@ -41,10 +41,10 @@
                         <i class="fab fa-whatsapp customFa"></i> <a href="https://api.whatsapp.com/send?phone=07770125434"> +44 7715 366349</a>
                     </li>
                     <li>
-                        <i class="fas fa-phone customFa fa-rotate-90"></i> <a href="#!"> +44 7715 366349 </a>
+                        <i class="fas fa-phone customFa fa-rotate-90"></i> <a href="tel:+447715366349"> +44 7715 366349 </a>
                     </li>
                     <li>
-                        <i class="fas fa-envelope-square customFa"></i> <a href="#!"> hello@educonsultorg.com</a>
+                        <i class="fas fa-envelope-square customFa"></i> <a href="mailto:hello@educonsultorg.com"> hello@educonsultorg.com</a>
                     </li>
                 </ul>
             </div>

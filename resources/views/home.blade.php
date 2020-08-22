@@ -10,7 +10,7 @@
                     <div class="intro-text">
                         <div class="intro-lead-in">Superior Academic Help at the Student's Disposal</div>
                         <p>Devoted in helping you overcome any difficult subject,  so you can focus on the ones that you are shining!</p>
-                        <a class="btn btn-danger font-weight-bold" href="#">PLACE ORDER</a>
+                        <a class="btn btn-danger font-weight-bold" href="{{ route('order') }}">PLACE ORDER</a>
                     </div>
                     <div class="icons">
                         <span class="f-w-500"> <i class="fas fa-graduation-cap"></i> Subject-matter Experts</span>
@@ -83,90 +83,30 @@
     <section id="subjects" class="subjects-section">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-lg-4">
-                    <article class="subjects-boxes bg-dark">
-                        <div class="course-title">
-                            <span>ACADEMIC PERSONAL STATEMENT SERVICE</span>
-                        </div>
-                        <div class="icon-course">
-                            <i class="fas fa-book-reader"></i>
-                        </div>
-                        <div class="course-title-inside">Academic Personal Statement</div>
-                        <div class="course-details">
-                            Edu.Consult.Org (ECO) is the #01 online platform where students can get in touch with the best
-                            academic consultants for just about every subject matter. We are your one stop solution providers for
-                            Essay, Assignment, Dissertation, Thesis, Proofreading-Editing &amp; Consultation.
-                            <br/><br/>
-                            We started our journey in 2013 servicing successfully primarily the European market.
-                            We soon expanded globally providing our online bespoke writing services to students that chose English as their education language,
-                            without border limitations.
-                        </div>
-                        <div class="mbr-section-btn d-flex justify-content-between px-4 pb-3">
-                            <div class="text-white">
-                                Prices From: <b>£100</b>
+                @foreach($services as $key => $service)
+                    <div class="col-sm-12 col-lg-4">
+                        <article class="subjects-boxes {{ $key % 2 == 0 ? 'bg-dark' : 'bg-danger' }}">
+                            <div class="course-title">
+                                <span>{{$service->name}}</span>
                             </div>
-                            <a href="/services/academic-personal-statement" class="font-weight-bold underline text-white">
-                                Order Now
-                            </a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-12 col-lg-4">
-                    <article class="subjects-boxes bg-danger">
-                        <div class="course-title">
-                            <span class="text-danger">CONSULTATION SERVICES</span>
-                        </div>
-                        <div class="icon-course">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <div class="course-title-inside">Consultation Services</div>
-                        <div class="course-details">
-                            Edu.Consult.Org (ECO) is the #01 online platform where students can get in touch with the best
-                            academic consultants for just about every subject matter. We are your one stop solution providers for
-                            Essay, Assignment, Dissertation, Thesis, Proofreading-Editing &amp; Consultation.
-                            <br/><br/>
-                            We started our journey in 2013 servicing successfully primarily the European market.
-                            We soon expanded globally providing our online bespoke writing services to students that chose English as their education language,
-                            without border limitations.
-                        </div>
-                        <div class="mbr-section-btn d-flex justify-content-between px-4 pb-3">
-                            <div class="text-white">
-                                Prices From: <b>£100</b>
+                            <div class="icon-course">
+                                <i class="fas fa-book-reader"></i>
                             </div>
-                            <a href="/services/academic-personal-statement" class="font-weight-bold underline text-white">
-                                Order Now
-                            </a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-12 col-lg-4">
-                    <article class="subjects-boxes bg-dark">
-                        <div class="course-title">
-                            <span>ASSISTING SERVICES</span>
-                        </div>
-                        <div class="icon-course">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <div class="course-title-inside">Assisting Services</div>
-                        <div class="course-details">
-                            Edu.Consult.Org (ECO) is the #01 online platform where students can get in touch with the best
-                            academic consultants for just about every subject matter. We are your one stop solution providers for
-                            Essay, Assignment, Dissertation, Thesis, Proofreading-Editing &amp; Consultation.
-                            <br/><br/>
-                            We started our journey in 2013 servicing successfully primarily the European market.
-                            We soon expanded globally providing our online bespoke writing services to students that chose English as their education language,
-                            without border limitations.
-                        </div>
-                        <div class="mbr-section-btn d-flex justify-content-between px-4 pb-3">
-                            <div class="text-white">
-                                Prices From: <b>£100</b>
+                            <div class="course-title-inside">{{ str_replace("Statement Service", "Service", $service->name) }}</div>
+                            <div class="course-details">
+                                {!! $service->intro !!}
                             </div>
-                            <a href="/services/academic-personal-statement" class="font-weight-bold underline text-white">
-                                Order Now
-                            </a>
-                        </div>
-                    </article>
-                </div>
+                            <div class="mbr-section-btn d-flex justify-content-between px-4 pb-3">
+                                <div class="text-white">
+                                    Prices From: <b>£{{ $service->pricesFrom() }}</b>
+                                </div>
+                                <a href="{{ route('order') }}" class="font-weight-bold underline text-white">
+                                    Order Now
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -203,7 +143,7 @@
                         <div class="testimonial-user">
                             <!--Avatar-->
                             <div class="testimonial-user-avatar mx-auto">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg" class="img-fluid rounded-circle" />
+                                <img src="{{ $member->image }}" class="img-fluid rounded-circle" />
                             </div>
                             <!--Content-->
                             <h4 class="avatar-name">{{ $member->name }}</h4>
@@ -211,11 +151,13 @@
                             <p class="text-center">{{ $member->message }}</p>
                             <!--Review-->
                             <div class="star-text">
-                                <i class="fas fa-star"> </i>
-                                <i class="fas fa-star"> </i>
-                                <i class="fas fa-star"> </i>
-                                <i class="fas fa-star"> </i>
-                                <i class="fas fa-star"> </i>
+                                @for($i=1; $i <= $member->stars; $i++)
+                                    <i class="fas fa-star"> </i>
+                                @endfor
+
+                                @if (strpos($member->stars, '.5'))
+                                    <i class="fas fa-star-half-alt"></i>
+                                @endif
                             </div>
                         </div>
                     </div>

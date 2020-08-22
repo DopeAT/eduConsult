@@ -20,6 +20,9 @@
                     <a class="nav-link" href="{{ route('about') }}">About Us</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link text-danger font-weight-bold" href="{{ route('order') }}">ORDER</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('services.index') }}">Services</a>
                 </li>
                 <li class="nav-item">
