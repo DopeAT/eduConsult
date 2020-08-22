@@ -1,59 +1,163 @@
-#about{
+#about {
 
-  .about-page-section{
-    background-image: url(/images/about.jpg);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    .about-page-section {
+        background-image: url(/images/about.jpg);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 
+        .card-lead {
+            padding: 10px 50px 0 50px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
 
-    .card-lead{
-      padding: 10px 50px 0 50px;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
+            .intro {
+                font-size: 2.5em;
+                font-family: "Roboto Slab","Palatino Linotype","Book Antiqua",Palatino,serif;
+            }
 
-      .intro{
-          font-size: 2.5em;
-          font-family: "Roboto Slab","Palatino Linotype","Book Antiqua",Palatino,serif;
-      }
-
-      .text{
-        font-size: 22px;
-        margin-top: 30px;
-      }
-
-    }
-  }
-
-  .guarantees{
-
-    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/images/about-guar-img.jpg);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-    .icon{
-      font-size: 35px;
+            .text {
+                font-size: 22px;
+                margin-top: 30px;
+            }
+        }
     }
 
-    .details{
+    .guarantees {
+        background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/images/about-guar-img.jpg);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 
-      h4{
-        height: 37px;
-      }
+        .icon {
+            font-size: 35px;
+        }
 
-
+        .details {
+            h4 {
+                height: 37px;
+            }
+        }
     }
 
+    // Team
+    #team {
 
-  }
+        .card {
+            border: none;
+            background: #ffffff;
+        }
 
+        .image-flip:hover .backside,
+        .image-flip.hover .backside {
+            -webkit-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
+            -o-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+            border-radius: .25rem;
+            cursor: pointer;
+        }
+
+        .image-flip:hover .frontside,
+        .image-flip.hover .frontside {
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+            cursor: pointer;
+        }
+
+        .mainflip {
+            -webkit-transition: 1s;
+            -webkit-transform-style: preserve-3d;
+            -ms-transition: 1s;
+            -moz-transition: 1s;
+            -moz-transform: perspective(1000px);
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transition: 1s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .frontside {
+            position: relative;
+            -webkit-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+        .backside {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: white;
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+            -o-transform: rotateY(-180deg);
+            -ms-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+            -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+            -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+            box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        }
+
+        .frontside,
+        .backside {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: 1s;
+            -webkit-transform-style: preserve-3d;
+            -moz-transition: 1s;
+            -moz-transform-style: preserve-3d;
+            -o-transition: 1s;
+            -o-transform-style: preserve-3d;
+            -ms-transition: 1s;
+            -ms-transform-style: preserve-3d;
+            transition: 1s;
+            transform-style: preserve-3d;
+        }
+
+        .frontside .card,
+        .backside .card {
+            min-height: 312px;
+        }
+
+        .backside .card a {
+            font-size: 18px;
+            color: $red;
+        }
+
+        .frontside .card .card-title,
+        .backside .card .card-title {
+            color: $red
+        }
+
+        .frontside .card .card-body img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+    }
+
+}
+
+@media (max-width: 575.98px) {
+    .guarantees {
+        .border-right, .border-left {
+            border: none!important;
+        }
+    }
 }
