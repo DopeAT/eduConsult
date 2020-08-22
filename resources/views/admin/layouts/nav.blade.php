@@ -138,11 +138,19 @@
         Extras
     </div>
 
-    <!-- Nav Item - Tables -->
+    <!-- Nav Item - Mail Data -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.newsletter.index') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Mail Data</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Discounts -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.discounts.index') }}">
+            <i class="fas fa-fw fa-tags "></i>
+            <span>Discounts</span>
         </a>
     </li>
 

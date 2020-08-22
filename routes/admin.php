@@ -137,6 +137,17 @@ Route::middleware(['admin.access'])->group(function(){
         'destroy' => 'admin.partners.destroy',
     ]);
 
+    // Discounts
+    Route::resource('/admin/discounts', 'Admin\DiscountController')->names([
+        'index'   => 'admin.discounts.index',
+        'create'  => 'admin.discounts.create',
+        'store'   => 'admin.discounts.store',
+        'show'    => 'admin.discounts.show',
+        'edit'    => 'admin.discounts.edit',
+        'update'  => 'admin.discounts.update',
+        'destroy' => 'admin.discounts.destroy',
+    ]);
+
     // Exports Routes
     require_once('exports.php');
 
