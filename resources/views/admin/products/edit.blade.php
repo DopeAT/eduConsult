@@ -39,32 +39,32 @@
                     </div>
                 </div>
 
-                <div id="productPrice">
-                    @if($data->service_id == 1)
-                        <div class="form-group row">
-                            <label for="prices" class="col-md-4 col-form-label text-md-right">Prices</label>
-                            <div class="col-md-3">
-                                <input id="new" type="number" name="new" value="{{$data->new}}" required autofocus>
-                            </div>
-                            <div class="col-md-3">
-                                <input id="edit" type="number" name="edit" value="{{$data->edit}}" required autofocus>
-                            </div>
-                        </div>
-                    @else
-                        <div class="form-group row">
-                            <label for="prices" class="col-md-4 col-form-label text-md-right">Price</label>
-                            <div class="col-md-6">
-                                <input id="new" type="text" class="form-control" name="new" value="{{$data->new}}" required autofocus>
-                            </div>
-                        </div>
-                    @endif
-                </div>
+{{--                <div id="productPrice">--}}
+{{--                    @if($data->service_id == 1)--}}
+{{--                        <div class="form-group row">--}}
+{{--                            <label for="prices" class="col-md-4 col-form-label text-md-right">Prices</label>--}}
+{{--                            <div class="col-md-3">--}}
+{{--                                <input id="new" type="number" name="new" value="{{$data->new}}" required autofocus>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-md-3">--}}
+{{--                                <input id="edit" type="number" name="edit" value="{{$data->edit}}" required autofocus>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @else--}}
+{{--                        <div class="form-group row">--}}
+{{--                            <label for="prices" class="col-md-4 col-form-label text-md-right">Price</label>--}}
+{{--                            <div class="col-md-6">--}}
+{{--                                <input id="new" type="text" class="form-control" name="new" value="{{$data->new}}" required autofocus>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
+{{--                </div>--}}
 
                 <div class="form-group row">
                     <label for="intro" class="col-md-4 col-form-label text-md-right">Intro</label>
 
                     <div class="col-md-6">
-                        <input id="intro" type="text" class="form-control" name="intro" value="{{ $data->intro }}" required autofocus>
+                        <textarea class="form-control form-control-sm mytextarea" name="intro" id="intro" cols="30" rows="10">{!! $data->intro !!}</textarea>
                     </div>
                 </div>
 

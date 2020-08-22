@@ -18,7 +18,7 @@
                 <span class="font-weight-bold">
                     Products
                 </span>
-                <a href="{{ route('admin.products.create') }}" class="btn-sm btn btn-success"><i class="fas fa-plus"></i> Add Product</a>
+{{--                <a href="{{ route('admin.products.create') }}" class="btn-sm btn btn-success"><i class="fas fa-plus"></i> Add Product</a>--}}
             </div>
         </div>
 

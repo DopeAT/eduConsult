@@ -114,13 +114,13 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param Product $product
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Product $product)
     {
-        $image = $product->image;
+        $image = $product->header_image;
         $productsFolder = public_path().'/images/products';
 
         if($request->hasFile('image')){
@@ -139,20 +139,20 @@ class ProductController extends Controller
             $image = $new_image;
         }
 
-        $priceNew = $request->new;
-        $priceEdit = isset($request->edit) ? $priceNew : $request->edit;
+//        $priceNew = $request->new;
+//        $priceEdit = isset($request->edit) ? $priceNew : $request->edit;
 
         $product->update([
             'name'  => $request->name,
             'slug'  => slug($request->name),
             'intro' => $request->intro,
             'body'  => $request->body,
-            'title' => '',
-            'meta'  => '',
+            'meta_title' => '',
+            'meta_desc'  => '',
             'header_image' => $image,
             'service_id'   => $request->service_id,
-            'new'   => $priceNew,
-            'edit'  => $priceEdit,
+//            'new'   => $priceNew,
+//            'edit'  => $priceEdit,
         ]);
 
         session()->flash('success', 'Product Updated.');
