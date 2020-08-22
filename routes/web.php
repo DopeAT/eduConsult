@@ -18,6 +18,10 @@ Route::get('/faqs', 'PagesController@faqs')->name('faqs');
 Route::get('/contact', 'ContactController@show')->name('contact');
 Route::post('/contact', 'ContactController@store')->name('contact.post');
 
+Route::get('/privacy', 'PagesController@privacy')->name('privacy');
+Route::get('/terms',   'PagesController@terms')->name('terms');
+Route::get('/sitemap', 'PagesController@sitemap')->name('sitemap');
+
 // Services
 Route::get('/services', 'ServiceController@index')->name('services.index');
 Route::get('/services/{service}', 'ServiceController@show')->name('services.show');

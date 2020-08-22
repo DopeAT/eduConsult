@@ -84,7 +84,7 @@
                     </div>
                     <div class="contact">
                         <div class="icon">
-                            <h3><a href="tel:+447715366349"><i class="fab fa-whatsapp"></i>  <span>+44 7715 366349</span></a></h3>
+                            <h3><a href="https://api.whatsapp.com/send?phone=07770125434"><i class="fab fa-whatsapp"></i>  <span>+44 7715 366349</span></a></h3>
                         </div>
                     </div>
                     <div class="contact">
