@@ -2,6 +2,26 @@
     <div class="container" style="padding: 2rem 3.5rem 2rem 6rem; text-align: left;">
         <div class="row">
             <div class="col-md-9">
+
+                <fieldset class="form-group mb-3">
+                    <div class="row">
+                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">First Name *</legend>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group mb-3">
+                    <div class="row">
+                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">First Name *</legend>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
+                        </div>
+                    </div>
+                </fieldset>
+
+
                 <fieldset class="form-group mb-3">
                     <div class="row">
                         <legend class="col-form-label font-weight-bold col-sm-4 pt-0">First Name *</legend>
@@ -55,6 +75,7 @@
                         </div>
                     </div>
                 </fieldset>
+
             </div>
 
             <div class="col-md-3 grey p-3" style="background-color: #f5f5f5;">

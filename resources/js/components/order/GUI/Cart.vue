@@ -15,31 +15,30 @@
                 </li>
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (GBP)</span>
-                    <strong>£20</strong>
+                    <strong>£{{total}}</strong>
                 </li>
             </ul>
 
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Promo code">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-secondary">Redeem</button>
-                </div>
+            <div class="input-group mt-5">
+<!--                <input type="text" class="form-control" placeholder="Promo code">-->
+<!--                <div class="input-group-append">-->
+<!--                    <button type="submit" class="btn btn-secondary">Redeem</button>-->
+<!--                </div>-->
             </div>
 
             <div class="mt-3">
                 <div class="card p-3">
                     <div class="text-center">
                         <h5 class="mt-2"><i class="fas fa-life-ring text-danger"></i> <b>NOT SURE</b></h5>
-                        <p>About your choise?</p>
+                        <p>About your choice?</p>
                     </div>
-                    <div class="description-text">
+                    <div class="description-text text-center">
                         <small class="text-muted">
-                            Let us help you! Explore our FAQ page or Live Chat with us.
+                            <span>Let us help you!</span> <br/>
                         </small>
                     </div>
-                    <div class="card-actions row justify-content-between p-2">
-                        <a class="font-weight-bold" href="#">FAQs</a>
-                        <a class="font-weight-bold" href="#">Live Chat</a>
+                    <div class="card-actions row justify-content-center p-2">
+                        <a class="font-weight-bold" href="javascript:void(Tawk_API.toggle())">Live Chat</a>
                     </div>
                 </div>
             </div>
@@ -57,7 +56,8 @@
         },
         computed: {
             ...mapGetters({
-                delivery: 'OrderDetails/getDeliveryDate'
+                delivery: 'OrderDetails/getDeliveryDate',
+                total: 'OrderDetails/getTotal'
             }),
             deliveryDate() {
                 return new Date(new Date().getTime() + (this.delivery * 24 * 60 * 60 * 1000));

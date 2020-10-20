@@ -13,12 +13,12 @@
 
         <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" placeholder="Mobile Phone" name="phone">
+            <input type="text" class="form-control" id="phone" placeholder="Mobile Phone" name="phone" v-model="phone">
         </div>
 
         <div class="form-group">
             <label for="postCode">Postal Code</label>
-            <input type="text" class="form-control" id="postCode" placeholder="Postcode" name="postCode">
+            <input type="text" class="form-control" id="postCode" placeholder="Postcode" name="postCode" v-model="postCode">
         </div>
 
         <div class="form-group">
@@ -50,6 +50,7 @@
 <script>
     import { createToken } from 'vue-stripe-elements-plus'
     import CreditCard from "./CreditCard";
+    import {mapGetters} from "vuex";
 
     export default {
         name: "PaymentForm",
@@ -68,7 +69,18 @@
                 agreeErrorText: null
             }
         },
+        computed: {
+            ...mapGetters({
+                Customer: 'CustomerDetails/getCurrentUser',
+                Order: 'OrderDetails/getOrder'
+            })
+        },
         methods: {
+            setCustomerFields() {
+                this.cardName = this.Customer.firstname + ' ' + this.Customer.lastname;
+                this.phone = this.Customer.phone;
+                this.email = this.Customer.email;
+            },
             purchase() {
 
                 if(!this.agree) {
@@ -91,15 +103,19 @@
                             phone: this.phone,
                             email: this.email,
                             postCode: this.postCode,
-                            amount: 135
+                            amount: this.Order.total,
+                            service_id: this.Order.product,
+                            product_id: this.Order.level,
+                            extra_services: this.Order.additional_services,
+                            delivery_id: this.Order.delivery == 5 ? 2 : 1,
+                            type_id: this.Order.type_of_service,
+                            level_id: this.Order.level,
                         }
 
                         axios.post("/charge", data).then(result => {
 
                             if(result.data.success) {
-                                // this.$store.commit('clearCart');
-                                // this.$router.push("/");
-                                alert(result.data.message)
+                                this.$emit('can-continue', {value: true});
                             }
                         });
                     });
@@ -109,6 +125,13 @@
                 }
 
             }
+        },
+        mounted() {
+            if (Object.keys(this.Customer).length === 0 && this.Customer.constructor === Object) {
+                window.location.href = '/';
+            }
+            this.$emit('can-continue', {value: true});
+            this.setCustomerFields();
         }
     }
 </script>

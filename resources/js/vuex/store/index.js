@@ -6,6 +6,8 @@ Vue.use(Vuex);
 
 import CustomerDetails from "./order/CustomerDetails";
 import OrderDetails from "./order/OrderDetails";
+import OrderLevels from "./order/Levels"
+import Services from "./order/Services"
 
 import VuexPersistence from "vuex-persist";
 
@@ -14,14 +16,18 @@ const vuexLocal = new VuexPersistence({
     storage: window.localStorage,
     modules: [
         'CustomerDetails',
-        'OrderDetails'
+        'OrderLevels',
+        'OrderDetails',
+        'Services'
     ]
 })
 
 export default new Vuex.Store({
     modules: {
         OrderDetails,
-        CustomerDetails
+        OrderLevels,
+        CustomerDetails,
+        Services
     },
     plugins: [vuexLocal.plugin],
     strict: true

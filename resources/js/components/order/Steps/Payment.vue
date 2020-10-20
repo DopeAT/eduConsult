@@ -2,7 +2,7 @@
     <div class="container" style="padding: 2rem 3.5rem 2rem 6rem; text-align: left;">
         <div class="row">
             <div class="col-md-12">
-                <PaymentForm></PaymentForm>
+                <PaymentForm @can-continue="emitCanContinue"></PaymentForm>
             </div>
         </div>
     </div>
@@ -13,6 +13,11 @@
 
     export default {
         components: {PaymentForm},
+        methods: {
+            emitCanContinue() {
+                this.$emit('can-continue', {value: true});
+            }
+        },
         mounted() {
 
         }
