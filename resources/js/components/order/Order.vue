@@ -17,108 +17,111 @@
 </template>
 
 <script>
-    import HorizontalStepper from 'vue-stepper';
+import HorizontalStepper from 'vue-stepper';
 
-    import OrderDetails from "./Steps/OrderDetails";
-    import CustomerDetails from "./Steps/CustomerDetails";
-    import Payment from "./Steps/Payment";
-    import OrderComplete from "./Steps/OrderComplete";
+import OrderDetails from "./Steps/OrderDetails";
+import CustomerDetails from "./Steps/CustomerDetails";
+import Payment from "./Steps/Payment";
+import OrderComplete from "./Steps/OrderComplete";
 
-    export default {
-        name: "Order",
-        components: {
-            HorizontalStepper
-        },
-        data(){
-            return {
-                demoSteps: [
-                    {
-                        icon: 'book',
-                        name: 'OrderDetails',
-                        title: 'Order Details',
-                        subtitle: 'Personalise your order',
-                        component: OrderDetails,
-                        completed: true
+export default {
+    name: "Order",
+    components: {
+        HorizontalStepper
+    },
+    data(){
+        return {
+            demoSteps: [
+                {
+                    icon: 'book',
+                    name: 'OrderDetails',
+                    title: 'Order Details',
+                    subtitle: 'Personalise your order',
+                    component: OrderDetails,
+                    completed: true
 
-                    },
-                    {
-                        icon: 'perm_identity',
-                        name: 'CustomerDetails',
-                        title: 'Your Details',
-                        subtitle: 'Tell us more about yourself',
-                        component: CustomerDetails,
-                        completed: false
-                    },
-                    {
-                        icon: 'payment',
-                        name: 'Payment',
-                        title: 'Payment',
-                        subtitle: 'Make payment',
-                        component: Payment,
-                        completed: false
-                    },
-                    {
-                        icon: 'check',
-                        name: 'OrderComplete',
-                        title: 'Confirm',
-                        subtitle: 'Review your order and confirm',
-                        component: OrderComplete,
-                        completed: false
-                    },
-                ]
+                },
+                {
+                    icon: 'perm_identity',
+                    name: 'CustomerDetails',
+                    title: 'Your Details',
+                    subtitle: 'Tell us more about yourself',
+                    component: CustomerDetails,
+                    completed: false
+                },
+                {
+                    icon: 'payment',
+                    name: 'Payment',
+                    title: 'Payment',
+                    subtitle: 'Make payment',
+                    component: Payment,
+                    completed: false
+                },
+                {
+                    icon: 'check',
+                    name: 'OrderComplete',
+                    title: 'Overview',
+                    subtitle: 'Review your order',
+                    component: OrderComplete,
+                    completed: false
+                },
+            ]
+        }
+    },
+    computed: {
+        orderSteps() {
+
+            if(!!window.IS_LOGGED) {
+                return this.demoSteps.filter(step => {
+                    return step.name != 'CustomerDetails';
+                });
             }
-        },
-        computed: {
-            orderSteps() {
 
-                if(!!window.IS_LOGGED) {
-                    return this.demoSteps.filter(step => {
-                        return step.name != 'CustomerDetails';
-                    });
+            return this.demoSteps;
+        }
+    },
+    methods: {
+        // Executed when @completed-step event is triggered
+        completeStep(payload) {
+            this.demoSteps.forEach((step) => {
+                if (step.name === payload.name || step.name === 'OrderDetails') {
+                    step.completed = true;
                 }
-
-                return this.demoSteps;
-            }
+            })
         },
-        methods: {
-            // Executed when @completed-step event is triggered
-            completeStep(payload) {
-                this.demoSteps.forEach((step) => {
-                    if (step.name === payload.name || step.name === 'OrderDetails') {
-                        step.completed = true;
+        // Executed when @active-step event is triggered
+        isStepActive(payload) {
+            this.demoSteps.forEach((step) => {
+                if (step.name === payload.name) {
+                    if(step.completed === true) {
+                        step.completed = false;
                     }
-                })
-            },
-            // Executed when @active-step event is triggered
-            isStepActive(payload) {
-                this.demoSteps.forEach((step) => {
-                    if (step.name === payload.name) {
-                        if(step.completed === true) {
-                            step.completed = false;
-                        }
-                    }
-                })
-            },
-            // Executed when @stepper-finished event is triggered
-            alert(payload) {
-                alert('end')
-            }
+                }
+            })
         },
+        // Executed when @stepper-finished event is triggered
+        alert(payload) {
+            window.location.href = '/';
+        }
+    },
+    mounted() {
+        this.$store.dispatch('CustomerDetails/getMe')
     }
+}
 </script>
 
 <style lang="scss">
 
-    .stepper-box {
-        box-shadow: none;
-    }
+.stepper-box {
+    box-shadow: none;
+}
 
-    .stepper-box .content {
-        margin: 1.5rem 0 0.5rem 0!important;
-    }
+.stepper-box .content {
+    margin: 1.5rem 0 0.5rem 0!important;
+}
 
-    .stepper-box .bottom {
-        padding: 1rem!important;
-    }
+.stepper-box .bottom {
+    padding: 1rem!important;
+}
 
 </style>

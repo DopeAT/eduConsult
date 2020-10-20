@@ -13,12 +13,12 @@
                             <div class="form-check" v-for="level in academic_levels">
                                 <input class="form-check-input"
                                        type="radio"
-                                       :id="level.id"
-                                       :value="level.value"
+                                       :id="'academic' + level.id"
+                                       :value="level.id"
                                        @change="updateField($event, 'academic_level')"
-                                       :checked="Order.academic_level == level.value"
+                                       :checked="parseInt(Order.academic_level) === parseInt(level.id)"
                                 >
-                                <label class="form-check-label" :for="level.id">
+                                <label class="form-check-label" :for="'academic' + level.id">
                                     {{ level.label }}
                                 </label>
                             </div>
@@ -36,12 +36,12 @@
                             <div class="form-check" v-for="product in products">
                                 <input class="form-check-input"
                                        type="radio"
-                                       :id="product.id"
-                                       :value="product.value"
+                                       :id="'product' + product.id"
+                                       :value="product.id"
                                        @change="updateField($event, 'product')"
-                                       :checked="Order.product == product.value"
+                                       :checked="parseInt(Order.product) === parseInt(product.id)"
                                 >
-                                <label class="form-check-label" :for="product.id">
+                                <label class="form-check-label" :for="'product' + product.id">
                                     {{ product.label }}
                                 </label>
                             </div>
@@ -56,9 +56,9 @@
                             <i class="fas fa-info-circle ml-2" data-toggle="tooltip" data-placement="right" title="Level"></i>
                         </legend>
                         <div class="col-sm-8">
-                            <select id="level" class="form-control" @change="updateField($event, 'level')">
-                                <option v-for="(item, key) in levels" :value="key" :selected="Order.level === item">
-                                    {{item}}
+                            <select :disabled="Order.product == 2" id="level" class="form-control" @change="updateField($event, 'level')">
+                                <option v-for="item in Levels" :value="item.id" :selected="Order.name === item.name">
+                                    {{item.name}}
                                 </option>
                             </select>
                         </div>
@@ -72,9 +72,9 @@
                             <i class="fas fa-info-circle ml-2" data-toggle="tooltip" data-placement="right" title="Type of service"></i>
                         </legend>
                         <div class="col-sm-8">
-                            <select id="type_of_service" class="form-control" @change="updateField($event, 'type_of_service')">
-                                <option v-for="(item, key) in type_of_services" :value="key" :selected="Order.type_of_service === item">
-                                    {{item}}
+                            <select :disabled="Order.product == 2" id="type_of_service" class="form-control" @change="updateField($event, 'type_of_service')">
+                                <option v-for="item in type_of_services" :value="item.id" :selected="Order.type_of_service === parseInt(item.id)">
+                                    {{item.label}}
                                 </option>
                             </select>
                         </div>
@@ -84,19 +84,20 @@
                 <fieldset class="form-group mb-3">
                     <div class="row">
                         <legend class="col-form-label font-weight-bold col-sm-4 pt-0">
-                            Product
+                            Additional Services
                             <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Product"></i>
                         </legend>
                         <div class="col-sm-8">
-                            <div class="form-check" v-for="(additional, index) in additional_services" :key="index">
+                            <div class="form-check" v-for="(additional, index) in AdditionalServices" :key="index">
                                 <input class="form-check-input"
                                        type="checkbox"
                                        :id="additional.id"
-                                       :value="additional.value"
+                                       :value="additional.id"
                                        v-model="add_services"
                                 >
                                 <label class="form-check-label" :for="additional.id">
-                                    {{ additional.label }}
+                                    {{ additional.name }}
+                                    <span class="text-muted small">(£{{ +additional.rates[0].total }})</span>
                                 </label>
                             </div>
                         </div>
@@ -111,8 +112,8 @@
                         </legend>
                         <div class="col-sm-8">
                             <select id="delivery" class="form-control" @change="updateField($event, 'delivery')">
-                                <option v-for="(item, key) in delivery" :value="key" :selected="Order.delivery === key">
-                                    {{item}}
+                                <option v-for="item in delivery" :value="item.value" :selected="Order.delivery == parseInt(item.value)">
+                                    {{item.label}}
                                 </option>
                             </select>
                         </div>
@@ -142,40 +143,28 @@
             return {
                 add_services: [],
                 academic_levels: [
-                    {id: 'student',value: 'student',label: 'Student',},
-                    {id: 'professional',value: 'professional',label: 'Professional',}
+                    {id: 1, label: 'Student',},
+                    {id: 2, label: 'Professional',}
                 ],
                 products: [
-                    {id: 'personal_statement',value: 'personal_statement',label: 'Personal Statement',},
-                    {id: 'additional_services_only',value: 'additional_services_only',label: 'Additional Services Only',}
+                    {id: 1, label: 'Personal Statement',},
+                    {id: 2, label: 'Additional Services Only',}
                 ],
-                levels: {
-                    "ucas": "Ucas",
-                    "oxbridge": "Oxbridge",
-                    "postgraduate": "Postgraduate",
-                    "specialist": "Specialist"
-                },
-                type_of_services: {
-                    "new": "New",
-                    "edit": "Edit"
-                },
-                additional_services: [
-                    {id: 'career_questions',value: 'career_questions',label: 'Career Questions'},
-                    {id: 'letters_of_recommendation',value: 'letters_of_recommendation',label: 'Letters of Recommendation'},
-                    {id: 'references',value: 'references',label: 'References'},
-                    {id: 'cover_letter',value: 'cover_letter',label: 'Cover Letter'},
-                    {id: 'cv_editing',value: 'cv_editing',label: 'CV Editing'}
+                type_of_services: [
+                    {id: 1, label: "New"},
+                    {id: 2, label: "Edit"}
                 ],
-                delivery: {
-                    "1": "24 hours",
-                    "3": "3 days",
-                    "7": "7 days",
-                }
+                delivery: [
+                    {id: 1, value: 1, label: "24 hours"},
+                    {id: 2, value: 5, label: "5 days"}
+                ]
             }
         },
         computed: {
             ...mapGetters({
-                Order: 'OrderDetails/getOrder'
+                Order: 'OrderDetails/getOrder',
+                Levels: 'OrderLevels/get',
+                AdditionalServices: 'Services/getAdditionalServices'
             })
         },
         watch: {
@@ -186,7 +175,7 @@
                 deep: true
             },
             clickedNext(val) {
-                
+
             },
             currentStep(val){
                 if(val.index === 0) {
@@ -194,18 +183,42 @@
                 }
             },
             add_services(val) {
-                this.$store.commit('OrderDetails/updateOrder', {['additional_services']: val});
+                this.$store.dispatch('OrderDetails/updateOrder', {['additional_services']: val}).then(() => {
+                    this.$store.dispatch('OrderDetails/fetchTotal', val);
+
+                    if(this.Order.product == 2) {
+                        this.$emit('can-continue', {value: val.length});
+                    }
+
+
+                });
             }
         },
         methods: {
             updateField(event, fieldName) {
-                this.$store.commit('OrderDetails/updateOrder', {[fieldName]: event.target.value});
+                this.$store.dispatch('OrderDetails/updateOrder', {[fieldName]: event.target.value}).then(() => {
+                    this.$store.dispatch('OrderDetails/fetchTotal', this.add_services);
+
+                    if (fieldName === 'product' && event.target.value == 2 && !this.add_services.length) {
+                        this.$emit('can-continue', {value: false});
+                    }
+
+                    if(fieldName === 'product' && event.target.value == 1) {
+                        this.$emit('can-continue', {value: true});
+                    }
+
+                    if(this.add_services.length && this.Order.product != 2) {
+                        this.$emit('can-continue', {value: true});
+                    }
+                });
             }
         },
         mounted() {
-            this.$emit('can-continue', {value: true});
-        },
-        updated() {
+            this.$store.dispatch('OrderLevels/getLevels');
+            this.$store.dispatch('Services/getAdditionalServices').then(() => {
+                this.$store.dispatch('OrderDetails/fetchTotal', this.add_services);
+            });
+
             this.$emit('can-continue', {value: true});
         }
     }

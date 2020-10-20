@@ -35,6 +35,10 @@ Route::get('/order', 'OrderController@order')->name('order');
 
 // Ajax - Api Routes
 Route::post('/api/newsletter/post', 'AjaxController@newsletter')->name('newsletter.store');
+Route::get('/api/user/me', 'AjaxController@me')->name('me');
+Route::get('/api/orders/levels', 'AjaxController@orderLevels')->name('orderLevels');
+Route::get('/api/orders/additional-services', 'AjaxController@additionalServices')->name('additionalServices');
+Route::post('/api/orders/order-total', 'AjaxController@orderTotal')->name('orderTotal');
 
 // Payment Routes
 Route::post('/charge', 'PaymentController@charge');

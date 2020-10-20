@@ -48,7 +48,12 @@ class PaymentController extends Controller
                         'payment_id' => $payment->payment_id,
                         'user_id'    => $userIsPaying->id,
                         'service_id' => $request->input('service_id'),
-                        'product_id' => $request->input('product_id')
+                        'product_id' => $request->input('product_id'),
+                        'extra_services' => implode(',', $request->input('extra_services')),
+                        'delivery_id' => $request->input('delivery_id'),
+                        'type_id' => $request->input('type_id'),
+                        'level_id' => $request->input('level_id'),
+                        'is_new' => 1,
                     ]);
                 }
 
