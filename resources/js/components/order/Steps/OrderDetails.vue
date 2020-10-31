@@ -74,7 +74,7 @@
                         <div class="col-sm-8">
                             <select :disabled="Order.product == 2" id="type_of_service" class="form-control" @change="updateField($event, 'type_of_service')">
                                 <option v-for="item in type_of_services" :value="item.id" :selected="Order.type_of_service === parseInt(item.id)">
-                                    {{item.label}} 
+                                    {{item.label}}
                                 </option>
                             </select>
                         </div>
