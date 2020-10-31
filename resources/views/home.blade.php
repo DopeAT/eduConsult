@@ -9,7 +9,7 @@
                 <div class="col-xl-12 darken-bg-text">
                     <div class="intro-text">
                         <div class="intro-lead-in">Superior Academic Help at the Student's Disposal</div>
-                        <p>Devoted in helping you overcome any difficult subject,  so you can focus on the ones that you are shining!</p>
+                        <p>Devoted in helping with one of the most important parts of your university application, so you can focus on your grades and extracurricular accomplishments.</p>
                         <a class="btn btn-danger font-weight-bold" href="{{ route('order') }}">PLACE ORDER</a>
                     </div>
                     <div class="icons">
