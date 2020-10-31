@@ -25,8 +25,8 @@ class OrderController extends Controller
         ]);
     }
 
-    public function show() {
-
+    public function show(Order $order) {
+        return $order->load('extra_services');
     }
 
     public function export(Request $request)

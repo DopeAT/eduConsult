@@ -24,4 +24,8 @@ class Order extends Model
     public function product() {
         return $this->belongsTo(Product::class);
     }
+
+    public function extra_services() {
+        return $this->belongsToMany(Product::class)->select(['name']);
+    }
 }

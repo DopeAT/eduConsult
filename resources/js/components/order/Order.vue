@@ -23,6 +23,7 @@ import OrderDetails from "./Steps/OrderDetails";
 import CustomerDetails from "./Steps/CustomerDetails";
 import Payment from "./Steps/Payment";
 import OrderComplete from "./Steps/OrderComplete";
+import {mapGetters} from "vuex";
 
 export default {
     name: "Order",
@@ -69,9 +70,12 @@ export default {
         }
     },
     computed: {
+        ...mapGetters({
+            currentUser: 'CustomerDetails/getCurrentUser'
+        }),
         orderSteps() {
 
-            if(!!window.IS_LOGGED) {
+            if(this.currentUser.id) {
                 return this.demoSteps.filter(step => {
                     return step.name != 'CustomerDetails';
                 });
@@ -105,23 +109,26 @@ export default {
         }
     },
     mounted() {
-        this.$store.dispatch('CustomerDetails/getMe')
+        this.$store.dispatch('CustomerDetails/getMe');
+    },
+    beforeDestroy() {
+        this.$store.commit('CustomerDetails/setCurrentUser', {});
     }
 }
 </script>
 
 <style lang="scss">
 
-.stepper-box {
-    box-shadow: none;
-}
+    .stepper-box {
+        box-shadow: none;
+    }
 
-.stepper-box .content {
-    margin: 1.5rem 0 0.5rem 0!important;
-}
+    .stepper-box .content {
+        margin: 1.5rem 0 0.5rem 0!important;
+    }
 
-.stepper-box .bottom {
-    padding: 1rem!important;
-}
+    .stepper-box .bottom {
+        padding: 1rem!important;
+    }
 
 </style>

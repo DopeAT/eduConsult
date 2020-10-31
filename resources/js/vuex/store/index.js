@@ -8,6 +8,7 @@ import CustomerDetails from "./order/CustomerDetails";
 import OrderDetails from "./order/OrderDetails";
 import OrderLevels from "./order/Levels"
 import Services from "./order/Services"
+import Payment from "./order/Payment";
 
 import VuexPersistence from "vuex-persist";
 
@@ -27,7 +28,8 @@ export default new Vuex.Store({
         OrderDetails,
         OrderLevels,
         CustomerDetails,
-        Services
+        Services,
+        Payment
     },
     plugins: [vuexLocal.plugin],
     strict: true

@@ -6,6 +6,7 @@ use App\Newsletter;
 use App\Product;
 use App\Rate;
 use App\Service;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +15,13 @@ class AjaxController extends Controller
 
     public function me()
     {
-        return Auth::user();
+        if(Auth::user())
+        return Auth::user()->only(['id', 'firstname', 'lastname', 'email', 'phone']);
+    }
+
+    public function checkUserEmail(Request $request)
+    {
+        return $emailsFound = User::select('email')->where('email', $request->email)->get();
     }
 
     public function orderLevels()

@@ -7,7 +7,7 @@
               @change='change($event)'
         />
 
-        <div id="card-errors" role="alert" v-text="errorMessage"></div>
+        <div v-if="errorMessage" id="card-errors" role="alert" v-text="errorMessage"></div>
     </div>
 </template>
 
@@ -42,12 +42,25 @@
                 }
             }
         },
+        watch: {
+            complete(val) {
+                console.log(val)
+            }
+        },
         methods: {
             pay () {
                 createToken().then(data => console.log(data.token))
             },
             change(event) {
+                this.errorMessage = false;
+
+                if(event.complete) {
+                    this.$emit('completeCard', true)
+                    return;
+                }
+
                 if (event.error) {
+                    this.$emit('errorCard', true);
                     this.errorMessage = event.error.message;
                 }
             }

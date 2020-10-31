@@ -19,7 +19,7 @@
                 </li>
             </ul>
 
-            <div class="input-group mt-5">
+            <div class="input-group mt-5 d-none d-lg-block">
 <!--                <input type="text" class="form-control" placeholder="Promo code">-->
 <!--                <div class="input-group-append">-->
 <!--                    <button type="submit" class="btn btn-secondary">Redeem</button>-->

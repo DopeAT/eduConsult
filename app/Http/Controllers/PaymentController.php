@@ -30,6 +30,8 @@ class PaymentController extends Controller
             if($response->isSuccessful()) {
 
                 $arr_payment_data = $response->getData();
+                $payment = null;
+                $order = null;
 
                 $isPaymentExist = Payment::where('payment_id', $arr_payment_data['id'])->first();
                 $userIsPaying = User::where('email', $request->input('email'))->first();
@@ -44,7 +46,7 @@ class PaymentController extends Controller
                     $payment->payment_status = $arr_payment_data['status'];
                     $payment->save();
 
-                    Order::create([
+                    $order = Order::create([
                         'payment_id' => $payment->payment_id,
                         'user_id'    => $userIsPaying->id,
                         'service_id' => $request->input('service_id'),
@@ -55,16 +57,31 @@ class PaymentController extends Controller
                         'level_id' => $request->input('level_id'),
                         'is_new' => 1,
                     ]);
+
+                    $order->extra_services()->sync($request->input('extra_services'));
                 }
 
                 return response()->json([
-                    'success' => true,
-                    'status'  => 200,
-                    'message' => "Payment is successful. Your payment id is: ". $arr_payment_data['id']
+                    'info' => [
+                        'success' => true,
+                        'status'  => 200,
+                        'message' => "Your payment has been successful. Your payment id is: ". $arr_payment_data['id'] .". Thank you for your order"
+                    ],
+                    'data' => [
+                        'payment' => $payment,
+                        'order' => $order->load('service', 'product', 'extra_services')
+                    ]
                 ]);
 
             } else {
-                return $response->getMessage();
+                return response()->json([
+                    'info' => [
+                        'success' => false,
+                        'status'  => 500,
+                        'message' => $response->getMessage()
+                    ],
+                    'data' => []
+                ]);
             }
 
         }

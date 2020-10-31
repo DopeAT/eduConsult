@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container" style="padding: 2rem 3.5rem 2rem 6rem; text-align: left;">
+    <div class="container mainContainer">
         <div class="row">
             <div class="col-md-9">
                 <fieldset class="form-group mb-3">
@@ -122,7 +122,7 @@
 
             </div>
 
-            <div class="col-md-3 grey p-3" style="background-color: #f5f5f5;">
+            <div class="col-md-3 grey p-lg-3 py-md-3 px-md-0" style="background-color: #f5f5f5;">
                 <Cart/>
             </div>
         </div>
@@ -214,6 +214,8 @@
             }
         },
         mounted() {
+            window.scrollTo(0,0);
+
             this.$store.dispatch('OrderLevels/getLevels');
             this.$store.dispatch('Services/getAdditionalServices').then(() => {
                 this.$store.dispatch('OrderDetails/fetchTotal', this.add_services);
@@ -224,8 +226,24 @@
     }
 </script>
 
-<style lang="scss">
+<style scoped>
+    .mainContainer {
+        padding: 2rem 3.5rem 2rem 6rem; text-align: left;
+    }
+
     .step-subtitle {
         font-size: 12px!important;
+    }
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 768px) {
+
+    }
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (max-width: 992px) {
+        .mainContainer {
+            padding: 2rem 0.5rem 1rem 0.5rem;text-align: left;
+        }
     }
 </style>

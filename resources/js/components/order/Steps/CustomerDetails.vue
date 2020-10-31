@@ -1,84 +1,21 @@
 <template>
-    <div class="container" style="padding: 2rem 3.5rem 2rem 6rem; text-align: left;">
+    <div class="container mainContainer">
         <div class="row">
             <div class="col-md-9">
-
-                <fieldset class="form-group mb-3">
-                    <div class="row">
-                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">First Name *</legend>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset class="form-group mb-3">
-                    <div class="row">
-                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">First Name *</legend>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
-                        </div>
-                    </div>
-                </fieldset>
-
-
-                <fieldset class="form-group mb-3">
-                    <div class="row">
-                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">First Name *</legend>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset class="form-group mb-3">
-                    <div class="row">
-                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">Last Name *</legend>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset class="form-group mb-3">
-                    <div class="row">
-                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">Email Address *</legend>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset class="form-group mb-3">
-                    <div class="row">
-                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">Phone</legend>
-                        <div class="col-sm-8">
-                            <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone Number">
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset class="form-group mb-3">
-                    <div class="row">
-                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">Password *</legend>
-                        <div class="col-sm-8">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset class="form-group mb-3">
-                    <div class="row">
-                        <legend class="col-form-label font-weight-bold col-sm-4 pt-0">Confirm Password *</legend>
-                        <div class="col-sm-8">
-                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password">
-                        </div>
-                    </div>
-                </fieldset>
-
+                <LoginForm @toggleRegisterModal="toggleRegisterModal"></LoginForm>
             </div>
 
-            <div class="col-md-3 grey p-3" style="background-color: #f5f5f5;">
+            <div ref="modal"
+                 class="modal fade"
+                 :class="{show, 'd-block': modal.active}"
+                 tabindex="-1"
+                 role="dialog"
+            >
+                <RegisterForm @toggleRegisterModal="toggleRegisterModal"></RegisterForm>
+            </div>
+            <div v-if="modal.active" class="modal-backdrop fade show"></div>
+
+            <div class="col-md-3 grey p-lg-3 py-md-3 px-md-0" style="background-color: #f5f5f5;">
                 <Cart></Cart>
             </div>
         </div>
@@ -87,13 +24,55 @@
 
 <script>
     import Cart from "../GUI/Cart";
+    import LoginForm from "../../auth/Login";
+    import RegisterForm from "../../auth/Register";
 
     export default {
         name: "CustomerDetails",
-        components: {Cart}
+        components: {RegisterForm, LoginForm, Cart},
+        data() {
+            return {
+                modal: {
+                    active: false,
+                    show: false
+                }
+            }
+        },
+        computed: {
+            show() {
+                return this.modal.show
+            }
+        },
+        methods: {
+            toggleRegisterModal() {
+                const body = document.querySelector("body");
+                this.modal.active = !this.modal.active;
+                this.modal.active
+                    ? body.classList.add("modal-open")
+                    : body.classList.remove("modal-open");
+                setTimeout(() => (this.modal.show = !this.modal.show), 10);
+            },
+        },
+        mounted() {
+            window.scrollTo(0,0);
+        }
     }
 </script>
 
 <style scoped>
+    .mainContainer {
+        padding: 2rem 3.5rem 2rem 6rem; text-align: left;
+    }
 
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 768px) {
+
+    }
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (max-width: 992px) {
+        .mainContainer {
+            padding: 2rem 0.5rem 1rem 0.5rem;text-align: left;
+        }
+    }
 </style>

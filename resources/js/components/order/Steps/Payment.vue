@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="padding: 2rem 3.5rem 2rem 6rem; text-align: left;">
+    <div class="container mainContainer">
         <div class="row">
             <div class="col-md-12">
                 <PaymentForm @can-continue="emitCanContinue"></PaymentForm>
@@ -19,49 +19,67 @@
             }
         },
         mounted() {
-
+            window.scrollTo(0,0);
         }
     }
 </script>
 
 <style lang="scss">
-#payment-form {
+    #payment-form {
 
-    .StripeElement {
-        box-sizing: border-box;
-        padding: 20px 15px;
-        width: 100%;
-        margin: 0 0 5px 0;
+        .StripeElement {
+            box-sizing: border-box;
+            padding: 20px 15px;
+            width: 100%;
+            margin: 0 0 5px 0;
 
-        padding: 10px 12px;
+            padding: 10px 12px;
 
-        border: 1px solid transparent;
-        border-radius: 4px;
-        background-color: white;
-        border: 2px solid #e1e1e1;
-        border-radius: 4px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background-color: white;
+            border: 2px solid #e1e1e1;
+            border-radius: 4px;
 
-        box-shadow: 0 1px 3px 0 #e6ebf1;
-        -webkit-transition: box-shadow 150ms ease;
-        transition: box-shadow 150ms ease;
-        box-shadow: 0 1px 3px 0 #e6ebf1;
-        -webkit-transition: box-shadow 150ms ease;
-        transition: box-shadow 150ms ease;
+            box-shadow: 0 1px 3px 0 #e6ebf1;
+            -webkit-transition: box-shadow 150ms ease;
+            transition: box-shadow 150ms ease;
+            box-shadow: 0 1px 3px 0 #e6ebf1;
+            -webkit-transition: box-shadow 150ms ease;
+            transition: box-shadow 150ms ease;
+        }
+
+        .StripeElement--focus {
+            box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+            border-color: #a1cbef;
+            outline: 0;
+        }
+
+        .StripeElement--invalid {
+            border-color: #e3342f;
+        }
+
+        .StripeElement--webkit-autofill {
+            background-color: #fefde5 !important;
+        }
+
+    }
+</style>
+
+<style scoped>
+    .mainContainer {
+        padding: 2rem 3.5rem 2rem 6rem; text-align: left;
     }
 
-    .StripeElement--focus {
-        box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
-        border-color: #a1cbef;
-        outline: 0;
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 768px) {
+
     }
 
-    .StripeElement--invalid {
-        border-color: #e3342f;
+    /* Medium devices (tablets, 768px and up) */
+    @media (max-width: 992px) {
+        .mainContainer {
+            padding: 2rem 0.5rem 1rem 0.5rem;text-align: left;
+        }
     }
-
-    .StripeElement--webkit-autofill {
-        background-color: #fefde5 !important;
-    }
-
-}
 </style>
