@@ -11164,14 +11164,15 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
 
 @media (max-width: 575.98px) {
   #home .intro-section {
-    height: 560px;
+    height: 575px;
     padding-top: 0px;
     text-align: center;
     background: #fff;
   }
 
   #home .intro-section#intro .intro-text {
-    padding-bottom: 40px;
+    padding-top: 5%;
+    padding-bottom: 20px;
   }
 
   #home .intro-section#intro .icons {
