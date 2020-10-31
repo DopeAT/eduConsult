@@ -74,7 +74,7 @@
                     <p class="mt-5 text-left">Our academic consultants are here to answer your questions <br/><br/>9am - 6pm Monday to Friday</p>
                     <div class="contact">
                         <div class="icon">
-                            <h3><a href="tel:+447715366349"><i class="fas fa-phone fa-rotate-90"></i>  <span>+44 7715 366349</span></a></h3>
+                            <h3><a href="tel:{{ env('PHONE_NUM') }}"><i class="fas fa-phone fa-rotate-90"></i>  <span>+44 7715 366349</span></a></h3>
                         </div>
                     </div>
                     <div class="contact">
@@ -84,12 +84,21 @@
                     </div>
                     <div class="contact">
                         <div class="icon">
-                            <h3><a href="https://api.whatsapp.com/send?phone=07770125434"><i class="fab fa-whatsapp"></i>  <span>+44 7715 366349</span></a></h3>
+                            <h3><a href="https://api.whatsapp.com/send?phone={{ env('PHONE_NUM') }}"><i class="fab fa-whatsapp"></i>  <span>+44 7715 366349</span></a></h3>
                         </div>
                     </div>
                     <div class="contact">
                         <div class="icon">
-                            <h3><a class="location-contact"><i class="fas fa-building"></i>  <span>SUITE 7 VIJAY HOUSE,<br/> UNIT 1 STEPHENSON COURT,<br/> BEDFORD, BEDFORDSHIRE,<br/> MK44 3WJ</span></a></h3>
+                            <h3>
+                                <a class="location-contact"><i class="fas fa-building"></i>
+                                    <span>
+                                        {{ env('ADDRESS') }},
+                                        <br/>{{ env('CITY') }}, {{ env('COUNTY') }}
+                                        <br/>{{ env('POSTCODE') }}
+                                        <br/>{{ env('COUNTRY') }}
+                                    </span>
+                                </a>
+                            </h3>
                         </div>
                     </div>
                 </div>
