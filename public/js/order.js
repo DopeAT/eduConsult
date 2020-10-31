@@ -47881,7 +47881,7 @@ __webpack_require__.r(__webpack_exports__);
     setTotal: function setTotal(state, payload) {
       var total = parseFloat(payload.total);
 
-      if (parseInt(state.order.delivery) === 1 && !parseInt(state.order.product) === 2) {
+      if (parseInt(state.order.delivery) === 1) {
         total += 100;
       }
 

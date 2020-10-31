@@ -29,7 +29,7 @@ export default {
         setTotal: (state, payload) => {
             let total = parseFloat(payload.total);
 
-            if(parseInt(state.order.delivery) === 1 && !parseInt(state.order.product) === 2) {
+            if(parseInt(state.order.delivery) === 1) {
                 total += 100;
             }
             state.order.total = total;
