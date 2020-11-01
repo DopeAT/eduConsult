@@ -2359,15 +2359,37 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   data: function data() {
-    return {};
+    return {
+      promoCode: null
+    };
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
     delivery: 'OrderDetails/getDeliveryDate',
-    total: 'OrderDetails/getTotal'
+    total: 'OrderDetails/getTotal',
+    order: 'OrderDetails/getOrder',
+    Levels: 'OrderLevels/get',
+    AdditionalServices: 'Services/getAdditionalServices',
+    discount: 'OrderDetails/getDiscount'
   }), {
     deliveryDate: function deliveryDate() {
       return new Date(new Date().getTime() + this.delivery * 24 * 60 * 60 * 1000);
@@ -2379,8 +2401,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return this.deliveryDate.toLocaleString('default', {
         month: 'long'
       });
+    },
+    getLevel: function getLevel() {
+      var _this = this;
+
+      return this.Levels.find(function (level) {
+        return parseInt(level.id) === parseInt(_this.order.level);
+      });
+    },
+    extraServicesChosen: function extraServicesChosen() {
+      var _this2 = this;
+
+      return this.AdditionalServices.filter(function (service) {
+        return _this2.order.additional_services.indexOf(service.id) > -1;
+      });
     }
-  })
+  }),
+  methods: {
+    redeemDiscount: function redeemDiscount() {
+      if (!this.promoCode || this.promoCode.length < 4) return;
+      this.$store.dispatch('OrderDetails/fetchDiscountRate', {
+        code: this.promoCode
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2844,6 +2888,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   mounted: function mounted() {
     this.$store.dispatch('CustomerDetails/getMe');
+    this.$store.commit('OrderDetails/setDiscount', null);
   },
   beforeDestroy: function beforeDestroy() {
     this.$store.commit('CustomerDetails/setCurrentUser', {});
@@ -3337,6 +3382,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this3 = this;
 
     window.scrollTo(0, 0);
+    this.add_services = [];
     this.$store.dispatch('OrderLevels/getLevels');
     this.$store.dispatch('Services/getAdditionalServices').then(function () {
       _this3.$store.dispatch('OrderDetails/fetchTotal', _this3.add_services);
@@ -3359,6 +3405,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GUI_Payments_PaymentForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../GUI/Payments/PaymentForm */ "./resources/js/components/order/GUI/Payments/PaymentForm.vue");
+/* harmony import */ var _GUI_Cart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../GUI/Cart */ "./resources/js/components/order/GUI/Cart.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -3370,8 +3421,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    Cart: _GUI_Cart__WEBPACK_IMPORTED_MODULE_1__["default"],
     PaymentForm: _GUI_Payments_PaymentForm__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   methods: {
@@ -3476,7 +3529,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.calendar[data-v-471451e0] {\n    margin: .25em 10px 10px 10px;\n    padding-top: 5px;\n    float: left;\n    width: 90px;\n    background: #ededef;\n    background: -moz-linear-gradient(top,#ededef,#ccc);\n    font: bold 30px/60px Arial Black,Arial,Helvetica,sans-serif;\n    text-align: center;\n    color: #000;\n    text-shadow: #fff 0 1px 0;\n    border-radius: 3px;\n    position: relative;\n    box-shadow: 0 2px 2px #888;\n}\n.calendar[data-v-471451e0]:before {\n    left: 11px;\n}\n.calendar[data-v-471451e0]:before, .calendar[data-v-471451e0]:after {\n    content: '';\n    float: left;\n    position: absolute;\n    top: 5px;\n    width: 8px;\n    height: 8px;\n    background: #111;\n    z-index: 1;\n    border-radius: 10px;\n    box-shadow: 0 1px 1px #fff;\n}\n.calendar em[data-v-471451e0] {\n    display: block;\n    font: normal bold 11px/30px Arial,Helvetica,sans-serif;\n    color: #fff;\n    text-shadow: #00365a 0 -1px 0;\n    background: #04599a;\n    background: -moz-linear-gradient(top,#04599a,#00365a);\n    border-bottom-right-radius: 3px;\n    border-bottom-left-radius: 3px;\n    border-top: 1px solid #00365a;\n}\n.calendar em[data-v-471451e0]:before {\n    left: 13px;\n}\n.calendar em[data-v-471451e0]:before, .calendar em[data-v-471451e0]:after {\n    content: '';\n    float: left;\n    position: absolute;\n    top: -5px;\n    width: 4px;\n    height: 14px;\n    background: #dadada;\n    background: -moz-linear-gradient(top,#f1f1f1,#aaa);\n    z-index: 2;\n    border-radius: 2px;\n}\n.calendar em[data-v-471451e0]:after {\n    right: 13px;\n}\n.calendar em[data-v-471451e0]:before, .calendar em[data-v-471451e0]:after {\n    content: '';\n    float: left;\n    position: absolute;\n    top: -5px;\n    width: 4px;\n    height: 14px;\n    background: #dadada;\n    background: -moz-linear-gradient(top,#f1f1f1,#aaa);\n    z-index: 2;\n    border-radius: 2px;\n}\n.calendar[data-v-471451e0]:after {\n    right: 11px;\n}\n.calendar[data-v-471451e0]:before, .calendar[data-v-471451e0]:after {\n    content: '';\n    float: left;\n    position: absolute;\n    top: 5px;\n    width: 8px;\n    height: 8px;\n    background: #111;\n    z-index: 1;\n    border-radius: 10px;\n    box-shadow: 0 1px 1px #fff;\n}\n", ""]);
+exports.push([module.i, "\n.calendar[data-v-471451e0] {\n    margin: .25em 10px 10px 10px;\n    padding-top: 5px;\n    float: left;\n    width: 90px;\n    background: #ededef;\n    background: -moz-linear-gradient(top,#ededef,#ccc);\n    font: bold 30px/60px Arial Black,Arial,Helvetica,sans-serif;\n    text-align: center;\n    color: #000;\n    text-shadow: #fff 0 1px 0;\n    border-radius: 3px;\n    position: relative;\n    box-shadow: 0 2px 2px #888;\n}\n.calendar[data-v-471451e0]:before {\n    left: 11px;\n}\n.calendar[data-v-471451e0]:before, .calendar[data-v-471451e0]:after {\n    content: '';\n    float: left;\n    position: absolute;\n    top: 5px;\n    width: 8px;\n    height: 8px;\n    background: #111;\n    z-index: 1;\n    border-radius: 10px;\n    box-shadow: 0 1px 1px #fff;\n}\n.calendar em[data-v-471451e0] {\n    display: block;\n    font: normal bold 11px/30px Arial,Helvetica,sans-serif;\n    color: #fff;\n    text-shadow: #00365a 0 -1px 0;\n    background: #04599a;\n    background: -moz-linear-gradient(top,#04599a,#00365a);\n    border-bottom-right-radius: 3px;\n    border-bottom-left-radius: 3px;\n    border-top: 1px solid #00365a;\n}\n.calendar em[data-v-471451e0]:before {\n    left: 13px;\n}\n.calendar em[data-v-471451e0]:before, .calendar em[data-v-471451e0]:after {\n    content: '';\n    float: left;\n    position: absolute;\n    top: -5px;\n    width: 4px;\n    height: 14px;\n    background: #dadada;\n    background: -moz-linear-gradient(top,#f1f1f1,#aaa);\n    z-index: 2;\n    border-radius: 2px;\n}\n.calendar em[data-v-471451e0]:after {\n    right: 13px;\n}\n.calendar em[data-v-471451e0]:before, .calendar em[data-v-471451e0]:after {\n    content: '';\n    float: left;\n    position: absolute;\n    top: -5px;\n    width: 4px;\n    height: 14px;\n    background: #dadada;\n    background: -moz-linear-gradient(top,#f1f1f1,#aaa);\n    z-index: 2;\n    border-radius: 2px;\n}\n.calendar[data-v-471451e0]:after {\n    right: 11px;\n}\n.calendar[data-v-471451e0]:before, .calendar[data-v-471451e0]:after {\n    content: '';\n    float: left;\n    position: absolute;\n    top: 5px;\n    width: 8px;\n    height: 8px;\n    background: #111;\n    z-index: 1;\n    border-radius: 10px;\n    box-shadow: 0 1px 1px #fff;\n}\n.overflow-list[data-v-471451e0] {\n    max-height: 150px;\n    overflow: auto;\n}\n", ""]);
 
 // exports
 
@@ -29665,7 +29718,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "cart-body" }, [
-      _c("ul", { staticClass: "list-group mb-3" }, [
+      _c("ul", { staticClass: "list-group" }, [
         _c(
           "li",
           { staticClass: "list-group-item d-flex justify-content-center" },
@@ -29675,15 +29728,69 @@ var render = function() {
               _vm._v(" "),
               _c("p", { staticClass: "calendar" }, [
                 _vm._v(
-                  "\n                            " +
+                  "\n                        " +
                     _vm._s(_vm.deliveryDay) +
-                    "\n                            "
+                    "\n                        "
                 ),
                 _c("em", [_vm._v(_vm._s(_vm.deliveryMonth))])
               ])
             ])
           ]
-        ),
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "list-group overflow-list" },
+        [
+          _c(
+            "li",
+            { staticClass: "list-group-item d-flex justify-content-between" },
+            [
+              _c("span", { staticClass: "small" }, [
+                _vm._v(_vm._s(_vm.getLevel.name))
+              ]),
+              _vm._v(" "),
+              _c("strong")
+            ]
+          ),
+          _vm._v(" "),
+          _vm._l(_vm.extraServicesChosen, function(extraServiceChosen) {
+            return _c(
+              "li",
+              { staticClass: "list-group-item d-flex justify-content-between" },
+              [
+                _c("span", { staticClass: "small" }, [
+                  _vm._v(_vm._s(extraServiceChosen.name))
+                ]),
+                _vm._v(" "),
+                _c("strong", { staticClass: "small text-muted" }, [
+                  _vm._v("£" + _vm._s(+extraServiceChosen.rates[0].total))
+                ])
+              ]
+            )
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c("ul", { staticClass: "list-group mb-3 " }, [
+        _vm.discount
+          ? _c(
+              "li",
+              {
+                staticClass:
+                  "list-group-item d-flex justify-content-between text-danger"
+              },
+              [
+                _c("span", { staticClass: "small" }, [_vm._v("Discount")]),
+                _vm._v(" "),
+                _c("strong", { staticClass: "small" }, [
+                  _vm._v("- " + _vm._s(_vm.discount) + "%")
+                ])
+              ]
+            )
+          : _vm._e(),
         _vm._v(" "),
         _c(
           "li",
@@ -29696,7 +29803,46 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "input-group mt-5 d-none d-lg-block" }),
+      _c("div", { staticClass: "input-group mb-3" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.promoCode,
+              expression: "promoCode"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            placeholder: "Promo code",
+            "aria-label": "Promo code",
+            "aria-describedby": "discount"
+          },
+          domProps: { value: _vm.promoCode },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.promoCode = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group-append" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              attrs: { type: "button", id: "button-discount" },
+              on: { click: _vm.redeemDiscount }
+            },
+            [_vm._v("Redeem")]
+          )
+        ])
+      ]),
       _vm._v(" "),
       _vm._m(0)
     ])
@@ -31070,8 +31216,18 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c(
         "div",
-        { staticClass: "col-md-12" },
+        { staticClass: "col-md-9" },
         [_c("PaymentForm", { on: { "can-continue": _vm.emitCanContinue } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "col-md-3 grey p-lg-3 py-md-3 px-md-0",
+          staticStyle: { "background-color": "#f5f5f5" }
+        },
+        [_c("Cart")],
         1
       )
     ])
@@ -47861,7 +48017,8 @@ __webpack_require__.r(__webpack_exports__);
       additional_services: [],
       delivery: 5,
       total: null
-    }
+    },
+    discount: null
   },
   getters: {
     getOrder: function getOrder(state) {
@@ -47872,6 +48029,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     getTotal: function getTotal(state) {
       return state.order.total;
+    },
+    getDiscount: function getDiscount(state) {
+      return state.discount;
     }
   },
   mutations: {
@@ -47885,7 +48045,15 @@ __webpack_require__.r(__webpack_exports__);
         total += 100;
       }
 
-      state.order.total = total;
+      if (state.discount) {
+        var discountValue = state.discount / 100;
+        total = total - total * discountValue;
+      }
+
+      state.order.total = +total.toFixed(2);
+    },
+    setDiscount: function setDiscount(state, payload) {
+      state.discount = payload;
     }
   },
   actions: {
@@ -47894,10 +48062,25 @@ __webpack_require__.r(__webpack_exports__);
           dispatch = _ref.dispatch;
       commit('updateOrder', payload);
     },
-    fetchTotal: function fetchTotal(_ref2, addServices) {
+    fetchDiscountRate: function fetchDiscountRate(_ref2, payload) {
       var commit = _ref2.commit,
-          getters = _ref2.getters,
-          rootGetters = _ref2.rootGetters;
+          dispatch = _ref2.dispatch,
+          getters = _ref2.getters;
+      axios.post('/api/orders/get-discount', payload).then(function (res) {
+        if (res.status !== 200) return;
+
+        if (res.data && res.data.id) {
+          commit('setDiscount', res.data.value);
+          dispatch('fetchTotal', getters.getOrder.additional_services);
+        }
+
+        return res;
+      });
+    },
+    fetchTotal: function fetchTotal(_ref3, addServices) {
+      var commit = _ref3.commit,
+          getters = _ref3.getters,
+          rootGetters = _ref3.rootGetters;
       var payload = getters['getOrder'];
       var rates = 0;
       var services = rootGetters['Services/getAdditionalServices'];

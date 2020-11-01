@@ -9,7 +9,8 @@ export default {
             additional_services: [],
             delivery: 5,
             total: null,
-        }
+        },
+        discount: null
     },
     getters: {
         getOrder(state) {
@@ -20,6 +21,9 @@ export default {
         },
         getTotal(state) {
             return state.order.total
+        },
+        getDiscount(state) {
+            return state.discount
         }
     },
     mutations: {
@@ -29,15 +33,37 @@ export default {
         setTotal: (state, payload) => {
             let total = parseFloat(payload.total);
 
-            if(parseInt(state.order.delivery) === 1) {
+            if (parseInt(state.order.delivery) === 1) {
                 total += 100;
             }
-            state.order.total = total;
+
+            if (state.discount) {
+                let discountValue = state.discount / 100;
+                total = total - (total * discountValue)
+            }
+
+            state.order.total = +total.toFixed(2);
+        },
+        setDiscount: (state, payload) => {
+            state.discount = payload
         }
     },
     actions: {
         updateOrder({commit, dispatch}, payload) {
             commit('updateOrder', payload);
+        },
+        fetchDiscountRate({commit, dispatch, getters}, payload) {
+            axios.post('/api/orders/get-discount', payload).then(res => {
+                if(res.status !== 200) return
+
+                if(res.data && res.data.id) {
+                    commit('setDiscount', res.data.value)
+
+                    dispatch('fetchTotal', getters.getOrder.additional_services);
+                }
+
+                return res;
+            })
         },
         fetchTotal({commit, getters, rootGetters}, addServices) {
             let payload = getters['getOrder'];
