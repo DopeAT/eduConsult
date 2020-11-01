@@ -3,7 +3,7 @@
         <h5 class="font-weight-bold text-center">Your Order Details</h5>
 
         <div class="cart-body">
-            <ul class="list-group mb-3">
+            <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-center">
                     <div>
                         <h6 class="my-0">Est. Delivery Date</h6>
@@ -13,17 +13,33 @@
                         </p>
                     </div>
                 </li>
+            </ul>
+            <ul class="list-group overflow-list">
+                <li class="list-group-item d-flex justify-content-between">
+                    <span class="small">{{getLevel.name}}</span>
+                    <strong></strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between" v-for="extraServiceChosen in extraServicesChosen">
+                    <span class="small">{{extraServiceChosen.name}}</span>
+                    <strong class="small text-muted">£{{ +extraServiceChosen.rates[0].total }}</strong>
+                </li>
+            </ul>
+            <ul class="list-group mb-3 ">
+                <li v-if="discount" class="list-group-item d-flex justify-content-between text-danger">
+                    <span class="small">Discount</span>
+                    <strong class="small">- {{ discount }}%</strong>
+                </li>
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (GBP)</span>
                     <strong>£{{total}}</strong>
                 </li>
             </ul>
 
-            <div class="input-group mt-5 d-none d-lg-block">
-<!--                <input type="text" class="form-control" placeholder="Promo code">-->
-<!--                <div class="input-group-append">-->
-<!--                    <button type="submit" class="btn btn-secondary">Redeem</button>-->
-<!--                </div>-->
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Promo code" aria-label="Promo code" v-model="promoCode" aria-describedby="discount">
+                <div class="input-group-append">
+                    <button class="btn btn-success" type="button" id="button-discount" @click="redeemDiscount">Redeem</button>
+                </div>
             </div>
 
             <div class="mt-3">
@@ -52,12 +68,18 @@
     export default {
         name: "Cart",
         data() {
-            return {}
+            return {
+                promoCode: null
+            }
         },
         computed: {
             ...mapGetters({
                 delivery: 'OrderDetails/getDeliveryDate',
-                total: 'OrderDetails/getTotal'
+                total: 'OrderDetails/getTotal',
+                order: 'OrderDetails/getOrder',
+                Levels: 'OrderLevels/get',
+                AdditionalServices: 'Services/getAdditionalServices',
+                discount: 'OrderDetails/getDiscount'
             }),
             deliveryDate() {
                 return new Date(new Date().getTime() + (this.delivery * 24 * 60 * 60 * 1000));
@@ -67,6 +89,21 @@
             },
             deliveryMonth() {
                 return this.deliveryDate.toLocaleString('default', { month: 'long' });
+            },
+            getLevel() {
+                return this.Levels.find(level => parseInt(level.id) === parseInt(this.order.level))
+            },
+            extraServicesChosen() {
+                return this.AdditionalServices.filter((service) => {
+                    return this.order.additional_services.indexOf(service.id) > -1
+                });
+            }
+        },
+        methods: {
+            redeemDiscount() {
+                if (!this.promoCode || this.promoCode.length < 4) return;
+
+                this.$store.dispatch('OrderDetails/fetchDiscountRate', {code: this.promoCode});
             }
         },
     }
@@ -187,5 +224,10 @@
         -moz-box-shadow: 0 1px 1px #fff;
         -webkit-box-shadow: 0 1px 1px #fff;
         box-shadow: 0 1px 1px #fff;
+    }
+
+    .overflow-list {
+        max-height: 150px;
+        overflow: auto;
     }
 </style>

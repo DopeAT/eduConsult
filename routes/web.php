@@ -40,6 +40,7 @@ Route::get('/api/orders/levels', 'AjaxController@orderLevels')->name('orderLevel
 Route::get('/api/orders/additional-services', 'AjaxController@additionalServices')->name('additionalServices');
 Route::post('/api/orders/order-total', 'AjaxController@orderTotal')->name('orderTotal');
 Route::post('/api/checkUserEmail', 'AjaxController@checkUserEmail')->name('checkUserEmail');
+Route::post('/api/orders/get-discount', 'AjaxController@getDiscount')->name('getDiscount');
 
 // Payment Routes
 Route::post('/charge', 'PaymentController@charge');

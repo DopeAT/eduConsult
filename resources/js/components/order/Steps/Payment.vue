@@ -1,8 +1,12 @@
 <template>
     <div class="container mainContainer">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-9">
                 <PaymentForm @can-continue="emitCanContinue"></PaymentForm>
+            </div>
+
+            <div class="col-md-3 grey p-lg-3 py-md-3 px-md-0" style="background-color: #f5f5f5;">
+                <Cart/>
             </div>
         </div>
     </div>
@@ -10,9 +14,10 @@
 
 <script>
     import PaymentForm from "../GUI/Payments/PaymentForm";
+    import Cart from "../GUI/Cart";
 
     export default {
-        components: {PaymentForm},
+        components: {Cart, PaymentForm},
         methods: {
             emitCanContinue() {
                 this.$emit('can-continue', {value: true});

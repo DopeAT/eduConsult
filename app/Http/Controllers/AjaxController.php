@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Discount;
 use App\Newsletter;
 use App\Product;
 use App\Rate;
 use App\Service;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -56,6 +58,20 @@ class AjaxController extends Controller
         ]);
 
         return 'Thank you for signing up to our newsletter.';
+    }
+
+    public function getDiscount(Request $request)
+    {
+        $request->validate(['code' => 'required']);
+        $now = (new Carbon)->now()->toDateString();
+
+        $discount = Discount::where('start', '<=', $now)
+                            ->where('end', '>=', $now)
+                            ->where('code', $request->code)
+                            ->get()
+                            ->first();
+
+        return response()->json($discount);
     }
 
 }

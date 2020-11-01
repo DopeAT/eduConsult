@@ -110,6 +110,7 @@ export default {
     },
     mounted() {
         this.$store.dispatch('CustomerDetails/getMe');
+        this.$store.commit('OrderDetails/setDiscount', null);
     },
     beforeDestroy() {
         this.$store.commit('CustomerDetails/setCurrentUser', {});
