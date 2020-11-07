@@ -85,6 +85,11 @@
                                                         Questions? Email <a href="mailto:">support@company.inc</a>
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <td class="text-center content-block">
+                                                        <a href="#" @click="printPDFInvoice">Print Invoice</a>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -116,6 +121,16 @@
             TodayFormatted() {
                 return moment().format('D MMM, YYYY');
             },
+        },
+        methods: {
+            printPDFInvoice() {
+                let data = {
+                    Payment: this.Payment,
+                    Order: this.OrderDetails
+                }
+
+                this.$store.dispatch('Payment/createInvoice', data);
+            }
         },
         mounted() {
             this.$emit('can-continue', {value: true});

@@ -11,6 +11,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class AjaxController extends Controller
 {
@@ -72,6 +73,14 @@ class AjaxController extends Controller
                             ->first();
 
         return response()->json($discount);
+    }
+
+    public function createInvoicePDF(Request $request)
+    {
+        view()->share('order', $request);
+        $pdf = PDF::loadView('pdf.order', $request);
+
+        return $pdf->download('order_rops.pdf');
     }
 
 }

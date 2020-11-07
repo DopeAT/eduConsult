@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderConfirmation;
 use App\Order;
+use App\Payer;
 use App\Payment;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Omnipay\Omnipay;
 
 class PaymentController extends Controller
@@ -32,6 +35,8 @@ class PaymentController extends Controller
                 $arr_payment_data = $response->getData();
                 $payment = null;
                 $order = null;
+                $payer = null;
+                $postcode = $request->input('postCode') ? $request->input('postCode') : '';
 
                 $isPaymentExist = Payment::where('payment_id', $arr_payment_data['id'])->first();
                 $userIsPaying = User::where('email', $request->input('email'))->first();
@@ -59,7 +64,18 @@ class PaymentController extends Controller
                     ]);
 
                     $order->extra_services()->sync($request->input('extra_services'));
+
+                    $payer = Payer::create([
+                        'payer_id'   => $userIsPaying->id,
+                        'payment_id' => $payment->payment_id,
+                        'email'      => $request->input('email'),
+                        'name'       => $request->input('cardName'),
+                        'phone'      => $request->input('phone'),
+                        'post_code'  => $postcode
+                    ]);
                 }
+
+                Mail::to('alextserep@gmail.com')->send(new OrderConfirmation($order, $payment, $payer));
 
                 return response()->json([
                     'info' => [

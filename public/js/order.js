@@ -3094,6 +3094,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3109,6 +3114,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return moment__WEBPACK_IMPORTED_MODULE_1___default()().format('D MMM, YYYY');
     }
   }),
+  methods: {
+    printPDFInvoice: function printPDFInvoice() {
+      var data = {
+        Payment: this.Payment,
+        Order: this.OrderDetails
+      };
+      this.$store.dispatch('Payment/createInvoice', data);
+    }
+  },
   mounted: function mounted() {
     this.$emit('can-continue', {
       value: true
@@ -30670,7 +30684,30 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(2)
+                  _c("div", { staticClass: "footer" }, [
+                    _c("table", { attrs: { width: "100%" } }, [
+                      _c("tbody", [
+                        _vm._m(2),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c(
+                            "td",
+                            { staticClass: "text-center content-block" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  attrs: { href: "#" },
+                                  on: { click: _vm.printPDFInvoice }
+                                },
+                                [_vm._v("Print Invoice")]
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
                 ])
               ]),
               _vm._v(" "),
@@ -30718,20 +30755,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "footer" }, [
-      _c("table", { attrs: { width: "100%" } }, [
-        _c("tbody", [
-          _c("tr", [
-            _c("td", { staticClass: "text-center content-block" }, [
-              _vm._v(
-                "\n                                                    Questions? Email "
-              ),
-              _c("a", { attrs: { href: "mailto:" } }, [
-                _vm._v("support@company.inc")
-              ])
-            ])
-          ])
-        ])
+    return _c("tr", [
+      _c("td", { staticClass: "text-center content-block" }, [
+        _vm._v(
+          "\n                                                    Questions? Email "
+        ),
+        _c("a", { attrs: { href: "mailto:" } }, [_vm._v("support@company.inc")])
       ])
     ])
   }
@@ -48122,6 +48151,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   namespaced: true,
   state: {
@@ -48154,6 +48185,15 @@ __webpack_require__.r(__webpack_exports__);
       var commit = _ref2.commit,
           dispatch = _ref2.dispatch;
       commit('setPayment', payload);
+    },
+    createInvoice: function createInvoice(_ref3, payload) {
+      _objectDestructuringEmpty(_ref3);
+
+      return axios.post('/api/service/order-pdf', payload).then(function (res) {
+        if (res.status !== 200) {
+          alert('Something went wrong. Please try again later.');
+        }
+      });
     }
   }
 });
