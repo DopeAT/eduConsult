@@ -87,7 +87,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="text-center content-block">
-                                                        <a href="#" @click="printPDFInvoice">Print Invoice</a>
+                                                        <a :href="'/order-pdf/' + OrderDetails.payment_id" target="_blank">Print Invoice</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -121,16 +121,6 @@
             TodayFormatted() {
                 return moment().format('D MMM, YYYY');
             },
-        },
-        methods: {
-            printPDFInvoice() {
-                let data = {
-                    Payment: this.Payment,
-                    Order: this.OrderDetails
-                }
-
-                this.$store.dispatch('Payment/createInvoice', data);
-            }
         },
         mounted() {
             this.$emit('can-continue', {value: true});

@@ -3114,15 +3114,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return moment__WEBPACK_IMPORTED_MODULE_1___default()().format('D MMM, YYYY');
     }
   }),
-  methods: {
-    printPDFInvoice: function printPDFInvoice() {
-      var data = {
-        Payment: this.Payment,
-        Order: this.OrderDetails
-      };
-      this.$store.dispatch('Payment/createInvoice', data);
-    }
-  },
   mounted: function mounted() {
     this.$emit('can-continue', {
       value: true
@@ -30697,8 +30688,12 @@ var render = function() {
                               _c(
                                 "a",
                                 {
-                                  attrs: { href: "#" },
-                                  on: { click: _vm.printPDFInvoice }
+                                  attrs: {
+                                    href:
+                                      "/order-pdf/" +
+                                      _vm.OrderDetails.payment_id,
+                                    target: "_blank"
+                                  }
                                 },
                                 [_vm._v("Print Invoice")]
                               )
@@ -48151,8 +48146,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   namespaced: true,
   state: {
@@ -48185,15 +48178,6 @@ function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("
       var commit = _ref2.commit,
           dispatch = _ref2.dispatch;
       commit('setPayment', payload);
-    },
-    createInvoice: function createInvoice(_ref3, payload) {
-      _objectDestructuringEmpty(_ref3);
-
-      return axios.post('/api/service/order-pdf', payload).then(function (res) {
-        if (res.status !== 200) {
-          alert('Something went wrong. Please try again later.');
-        }
-      });
     }
   }
 });

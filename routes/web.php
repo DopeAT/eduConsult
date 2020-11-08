@@ -41,7 +41,7 @@ Route::get('/api/orders/additional-services', 'AjaxController@additionalServices
 Route::post('/api/orders/order-total', 'AjaxController@orderTotal')->name('orderTotal');
 Route::post('/api/checkUserEmail', 'AjaxController@checkUserEmail')->name('checkUserEmail');
 Route::post('/api/orders/get-discount', 'AjaxController@getDiscount')->name('getDiscount');
-Route::post('/api/service/order-pdf', 'AjaxController@createInvoicePDF')->name('createInvoicePDF');
+Route::get('/order-pdf/{id}', 'AjaxController@createInvoicePDF')->name('createInvoicePDF');
 
 // Payment Routes
 Route::post('/charge', 'PaymentController@charge');
