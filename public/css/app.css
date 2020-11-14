@@ -11469,6 +11469,10 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   cursor: pointer;
 }
 
+#faqs .radio-inline .radio-span {
+  padding: 0 0 0 3px;
+}
+
 @media (max-width: 575.98px) {
   #faqs .faq-section {
     padding-top: 40px;

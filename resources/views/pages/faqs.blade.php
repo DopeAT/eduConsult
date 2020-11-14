@@ -49,13 +49,16 @@
                             <div id="tgganswerquestion" class="p-3 panel-collapse collapse show" aria-expanded="true" style="">
                                 <div class="panel-content">
                                     <label class="radio-inline">
-                                        <input type="radio" name="survey" id="Radios1" value="Yes" checked onclick="clickYes();">Yes
+                                        <input type="radio" name="survey" id="Radios1" value="Yes" checked onclick="clickYes()">
+                                        <span class="radio-span">Yes</span>
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="survey" id="Radios2" value="No" onclick="clickNo();">No
+                                        <input type="radio" name="survey" id="Radios2" value="No" onclick="clickNo()">
+                                        <span class="radio-span">No</span>
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="survey" id="Radios3" value="Notsure" onclick="clickNotSure();">Not sure
+                                        <input type="radio" name="survey" id="Radios3" value="Notsure" onclick="clickNotSure()">
+                                        <span class="radio-span">Not sure</span>
                                     </label>
                                     <div class="hidden" id="yes"></div>
                                     <div class="hidden" id="no">
