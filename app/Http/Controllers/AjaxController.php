@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Discount;
 use App\Newsletter;
+use App\Order;
+use App\Payment;
 use App\Product;
 use App\Rate;
 use App\Service;
@@ -11,6 +13,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class AjaxController extends Controller
 {
@@ -72,6 +75,34 @@ class AjaxController extends Controller
                             ->first();
 
         return response()->json($discount);
+    }
+
+    public function createInvoicePDF($id)
+    {
+        if (!isset($id)) {
+            die ('Something wrong');
+        }
+
+        $payment = Payment::where('payment_id', $id)->first();
+        $order = Order::select('id', 'payment_id', 'user_id', 'service_id', 'product_id', 'delivery_id', 'type_id', 'level_id')
+                      ->where('payment_id', $id)
+                      ->first()
+                      ->load('user', 'service', 'product', 'extra_services');
+
+        if ($order->user->id !== Auth::user()->id) {
+            die ('Something wrong');
+        }
+
+        $data = [
+            'payment' => $payment,
+            'order' => $order,
+            'extra_services'
+        ];
+
+        view()->share('order', $data);
+        $pdf = PDF::loadView('pdf.order', $data);
+
+        return $pdf->download('order_rops.pdf');
     }
 
 }

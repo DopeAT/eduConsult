@@ -85,6 +85,11 @@
                                                         Questions? Email <a href="mailto:">support@company.inc</a>
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <td class="text-center content-block">
+                                                        <a :href="'/order-pdf/' + OrderDetails.payment_id" target="_blank">Print Invoice</a>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
