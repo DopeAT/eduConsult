@@ -73,9 +73,14 @@ class PaymentController extends Controller
                         'phone'      => $request->input('phone'),
                         'post_code'  => $postcode
                     ]);
+
+                    $order = Order::select('id', 'payment_id', 'user_id', 'service_id', 'product_id', 'delivery_id', 'type_id', 'level_id')
+                                  ->where('payment_id', $payment->payment_id)
+                                  ->first()
+                                  ->load('user', 'service', 'product', 'extra_services');
                 }
 
-                Mail::to('alextserep@gmail.com')->send(new OrderConfirmation($order, $payment, $payer));
+                Mail::to($request->input('email'))->send(new OrderConfirmation($order, $payment, $payer));
 
                 return response()->json([
                     'info' => [
@@ -85,7 +90,7 @@ class PaymentController extends Controller
                     ],
                     'data' => [
                         'payment' => $payment,
-                        'order' => $order->load('service', 'product', 'extra_services')
+                        'order' => $order
                     ]
                 ]);
 

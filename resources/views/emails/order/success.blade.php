@@ -126,38 +126,20 @@
                 <table>
                     <tr>
                         <td>
+                            {{ env('COMPANY') }}<br>
                             {{ env('ADDRESS') }}, {{ env('POSTCODE') }}<br>
                             {{ env('CITY') }}, {{ env('COUNTY') }}<br>
                             {{ env('COUNTRY') }}
                         </td>
 
                         <td>
-                            {{ env('COMPANY') }}<br>
-                            John Doe<br>
-                            john@example.com
+                            {{ $payer->name }}<br>
+                            {{ $payer->email }}<br>
+                            {{ $payer->phone }}<br>
+                            {{ $payer->postcode }}
                         </td>
                     </tr>
                 </table>
-            </td>
-        </tr>
-
-        <tr class="heading">
-            <td>
-                Payment Method
-            </td>
-
-            <td>
-                Check #
-            </td>
-        </tr>
-
-        <tr class="details">
-            <td>
-                Check
-            </td>
-
-            <td>
-                1000
             </td>
         </tr>
 
@@ -172,40 +154,28 @@
         </tr>
 
         <tr class="item">
-            <td>
-                Website design
-            </td>
-
-            <td>
-                $300.00
-            </td>
+            <td>{{ $order->service->name }}</td>
+            <td> </td>
         </tr>
 
         <tr class="item">
-            <td>
-                Hosting (3 months)
-            </td>
-
-            <td>
-                $75.00
-            </td>
+            <td>{{ $order->product->name }}</td>
+            <td> </td>
         </tr>
-
-        <tr class="item last">
-            <td>
-                Domain name (1 year)
-            </td>
-
-            <td>
-                $10.00
-            </td>
-        </tr>
+        @if($order->extra_services)
+            @foreach($order->extra_services as $service)
+                <tr class="item">
+                    <td>{{ $service->name }}</td>
+                    <td>&nbsp;</td>
+                </tr>
+            @endforeach
+        @endif
 
         <tr class="total">
-            <td></td>
+            <td style="border-top: 1px solid #000;font-weight: 700;">Total</td>
 
-            <td>
-                Total: $385.00
+            <td style="border-top: 1px solid #000;font-weight: 700;">
+                £{{ $payment->amount }}
             </td>
         </tr>
     </table>
