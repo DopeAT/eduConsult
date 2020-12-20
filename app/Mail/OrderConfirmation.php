@@ -39,7 +39,7 @@ class OrderConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->from('info@educonsultorg.com', 'The ROPS')
+        return $this->from(env('INFO_EMAIL', 'info@therops.co.uk'), 'The ROPS')
                     ->subject('Order Confirmation')
                     ->view('emails.order.success', [
                         'order'   => $this->order,
