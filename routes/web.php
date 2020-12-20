@@ -46,6 +46,9 @@ Route::get('/order-pdf/{id}', 'AjaxController@createInvoicePDF')->name('createIn
 // Payment Routes
 Route::post('/charge', 'PaymentController@charge');
 
+// Profile
+Route::get('/profile', 'UserController@me');
+
 // Admin Routes
 require_once('admin.php');
 
