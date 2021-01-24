@@ -148,6 +148,17 @@ Route::middleware(['admin.access'])->group(function(){
         'destroy' => 'admin.discounts.destroy',
     ]);
 
+    // Pages
+    Route::resource('/admin/pages', 'Admin\PagesController')->names([
+        'index'   => 'admin.pages.index',
+        'create'  => 'admin.pages.create',
+        'store'   => 'admin.pages.store',
+        'show'    => 'admin.pages.show',
+        'edit'    => 'admin.pages.edit',
+        'update'  => 'admin.pages.update',
+        'destroy' => 'admin.pages.destroy',
+    ]);
+
     // Exports Routes
     require_once('exports.php');
 

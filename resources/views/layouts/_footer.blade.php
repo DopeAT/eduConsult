@@ -10,10 +10,13 @@
                         <a href="{{ route('contact') }}">Contact Us</a>
                     </li>
                     <li>
-                        <a href="{{ route('privacy') }}">Privacy Policy</a>
+                        <a href="/privacy-policy">Privacy Policy</a>
                     </li>
                     <li>
-                        <a href="{{ route('terms') }}">Terms and Conditions</a>
+                        <a href="/cookie-policy">Cookies Policy</a>
+                    </li>
+                    <li>
+                        <a href="/terms-conditions">Terms and Conditions</a>
                     </li>
                     <li>
                         <a href="{{ route('sitemap') }}">Sitemap</a>

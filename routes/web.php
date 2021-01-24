@@ -17,9 +17,6 @@ Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faqs', 'PagesController@faqs')->name('faqs');
 Route::get('/contact', 'ContactController@show')->name('contact');
 Route::post('/contact', 'ContactController@store')->name('contact.post');
-
-Route::get('/privacy', 'PagesController@privacy')->name('privacy');
-Route::get('/terms',   'PagesController@terms')->name('terms');
 Route::get('/sitemap', 'PagesController@sitemap')->name('sitemap');
 
 // Services
@@ -52,3 +49,7 @@ Route::get('/profile', 'UserController@me');
 // Admin Routes
 require_once('admin.php');
 
+// Should Be Last as is setting DB pages
+
+// Pages
+Route::get('/{page}', 'PagesController@show');
