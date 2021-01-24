@@ -117,11 +117,19 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link" href="{{ route('admin.pages.index') }}">
+            <i class="fas fa-fw fa-atlas"></i>
+            <span>Web Pages</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Users Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
             <i class="fas fa-fw fa-users"></i>
             <span>Users</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseUsers" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Users:</h6>
                 <a class="collapse-item" href="/admin/users?type=1">Admin</a>
