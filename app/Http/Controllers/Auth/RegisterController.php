@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Address;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -74,7 +75,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'firstname' => $data['firstname'],
             'lastname'  => $data['lastname'],
             'email'     => $data['email'],
@@ -83,5 +84,11 @@ class RegisterController extends Controller
             'password'  => Hash::make($data['password']),
             'role_id'   => 2
         ]);
+
+        Address::create([
+           'user_id' => $user->id
+        ]);
+
+        return $user;
     }
 }
