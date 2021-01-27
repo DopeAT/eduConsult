@@ -43,8 +43,11 @@ Route::get('/order-pdf/{id}', 'AjaxController@createInvoicePDF')->name('createIn
 // Payment Routes
 Route::post('/charge', 'PaymentController@charge');
 
-// Profile
-Route::get('/profile', 'UserController@me');
+// Auth Routes
+Route::middleware(['admin.access'])->group(function(){
+    Route::get('/profile', 'UserController@me')->name('profile');
+    Route::put('/profile/settings/{user}', 'UserController@update')->name('profile.settings.update');
+});
 
 // Admin Routes
 require_once('admin.php');
