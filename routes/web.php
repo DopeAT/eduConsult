@@ -29,6 +29,9 @@ Route::get('/services/{service}/{product}', 'ProductController@show')->name('pro
 // Order Page
 Route::get('/order', 'OrderController@order')->name('order');
 
+// Survey
+Route::get('/survey-example', 'PagesController@surveyExample')->name('survey.example');
+
 
 // Ajax - Api Routes
 Route::post('/api/newsletter/post', 'AjaxController@newsletter')->name('newsletter.store');

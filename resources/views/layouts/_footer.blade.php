@@ -21,6 +21,9 @@
                     <li>
                         <a href="{{ route('sitemap') }}">Sitemap</a>
                     </li>
+                    <li>
+                        <a href="{{ route('survey.example') }}">Survey Example</a>
+                    </li>
                 </ul>
             </div>
 
