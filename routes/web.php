@@ -32,7 +32,6 @@ Route::get('/order', 'OrderController@order')->name('order');
 // Survey
 Route::get('/survey-example', 'PagesController@surveyExample')->name('survey.example');
 
-
 // Ajax - Api Routes
 Route::post('/api/newsletter/post', 'AjaxController@newsletter')->name('newsletter.store');
 Route::get('/api/user/me', 'AjaxController@me')->name('me');
@@ -50,6 +49,13 @@ Route::post('/charge', 'PaymentController@charge');
 Route::middleware(['admin.access'])->group(function(){
     Route::get('/profile', 'UserController@me')->name('profile');
     Route::put('/profile/settings/{user}', 'UserController@update')->name('profile.settings.update');
+
+    // Survey
+    Route::get('/user/survey/{token}', 'SurveyController@survey')->name('survey');
+    // Survey Upload Files
+    Route::post('/user/survey/{token}/fileupload/','SurveyController@uploadFilesForUser')->name('users.fileupload');
+    // Survey Submit
+    Route::post('/user/survey/{token}', 'SurveyController@create')->name('survey.post');
 });
 
 // Admin Routes

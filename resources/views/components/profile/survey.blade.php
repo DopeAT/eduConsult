@@ -8,3 +8,13 @@
 </div>
 
 <h6 class="heading-small text-muted mb-4">Survey information</h6>
+
+<div class="row">
+    <div class="col-sm-12">
+        <h6 class="text-center">
+            <a href="{{ route('survey', $activeSurvey->order->payment_id) }}" class="font-weight-bold">
+                Continue with your survey
+            </a>
+        </h6>
+    </div>
+</div>

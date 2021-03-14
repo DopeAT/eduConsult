@@ -67,10 +67,10 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="students" role="tabpanel" aria-labelledby="students-tab">
-                            @include('components.survey.questions', ['data' => $students])
+                            @include('components.survey.questions', ['data' => $students, 'disabled' => true])
                         </div>
                         <div class="tab-pane fade" id="professionals" role="tabpanel" aria-labelledby="professionals-tab">
-                            @include('components.survey.questions', ['data' => $pros])
+                            @include('components.survey.questions', ['data' => $pros, 'disabled' => true])
                         </div>
                     </div>
                 </div>
