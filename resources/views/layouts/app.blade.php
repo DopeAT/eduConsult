@@ -7,7 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'EduConsultOrg.com') }}</title>
+    <title>{{ isset($metas) && !empty($metas->title) ? $metas->title : config('app.name', 'The Rops') }}</title>
+
+    @if(isset($metas) && !empty($metas->description))
+        <meta name="description" content="{{$metas->description}}">
+    @endif
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
