@@ -159,6 +159,17 @@ Route::middleware(['admin.access'])->group(function(){
         'destroy' => 'admin.pages.destroy',
     ]);
 
+    // Survey
+    Route::resource('/admin/survey', 'Admin\SurveyController')->names([
+        'index'   => 'admin.survey.index',
+        'create'  => 'admin.survey.create',
+        'store'   => 'admin.survey.store',
+        'show'    => 'admin.survey.show',
+        'edit'    => 'admin.survey.edit',
+        'update'  => 'admin.survey.update',
+        'destroy' => 'admin.survey.destroy',
+    ]);
+
     // Exports Routes
     require_once('exports.php');
 

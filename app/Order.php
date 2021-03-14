@@ -28,4 +28,8 @@ class Order extends Model
     public function extra_services() {
         return $this->belongsToMany(Product::class)->select(['name']);
     }
+
+    public function surveys() {
+        return $this->hasMany(Survey::class);
+    }
 }

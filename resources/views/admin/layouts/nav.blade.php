@@ -77,6 +77,14 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.survey.index') }}">
+            <i class="fas fa-fw fa-question-circle"></i>
+            <span>Survey Settings</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.roles.index') }}">
             <i class="fas fa-fw fa-user-astronaut"></i>
             <span>Roles</span>

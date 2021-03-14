@@ -6,6 +6,7 @@ use App\Mail\OrderConfirmation;
 use App\Order;
 use App\Payer;
 use App\Payment;
+use App\Survey;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -79,6 +80,12 @@ class PaymentController extends Controller
                                   ->first()
                                   ->load('user', 'service', 'product', 'extra_services');
                 }
+
+                Survey::create([
+                    'order_id' => $order->id,
+                    'user_id' => $userIsPaying->id,
+                    'completed' => 0
+                ]);
 
                 Mail::to($request->input('email'))->send(new OrderConfirmation($order, $payment, $payer));
 
