@@ -57,19 +57,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="font-weight-bold" for="city">City</label>
-                    <input type="text" name="city" class="form-control" placeholder="City" value="{{ $user->address->city }}">
+                    <input type="text" name="city" class="form-control" placeholder="City" value="{{ $user->address ? $user->address->city : '' }}">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="font-weight-bold" for="country">Country</label>
-                    <input type="text" name="country" class="form-control" placeholder="Country" value="{{ $user->address->city }}">
+                    <input type="text" name="country" class="form-control" placeholder="Country" value="{{ $user->address ? $user->address->city : ''  }}">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="font-weight-bold" for="postcode">Postcode</label>
-                    <input type="text" name="postcode" class="form-control" placeholder="Postal code" value="{{ $user->address->postcode }}">
+                    <input type="text" name="postcode" class="form-control" placeholder="Postal code" value="{{ $user->address ? $user->address->postcode : ''  }}">
                 </div>
             </div>
         </div>
