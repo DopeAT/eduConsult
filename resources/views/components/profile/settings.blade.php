@@ -49,7 +49,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label class="font-weight-bold" for="address">Address</label>
-                    <input type="text" name="address" class="form-control" placeholder="Home Address" value="{{ $user->address->fullAddress() }}">
+                    <input type="text" name="address" class="form-control" placeholder="Home Address" value="{{ $user->address ? $user->address->fullAddress() : '' }}">
                 </div>
             </div>
         </div>
