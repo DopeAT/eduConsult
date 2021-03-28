@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <h1 class="text-center title">Why use EduConsult<span class="text-danger font-weight-bold">O</span>rg.com ?</h1>
+                    <h1 class="text-center title">Why use The Oxbridge & Russel Personal Statements?</h1>
                     <hr class="red-hr">
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     <div class="boxes">
                         <strong class="non-icon text-danger">100%</strong>
                         <h4>Original Work</h4>
-                        <p class="text-muted">Educonsultorg is 100% confidential, 100% on time and 100% guaranteed plagiarism-free.</p>
+                        <p class="text-muted">The Oxbridge & Russel Personal Statements is 100% confidential, 100% on time and 100% guaranteed plagiarism-free.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -123,7 +123,7 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-6">
                     <h3 class="text-center">At your services</h3>
-                    <p>EduConsultOrg is the #01 online platform where students can get in touch with the best academic consultants for just about every subject matter.<br/>We’ve started our online journey back at 2013.<br/>Backed by a carefully selected team of expert writers with vast academic experience, we complete essay writing projects for all levels and disciplines!</p>
+                    <p>The Oxbridge & Russel Personal Statements is the #01 online platform where students can get in touch with the best academic consultants for just about every subject matter.<br/>We’ve started our online journey back at 2013.<br/>Backed by a carefully selected team of expert writers with vast academic experience, we complete essay writing projects for all levels and disciplines!</p>
                 </div>
                 <div class="col-lg-6 col-sm-6">
                     <h3 class="text-center">Customer Satisfaction</h3>
