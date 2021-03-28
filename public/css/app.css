@@ -11321,34 +11321,21 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
 
 #about #team .image-flip:hover .backside,
 #about #team .image-flip.hover .backside {
-  transform: rotateY(0deg);
   border-radius: 0.25rem;
   cursor: pointer;
 }
 
 #about #team .image-flip:hover .frontside,
 #about #team .image-flip.hover .frontside {
-  transform: rotateY(180deg);
   cursor: pointer;
 }
 
 #about #team .mainflip {
-  -webkit-transition: 1s;
-  -webkit-transform-style: preserve-3d;
-  -ms-transition: 1s;
-  -moz-transition: 1s;
-  -moz-transform: perspective(1000px);
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transition: 1s;
-  transform-style: preserve-3d;
   position: relative;
 }
 
 #about #team .frontside {
   position: relative;
-  -webkit-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
   z-index: 2;
   margin-bottom: 30px;
 }
@@ -11358,22 +11345,11 @@ footer#footer #news-feedback #alert-danger button#alert-btn {
   top: 0;
   left: 0;
   background: white;
-  transform: rotateY(-180deg);
   box-shadow: 5px 7px 9px -4px #9e9e9e;
 }
 
 #about #team .frontside,
 #about #team .backside {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: 1s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transition: 1s;
-  -moz-transform-style: preserve-3d;
-  -o-transition: 1s;
-  -o-transform-style: preserve-3d;
-  -ms-transition: 1s;
-  -ms-transform-style: preserve-3d;
   transition: 1s;
   transform-style: preserve-3d;
 }
