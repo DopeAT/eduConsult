@@ -41,7 +41,7 @@
                         <tr>
                             <td class="font-weight-bold">{{ $user->id }}</td>
                             <td class="font-weight-bold text-primary">{{ $user->fullname() }}</td>
-                            <td>{{ $user->role->name }}</td>
+                            <td>{{ $user->role_id === 1 ? 'Admin' : 'Client' }}</td>
                             <td>{{ $user->created_at->format('d M Y') }}</td>
                             <td class="d-flex">
 
