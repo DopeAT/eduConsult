@@ -26,12 +26,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 my-5">
-                    <h3 class="text-center">Welcome to Edu.Consult.Org, all the expert help you need in one website!</h3>
+                    <h3 class="text-center">Welcome to The ROps.co.uk, all the expert help you need in one website!</h3>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-lg-6">
-                    <p><b>Edu.Consult.Org (ECO)</b> is the #01 online platform where students can get in touch with the best academic consultants for just about every subject matter. We are your one stop solution providers for Essay, Assignment, Dissertation, Thesis, Proofreading-Editing & Consultation.</p>
+                    <p><b>The Oxbridge & Russel Personal Statements (The ROps)</b> is the #01 online platform where students can get in touch with the best academic consultants for just about every subject matter. We are your one stop solution providers for Essay, Assignment, Dissertation, Thesis, Proofreading-Editing & Consultation.</p>
                     <br/>
                     <p>We started our journey in 2013 servicing successfully primarily the European market. We soon expanded globally providing our online bespoke writing services to students that chose English as their education language, without border limitations.  </p>
                     <br/>
@@ -149,41 +149,49 @@
                                             >
                                         </p>
                                         <h4 class="card-title">{{ $member->name }}</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                        <a href="#!" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="backside">
-                                <div class="card">
-                                    <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h6 class="font-weight-bold">{{ $member->profession }}</h6>
+                                        <p class="card-text">{{ $member->text }}</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" href="#!">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" href="#!">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" href="#!">
-                                                    <i class="fab fa-skype"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" href="#!">
-                                                    <i class="fab fa-linkedin"></i>
+                                                <a class="social-icon text-xs-center" href="mailto:{{$member->email}}">
+                                                    <i class="fas fa-envelope"></i>
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+{{--                            <div class="backside">--}}
+{{--                                <div class="card">--}}
+{{--                                    <div class="card-body text-center mt-4">--}}
+{{--                                        <h4 class="card-title">{{ $member->name }}</h4>--}}
+{{--                                        <h6 class="font-weight-bold">{{ $member->profession }}</h6>--}}
+{{--                                        <p class="card-text">{{ $member->text }}</p>--}}
+{{--                                        <ul class="list-inline">--}}
+{{--                                            <li class="list-inline-item">--}}
+{{--                                                <a class="social-icon text-xs-center" href="#!">--}}
+{{--                                                    <i class="fab fa-facebook-f"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="list-inline-item">--}}
+{{--                                                <a class="social-icon text-xs-center" href="#!">--}}
+{{--                                                    <i class="fab fa-twitter"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="list-inline-item">--}}
+{{--                                                <a class="social-icon text-xs-center" href="#!">--}}
+{{--                                                    <i class="fab fa-skype"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="list-inline-item">--}}
+{{--                                                <a class="social-icon text-xs-center" href="#!">--}}
+{{--                                                    <i class="fab fa-linkedin"></i>--}}
+{{--                                                </a>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
