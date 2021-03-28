@@ -23,9 +23,11 @@ class ServiceController extends Controller
     public function show($service)
     {
         $service = Service::where('slug', $service)->get()->first();
+        $partners = Partner::all();
 
         return view('pages.services.show', [
-            'service' => $service->load('products')
+            'service' => $service->load('products'),
+            'partners' => $partners
         ]);
     }
 
