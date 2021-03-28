@@ -6,7 +6,7 @@
                 <h3 class="text-center">Contact Us</h3>
                 <p>
                     Stay in touch! We offer a variety of communication channels but you can always sent us an email and say:
-                    <a href="" class="blue-color">hello@educonsultorg.com</a>
+                    <a href="mailto:{{env('HELLO_EMAIL')}}" class="blue-color">{{env('HELLO_EMAIL')}}</a>
                 </p>
                 <hr>
             </div>

@@ -55,7 +55,7 @@
                         <i class="fas fa-phone customFa fa-rotate-90"></i> <a href="tel:{{ env('PHONE_NUM') }}"> +44 7715 366349 </a>
                     </li>
                     <li>
-                        <i class="fas fa-envelope-square customFa"></i> <a href="mailto:hello@educonsultorg.com"> hello@educonsultorg.com</a>
+                        <i class="fas fa-envelope-square customFa"></i> <a href="mailto:{{env('HELLO_EMAIL')}}"> {{env('HELLO_EMAIL')}}</a>
                     </li>
                 </ul>
             </div>
