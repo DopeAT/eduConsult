@@ -45,7 +45,7 @@
                     <label for="message" class="col-md-4 col-form-label text-md-right">Message</label>
 
                     <div class="col-md-6">
-                        <input id="message" type="text" class="form-control" name="message" value="{{ old('message') }}" required autofocus>
+                        <input id="message" maxlength="191" type="text" class="form-control" name="message" value="{{ old('message') }}" required autofocus>
                     </div>
                 </div>
 

@@ -143,7 +143,7 @@
                         <div class="testimonial-user">
                             <!--Avatar-->
                             <div class="testimonial-user-avatar mx-auto">
-                                <img src="{{ $member->image }}" class="img-fluid rounded-circle" />
+                                <img src="/images/testimonials/{{ $member->image }}" class="img-fluid rounded-circle" />
                             </div>
                             <!--Content-->
                             <h4 class="avatar-name">{{ $member->name }}</h4>
