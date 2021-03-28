@@ -56,38 +56,7 @@
         </div>
     </section>
 
-    <!-- partners -->
-    <section id="logos-section" class="py-4 bg-white">
-        <div class="container text-center">
-
-            <ul class="list-inline row">
-                <li class="col-lg-3 col-6 mb-3">
-                    <img class="img-fluid" src="/images/logos/logo-1.png" alt="">
-                </li>
-                <li class="col-lg-3 col-6 mb-3">
-                    <img class="img-fluid" src="/images/logos/logo-2.png" alt="">
-                </li>
-                <li class="col-lg-3 col-6 mb-3">
-                    <img class="img-fluid" src="/images/logos/logo-3.png" alt="">
-                </li>
-                <li class="col-lg-3 col-6 mb-3">
-                    <img class="img-fluid" src="/images/logos/logo-4.png" alt="">
-                </li>
-                <li class="col-lg-3 col-6 mb-3">
-                    <img class="img-fluid" src="/images/logos/logo-5.png" alt="">
-                </li>
-                <li class="col-lg-3 col-6 mb-3">
-                    <img class="img-fluid" src="/images/logos/logo-6.png" alt="">
-                </li>
-                <li class="col-lg-3 col-6 mb-3">
-                    <img class="img-fluid" src="/images/logos/logo-7.png" alt="">
-                </li>
-                <li class="col-lg-3 col-6 mb-3">
-                    <img class="img-fluid" src="/images/logos/logo-8.png" alt="">
-                </li>
-            </ul>
-        </div>
-    </section>
+    @include('components.partners')
 
     @include('components.contact_boxes')
 

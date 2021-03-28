@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Partner;
 use App\Service;
 use Illuminate\Http\Request;
 
@@ -11,9 +12,11 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
+        $partners = Partner::all();
 
         return view('pages.services.index', [
-            'services' => $services
+            'services' => $services,
+            'partners' => $partners
         ]);
     }
 
