@@ -213,12 +213,12 @@
                 });
             }
         },
-        mounted() {
+        async mounted() {
             window.scrollTo(0,0);
 
             this.add_services = [];
-            this.$store.dispatch('OrderLevels/getLevels');
-            this.$store.dispatch('Services/getAdditionalServices').then(() => {
+            await this.$store.dispatch('OrderLevels/getLevels');
+            await this.$store.dispatch('Services/getAdditionalServices').then(() => {
                 this.$store.dispatch('OrderDetails/fetchTotal', this.add_services);
             });
 

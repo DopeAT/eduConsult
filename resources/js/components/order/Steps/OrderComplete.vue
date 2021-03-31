@@ -16,6 +16,11 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td class="content-block">
+                                                                    <img src="/images/app/logo/Original.svg" width="115px">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="content-block">
                                                                     <h3>Thank you for your order!</h3>
                                                                     <p class="lead">
                                                                         <strong>Please check your email</strong> for confirmation email.
@@ -65,10 +70,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td class="content-block">
-                                                                    Ena Solutions Ltd,
-                                                                    1C Gardenia Avenue,
-                                                                    Luton, Bedfordshire,
-                                                                    LU3 2NP
+                                                                    {{ address }}
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -82,11 +84,11 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="text-center content-block">
-                                                        Questions? Email <a href="mailto:">support@company.inc</a>
+                                                        Questions? Email <a :href="'mailto:' + infoEmail">{{infoEmail}}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-center content-block">
+                                                    <td class="text-center aligncenter content-block">
                                                         <a :href="'/order-pdf/' + OrderDetails.payment_id" target="_blank">Print Invoice</a>
                                                     </td>
                                                 </tr>
@@ -121,10 +123,26 @@
             TodayFormatted() {
                 return moment().format('D MMM, YYYY');
             },
+            address() {
+                const address = [
+                    process.env.MIX_COMPANY,
+                    process.env.MIX_ADDRESS,
+                    process.env.MIX_CITY,
+                    process.env.MIX_COUNTY,
+                    process.env.MIX_POSTCODE
+                ]
+
+                return address.join(', ')
+            },
+            infoEmail() {
+                return process.env.INFO_EMAIL
+            }
         },
         mounted() {
             this.$emit('can-continue', {value: true});
             window.scrollTo(0,0);
+
+            console.log(process.env.MIX_COMPANY)
         },
     }
 </script>

@@ -291,6 +291,11 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td class="content-block">
+                                                                        <img src="{{ url('/images/app/logo/Original.svg') }}" width="115px">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="content-block">
                                                                         <table class="invoice">
                                                                             <tbody>
                                                                                 <tr>
@@ -336,10 +341,10 @@
                                                                 </tr>
                                                             <tr>
                                                                 <td class="content-block text-center">
-                                                                    Ena Solutions Ltd,
-                                                                    1C Gardenia Avenue,
-                                                                    Luton, Bedfordshire,
-                                                                    LU3 2NP
+                                                                    {{ env('COMPANY') }},
+                                                                    {{ env('ADDRESS') }},
+                                                                    {{ env('CITY') }}, {{ env('COUNTY') }},
+                                                                    {{ env('POSTCODE') }}
                                                                 </td>
                                                             </tr>
                                                             </tbody>
@@ -352,8 +357,8 @@
                                             <table width="100%">
                                                 <tbody>
                                                 <tr>
-                                                    <td class="text-center content-block">
-                                                        Questions? Email <a href="mailto:">support@company.inc</a>
+                                                    <td class="text-center aligncenter content-block">
+                                                        Questions? Email <a href="mailto:{{ env('INFO_EMAIL') }}">{{ env('INFO_EMAIL') }}</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>
