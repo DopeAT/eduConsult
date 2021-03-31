@@ -9,6 +9,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class OrderConfirmation extends Mailable
 {
@@ -39,8 +40,20 @@ class OrderConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->from(env('INFO_EMAIL', 'info@therops.co.uk'), 'The ROPS')
+        $data = [
+            'payment' => $this->payment,
+            'order' => $this->order,
+            'extra_services'
+        ];
+
+        $pdf = PDF::loadView('pdf.order', $data);
+
+
+        return $this->from(env('INFO_EMAIL', 'info@therops.co.uk'), 'The Rops')
                     ->subject('Order Confirmation')
+                    ->attachData($pdf->output(), 'Your_Post_Detail.pdf', [
+                        'mime' => 'application/pdf',
+                    ])
                     ->view('emails.order.success', [
                         'order'   => $this->order,
                         'payment' => $this->payment,

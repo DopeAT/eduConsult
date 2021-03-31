@@ -63,6 +63,8 @@
                                             <input type="hidden" id="pageId" value="{{ $order->payment_id }}">
 
                                             <form class="dropzone" id="demo-upload" action="{{route('users.fileupload', $order->payment_id)}}">
+                                                @csrf
+
                                                 <div class="dz-message font-weight-bold">
                                                     Drop files here or click to upload.
                                                 </div>
