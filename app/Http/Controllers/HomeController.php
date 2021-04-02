@@ -27,7 +27,12 @@ class HomeController extends Controller
     public function index()
     {
         $services = Service::select('id', 'name', 'intro')->get();
-        $testimonials = Testimonial::all()->random(3);
+        $testimonials = Testimonial::all();
+
+        if(count($testimonials) > 3) {
+            $testimonials = $testimonials->random(3);
+        }
+
         $metas = Meta::where('url', 'home')->first();
 
         return view('home', [
