@@ -149,6 +149,17 @@ Route::middleware(['admin.access'])->group(function(){
     ]);
 
     // Pages
+    Route::resource('/admin/meta/seo', 'Admin\MetasController')->names([
+        'index'   => 'admin.meta.seo.index',
+        'create'  => 'admin.meta.seo.create',
+        'store'   => 'admin.meta.seo.store',
+        'show'    => 'admin.meta.seo.show',
+        'edit'    => 'admin.meta.seo.edit',
+        'update'  => 'admin.meta.seo.update',
+        'destroy' => 'admin.meta.seo.destroy',
+    ]);
+
+    // Pages
     Route::resource('/admin/pages', 'Admin\PagesController')->names([
         'index'   => 'admin.pages.index',
         'create'  => 'admin.pages.create',

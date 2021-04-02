@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Meta;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,7 +15,11 @@ class ContactController extends Controller
      */
     public function show()
     {
-        return view('pages/contact');
+        $metas = Meta::where('url', 'contact')->first();
+
+        return view('pages/contact', [
+            'metas' => $metas
+        ]);
     }
 
     public function store(Request $request)

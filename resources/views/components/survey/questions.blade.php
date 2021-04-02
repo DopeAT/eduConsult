@@ -1,7 +1,7 @@
 <ul class="mt-3 list-unstyled">
     @foreach($data as $question)
 
-        @php $answer = $answers->where('question_id', $question->id)->first(); @endphp
+        @php $answer = isset($answers) ? $answers->where('question_id', $question->id)->first() : null @endphp
 
         <li>
             <h5 class="py-3 survey-question-title">{{ $question->question }}</h5>

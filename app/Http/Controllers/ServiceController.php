@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Meta;
 use App\Partner;
 use App\Service;
 use Illuminate\Http\Request;
@@ -13,10 +14,12 @@ class ServiceController extends Controller
     {
         $services = Service::all();
         $partners = Partner::all();
+        $metas = Meta::where('url', 'services')->first();
 
         return view('pages.services.index', [
             'services' => $services,
-            'partners' => $partners
+            'partners' => $partners,
+            'metas' => $metas
         ]);
     }
 
@@ -24,10 +27,12 @@ class ServiceController extends Controller
     {
         $service = Service::where('slug', $service)->get()->first();
         $partners = Partner::all();
+        $metas = Meta::where('url', $service)->first();
 
         return view('pages.services.show', [
             'service' => $service->load('products'),
-            'partners' => $partners
+            'partners' => $partners,
+            'metas' => $metas
         ]);
     }
 

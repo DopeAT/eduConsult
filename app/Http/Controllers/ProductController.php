@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Meta;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -27,9 +28,11 @@ class ProductController extends Controller
     public function show($service, $product)
     {
         $product = Product::where('slug', $product)->first()->load('service')->load('rates');
+        $metas = Meta::where('url', $product)->first();
 
         return view('pages.product', [
-            'product' => $product
+            'product' => $product,
+            'metas' => $metas
         ]);
     }
 }
