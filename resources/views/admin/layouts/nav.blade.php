@@ -125,6 +125,14 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.meta.seo.index') }}">
+            <i class="fab fa-fw fa-google"></i>
+            <span>SEO</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.pages.index') }}">
             <i class="fas fa-fw fa-atlas"></i>
             <span>Web Pages</span>
