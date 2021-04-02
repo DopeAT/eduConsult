@@ -130,40 +130,43 @@
                     <p>Keeping our clients satisfied is our primary focus, therefore we do not cut any corners. We put a tremendous amount of effort into each order to ensure that customer communication, project management and project quality assurance processes in all levels, are exceeding your expectations.<br/><b>We succeed when you succeed!</b></p>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-sm-12">
-                    <h3 class="text-center">What Our Customers Say About Us</h3>
-                    <hr>
+
+            @if(count($testimonials) > 0)
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        <h3 class="text-center">What Our Customers Say About Us</h3>
+                        <hr>
+                    </div>
                 </div>
-            </div>
-            <div class="row mt-3 testimonials">
+                <div class="row mt-3 testimonials">
 
-                @foreach($testimonials as $member)
-                    <div class="col-sm-4">
-                        <div class="testimonial-user">
-                            <!--Avatar-->
-                            <div class="testimonial-user-avatar mx-auto">
-                                <img src="/images/testimonials/{{ $member->image }}" class="img-fluid rounded-circle" />
-                            </div>
-                            <!--Content-->
-                            <h4 class="avatar-name">{{ $member->name }}</h4>
-                            <h6 class="text-primary prof">{{ $member->role }}</h6>
-                            <p class="text-center">{{ $member->message }}</p>
-                            <!--Review-->
-                            <div class="star-text">
-                                @for($i=1; $i <= $member->stars; $i++)
-                                    <i class="fas fa-star"> </i>
-                                @endfor
+                    @foreach($testimonials as $member)
+                        <div class="col-sm-4">
+                            <div class="testimonial-user">
+                                <!--Avatar-->
+                                <div class="testimonial-user-avatar mx-auto">
+                                    <img src="/images/testimonials/{{ $member->image }}" class="img-fluid rounded-circle" />
+                                </div>
+                                <!--Content-->
+                                <h4 class="avatar-name">{{ $member->name }}</h4>
+                                <h6 class="text-primary prof">{{ $member->role }}</h6>
+                                <p class="text-center">{{ $member->message }}</p>
+                                <!--Review-->
+                                <div class="star-text">
+                                    @for($i=1; $i <= $member->stars; $i++)
+                                        <i class="fas fa-star"> </i>
+                                    @endfor
 
-                                @if (strpos($member->stars, '.5'))
-                                    <i class="fas fa-star-half-alt"></i>
-                                @endif
+                                    @if (strpos($member->stars, '.5'))
+                                        <i class="fas fa-star-half-alt"></i>
+                                    @endif
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
 
-            </div>
+                </div>
+            @endif
 
         </div>
     </section>

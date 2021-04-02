@@ -125,81 +125,83 @@
     </section>
 
     {{--Team--}}
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 my-5">
-                    <h3 class="text-center">Meet our team</h3>
-                </div>
-            </div>
-            <div class="row mt-3" id="team">
-
-                <!-- Team member -->
-                @foreach($teamMembers as $member)
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" >
-                        <div class="mainflip flip-0">
-                            <div class="frontside">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <p>
-                                            <img class="img-fluid"
-                                                 src="/images/team/{{ $member->image }}" alt="{{ $member->name }} | {{ $member->profession }}"
-                                                 title="{{ $member->name }} | {{ $member->profession }}"
-                                            >
-                                        </p>
-                                        <h4 class="card-title">{{ $member->name }}</h4>
-                                        <h6 class="font-weight-bold">{{ $member->profession }}</h6>
-                                        <p class="card-text">{{ $member->text }}</p>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" href="mailto:{{$member->email}}">
-                                                    <i class="fas fa-envelope"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-{{--                            <div class="backside">--}}
-{{--                                <div class="card">--}}
-{{--                                    <div class="card-body text-center mt-4">--}}
-{{--                                        <h4 class="card-title">{{ $member->name }}</h4>--}}
-{{--                                        <h6 class="font-weight-bold">{{ $member->profession }}</h6>--}}
-{{--                                        <p class="card-text">{{ $member->text }}</p>--}}
-{{--                                        <ul class="list-inline">--}}
-{{--                                            <li class="list-inline-item">--}}
-{{--                                                <a class="social-icon text-xs-center" href="#!">--}}
-{{--                                                    <i class="fab fa-facebook-f"></i>--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="list-inline-item">--}}
-{{--                                                <a class="social-icon text-xs-center" href="#!">--}}
-{{--                                                    <i class="fab fa-twitter"></i>--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="list-inline-item">--}}
-{{--                                                <a class="social-icon text-xs-center" href="#!">--}}
-{{--                                                    <i class="fab fa-skype"></i>--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="list-inline-item">--}}
-{{--                                                <a class="social-icon text-xs-center" href="#!">--}}
-{{--                                                    <i class="fab fa-linkedin"></i>--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-                        </div>
+    @if(count($teamMembers) > 0)
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 my-5">
+                        <h3 class="text-center">Meet our team</h3>
                     </div>
                 </div>
-                @endforeach
-                <!-- ./Team member -->
+                <div class="row mt-3" id="team">
 
+                    <!-- Team member -->
+                    @foreach($teamMembers as $member)
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="image-flip" >
+                            <div class="mainflip flip-0">
+                                <div class="frontside">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p>
+                                                <img class="img-fluid"
+                                                     src="/images/team/{{ $member->image }}" alt="{{ $member->name }} | {{ $member->profession }}"
+                                                     title="{{ $member->name }} | {{ $member->profession }}"
+                                                >
+                                            </p>
+                                            <h4 class="card-title">{{ $member->name }}</h4>
+                                            <h6 class="font-weight-bold">{{ $member->profession }}</h6>
+                                            <p class="card-text">{{ $member->text }}</p>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" href="mailto:{{$member->email}}">
+                                                        <i class="fas fa-envelope"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+    {{--                            <div class="backside">--}}
+    {{--                                <div class="card">--}}
+    {{--                                    <div class="card-body text-center mt-4">--}}
+    {{--                                        <h4 class="card-title">{{ $member->name }}</h4>--}}
+    {{--                                        <h6 class="font-weight-bold">{{ $member->profession }}</h6>--}}
+    {{--                                        <p class="card-text">{{ $member->text }}</p>--}}
+    {{--                                        <ul class="list-inline">--}}
+    {{--                                            <li class="list-inline-item">--}}
+    {{--                                                <a class="social-icon text-xs-center" href="#!">--}}
+    {{--                                                    <i class="fab fa-facebook-f"></i>--}}
+    {{--                                                </a>--}}
+    {{--                                            </li>--}}
+    {{--                                            <li class="list-inline-item">--}}
+    {{--                                                <a class="social-icon text-xs-center" href="#!">--}}
+    {{--                                                    <i class="fab fa-twitter"></i>--}}
+    {{--                                                </a>--}}
+    {{--                                            </li>--}}
+    {{--                                            <li class="list-inline-item">--}}
+    {{--                                                <a class="social-icon text-xs-center" href="#!">--}}
+    {{--                                                    <i class="fab fa-skype"></i>--}}
+    {{--                                                </a>--}}
+    {{--                                            </li>--}}
+    {{--                                            <li class="list-inline-item">--}}
+    {{--                                                <a class="social-icon text-xs-center" href="#!">--}}
+    {{--                                                    <i class="fab fa-linkedin"></i>--}}
+    {{--                                                </a>--}}
+    {{--                                            </li>--}}
+    {{--                                        </ul>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    <!-- ./Team member -->
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
 @endsection
