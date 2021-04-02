@@ -27,13 +27,17 @@
     @yield('_styles')
 </head>
 <body>
-    <div id="app">
-        <div id="@yield('page_id')">
+    <div>
+        <div id="app">
+
+            @auth
+                @php $activeSurvey = Auth::user()->surveys()->where('completed', 0)->first() @endphp
+            @endauth
 
             {{--NavBar--}}
             @include('layouts._nav')
 
-            <div class="pt-5">
+            <div id="@yield('page_id')" class="{{ !empty($activeSurvey) ? 'pt-0' : 'pt-5' }}">
                 @yield('content')
             </div>
 
