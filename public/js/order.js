@@ -2912,7 +2912,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     currentUser: 'CustomerDetails/getCurrentUser'
   }), {
     orderSteps: function orderSteps() {
-      if (this.currentUser.id) {
+      if (this.currentUser && this.currentUser.id) {
         return this.demoSteps.filter(function (step) {
           return step.name != 'CustomerDetails';
         });
@@ -30590,7 +30590,7 @@ var render = function() {
             { staticClass: "list-group-item d-flex justify-content-between" },
             [
               _c("span", { staticClass: "small" }, [
-                _vm._v(_vm._s(_vm.getLevel.name))
+                _vm._v(_vm._s(_vm.getLevel && _vm.getLevel.name))
               ]),
               _vm._v(" "),
               _c("strong")

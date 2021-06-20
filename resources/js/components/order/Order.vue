@@ -75,7 +75,7 @@ export default {
         }),
         orderSteps() {
 
-            if(this.currentUser.id) {
+            if(this.currentUser && this.currentUser.id) {
                 return this.demoSteps.filter(step => {
                     return step.name != 'CustomerDetails';
                 });

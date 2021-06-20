@@ -16,7 +16,7 @@
             </ul>
             <ul class="list-group overflow-list">
                 <li class="list-group-item d-flex justify-content-between">
-                    <span class="small">{{getLevel.name}}</span>
+                    <span class="small">{{getLevel && getLevel.name}}</span>
                     <strong></strong>
                 </li>
                 <li class="list-group-item d-flex justify-content-between" v-for="extraServiceChosen in extraServicesChosen">
