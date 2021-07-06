@@ -37,7 +37,7 @@
             {{--NavBar--}}
             @include('layouts._nav')
 
-            <div id="@yield('page_id')" class="{{ !empty($activeSurvey) ? 'pt-0' : 'pt-5' }}">
+            <div id="@yield('page_id')" class="{{ !empty($activeSurvey) ? 'pt-0' : 'pt-5 pt-sm-10' }}">
                 @yield('content')
             </div>
 

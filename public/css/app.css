@@ -10908,6 +10908,12 @@ hr.white-hr {
   border-top: 1px solid #eee;
 }
 
+@media (max-width: 575.98px) {
+  .pt-sm-10 {
+    padding-top: 5rem !important;
+  }
+}
+
 .blue-color {
   color: #01b4ff !important;
 }

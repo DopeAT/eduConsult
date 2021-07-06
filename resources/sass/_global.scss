@@ -23,6 +23,12 @@ hr.white-hr{
     border-top: 1px solid #eee;
 }
 
+.pt-sm-10 {
+    @media (max-width: 575.98px) {
+        padding-top: 5rem !important;
+    }
+}
+
 .blue-color{
     color: $blue-custom;
 }
