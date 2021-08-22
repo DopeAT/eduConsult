@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Meta;
+use App\Partner;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -29,9 +30,11 @@ class ProductController extends Controller
     {
         $product = Product::where('slug', $product)->first()->load('service')->load('rates');
         $metas = Meta::where('url', $product)->first();
+        $partners = Partner::all();
 
         return view('pages.product', [
             'product' => $product,
+            'partners' => $partners,
             'metas' => $metas
         ]);
     }
