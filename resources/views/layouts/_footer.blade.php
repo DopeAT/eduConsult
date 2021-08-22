@@ -10,16 +10,16 @@
                         <a href="{{ route('contact') }}">Contact Us</a>
                     </li>
                     <li>
-                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/privacy-cookie-policy">Privacy & Cookie Policy</a>
                     </li>
                     <li>
-                        <a href="/cookie-policy">Cookies Policy</a>
+                        <a href="/terms-of-use">Use Policy</a>
                     </li>
                     <li>
                         <a href="/terms-conditions">Terms and Conditions</a>
                     </li>
                     <li>
-                        <a href="{{ route('sitemap') }}">Sitemap</a>
+                        <a href="/sitemap.xml">Sitemap</a>
                     </li>
                     <li>
                         <a href="{{ route('survey.example') }}">Survey Example</a>
